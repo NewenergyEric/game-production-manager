@@ -70,6 +70,48 @@ def validate(data):
     for m in milestones.values():
         refs(m, 'task_ids', tasks)
         if not m.get('exit_criteria'): errors.append(m['id'] + ': missing exit criteria')
+    if data.get('detail_level') == 'execution':
+        nonblank = lambda value: isinstance(value, str) and bool(value.strip())
+        for tid, task in tasks.items():
+            for key in ['input_versions', 'outputs', 'entry_criteria', 'stop_conditions', 'acceptance_cases']:
+                if not isinstance(task.get(key), list) or not task[key]:
+                    errors.append(f'{tid}: execution task needs nonempty {key}')
+            for key in ['inputs', 'outputs', 'entry_criteria', 'stop_conditions']:
+                if not isinstance(task.get(key), list) or not task[key] or not all(nonblank(v) for v in task[key]):
+                    errors.append(f'{tid}: {key} needs nonblank strings')
+            inputs = task.get('input_versions', [])
+            input_refs = []
+            for item in inputs if isinstance(inputs, list) else []:
+                if not isinstance(item, dict) or not nonblank(item.get('ref')) or not nonblank(item.get('version')) or item.get('status') not in ['available', 'pending']:
+                    errors.append(f'{tid}: versioned input needs ref, version and available/pending status')
+                    continue
+                ref = item['ref']; input_refs.append(ref)
+                if ref.startswith(('D-', 'T-', 'R-', 'M-')) and ref not in all_ids:
+                    errors.append(f'{tid}: dangling versioned input {ref}')
+                if task.get('status') in ['ready', 'in_progress', 'submitted', 'accepted'] and item['status'] != 'available':
+                    errors.append(f'{tid}: pending inputs cannot be treated as executable')
+            declared = task.get('inputs', [])
+            if isinstance(declared, list) and all(nonblank(v) for v in declared):
+                if len(declared) != len(set(declared)) or len(input_refs) != len(set(input_refs)) or set(input_refs) != set(declared):
+                    errors.append(f'{tid}: input_versions must match inputs exactly once')
+            if task.get('status') in ['ready', 'in_progress', 'submitted']:
+                for dep in graph[tid]:
+                    if dep in tasks and tasks[dep].get('status') != 'accepted':
+                        errors.append(f'{tid}: prerequisite {dep} must be accepted before execution')
+            cases = task.get('acceptance_cases', [])
+            for case in cases if isinstance(cases, list) else []:
+                if not isinstance(case, dict) or not all(nonblank(case.get(key)) for key in ['id', 'given', 'when', 'then']):
+                    errors.append(f'{tid}: acceptance case needs id/given/when/then')
+        bom = data.get('asset_bom', [])
+        if not isinstance(bom, list) or not bom:
+            errors.append('execution package needs an asset_bom with quantity basis')
+        else:
+            bom_ids = set()
+            for asset in bom:
+                if not isinstance(asset, dict) or not all(asset.get(k) for k in ['id', 'family', 'states', 'representation', 'quantity_basis', 'spec_status']):
+                    errors.append('asset BOM needs ID, family, states, representation, quantity basis and spec status'); continue
+                if asset['id'] in bom_ids: errors.append('duplicate asset BOM ID')
+                bom_ids.add(asset['id'])
     visited, active = set(), set()
     def walk(tid):
         if tid in active: errors.append('dependency cycle at ' + tid); return
@@ -119,11 +161,22 @@ def render(data, out):
     for m in data['milestones']: lines += [f"- {m['id']}：{m.get('goal','')}；退出条件：{m['exit_criteria']}"]
     lines += ['', '本文件是执行计划。制作、代码和 Build 由任务执行者提交；文档生成不改变任务完成状态。', '']
     (out/'SOW.md').write_text('\n'.join(lines),encoding='utf-8')
-    fields = ['id','owner_role','executor_kind','deliverable_ids','depends_on','action','acceptance','status']
+    fields = ['id','owner_role','executor_kind','deliverable_ids','depends_on','inputs','input_versions','action','outputs','entry_criteria','acceptance','stop_conditions','status']
     with (out/'tasks.csv').open('w',encoding='utf-8-sig',newline='') as file:
         writer = csv.DictWriter(file,fieldnames=fields); writer.writeheader()
         for t in data['tasks']:
-            writer.writerow({k: json.dumps(t[k],ensure_ascii=False) if isinstance(t[k], (dict,list)) else t[k] for k in fields})
+            writer.writerow({k: json.dumps(t.get(k, []),ensure_ascii=False) if isinstance(t.get(k, []), (dict,list)) else t[k] for k in fields})
+    cases = [(t['id'], c) for t in data['tasks'] for c in t.get('acceptance_cases', [])]
+    if cases:
+        with (out/'acceptance.csv').open('w', encoding='utf-8-sig', newline='') as file:
+            writer = csv.writer(file); writer.writerow(['task_id','case_id','given','when','then'])
+            for tid, case in cases: writer.writerow([tid] + [case[k] for k in ['id','given','when','then']])
+    if data.get('asset_bom'):
+        with (out/'asset-bom.csv').open('w', encoding='utf-8-sig', newline='') as file:
+            fields = ['id','family','states','representation','quantity_basis','spec_status']
+            writer = csv.DictWriter(file, fieldnames=fields); writer.writeheader()
+            for asset in data['asset_bom']:
+                writer.writerow({k: json.dumps(asset[k],ensure_ascii=False) if isinstance(asset[k], (dict,list)) else asset[k] for k in fields})
     roles = {}
     for t in data['tasks']: roles.setdefault(t['owner_role'], []).append(t)
     (out/'role-views.json').write_text(json.dumps(roles,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')

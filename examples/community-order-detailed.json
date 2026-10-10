@@ -1,0 +1,933 @@
+{
+  "id": "community-order-execution-example",
+  "version": "draft-2",
+  "detail_level": "execution",
+  "example_only": true,
+  "goal": "把一条社区订单拆到可被具体工种接手；不冒充已开发的游戏功能。",
+  "strategy": "沿用既有 Merge 系统，先确定规则与接口，再并行准备 UI、场景与文本，最后集成和验收。",
+  "scope_in": [
+    "一条订单的条件、扣除、提交与完成反馈",
+    "一个社区角落改造前后状态",
+    "UI、本地化、规则测试与交接"
+  ],
+  "scope_out": [
+    "完整游戏制作",
+    "正式物品数值、工期和预算承诺",
+    "擅自决定客户端/服务端与存档架构"
+  ],
+  "constraints": [
+    "本案例为原创规划实验，不是用户项目批准范围",
+    "任务全部 planned；素材与工程规格由实际项目负责人提供"
+  ],
+  "assumptions": [
+    "物品链、奖励、引擎、存档架构、美术包版本尚待确认"
+  ],
+  "requirements": [
+    {
+      "id": "R-ORDER",
+      "text": "交付指定物品后完成订单；合法、失败、重复与恢复的预期清楚",
+      "source": "本仓库原创深度规划案例",
+      "status": "proposed",
+      "acceptance": [
+        "有具体验收案例与接收岗位"
+      ],
+      "owner_role": "主策"
+    },
+    {
+      "id": "R-CORNER",
+      "text": "已完成订单对应角落从改造前到改造后，能复核资源绑定",
+      "source": "本仓库原创深度规划案例",
+      "status": "proposed",
+      "acceptance": [
+        "有具体验收案例与接收岗位"
+      ],
+      "owner_role": "主美"
+    },
+    {
+      "id": "R-LOCALE",
+      "text": "订单数量、动作、错误和完成反馈能替换语言并适配长度",
+      "source": "本仓库原创深度规划案例",
+      "status": "proposed",
+      "acceptance": [
+        "有具体验收案例与接收岗位"
+      ],
+      "owner_role": "本地化负责人"
+    }
+  ],
+  "deliverables": [
+    {
+      "id": "D-RULE",
+      "name": "订单状态与规则契约",
+      "type": "design",
+      "requirement_ids": [
+        "R-ORDER"
+      ],
+      "spec": {
+        "baseline": "draft-2 / proposed",
+        "format": "见对应任务输出；引擎专属规格待确认"
+      },
+      "acceptance": [
+        "对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"
+      ],
+      "reviewer_role": "主策"
+    },
+    {
+      "id": "D-CONFIG",
+      "name": "物品与奖励配置字段",
+      "type": "data",
+      "requirement_ids": [
+        "R-ORDER"
+      ],
+      "spec": {
+        "baseline": "draft-2 / proposed",
+        "format": "见对应任务输出；引擎专属规格待确认"
+      },
+      "acceptance": [
+        "对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"
+      ],
+      "reviewer_role": "主策"
+    },
+    {
+      "id": "D-TECH",
+      "name": "提交/存档/幂等接口契约",
+      "type": "technical",
+      "requirement_ids": [
+        "R-ORDER"
+      ],
+      "spec": {
+        "baseline": "draft-2 / proposed",
+        "format": "见对应任务输出；引擎专属规格待确认"
+      },
+      "acceptance": [
+        "对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"
+      ],
+      "reviewer_role": "技术负责人"
+    },
+    {
+      "id": "D-BOM",
+      "name": "资产家族与规格清单",
+      "type": "asset",
+      "requirement_ids": [
+        "R-CORNER"
+      ],
+      "spec": {
+        "baseline": "draft-2 / proposed",
+        "format": "见对应任务输出；引擎专属规格待确认"
+      },
+      "acceptance": [
+        "对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"
+      ],
+      "reviewer_role": "主美"
+    },
+    {
+      "id": "D-UI",
+      "name": "订单组件与交互状态",
+      "type": "ui",
+      "requirement_ids": [
+        "R-ORDER"
+      ],
+      "spec": {
+        "baseline": "draft-2 / proposed",
+        "format": "见对应任务输出；引擎专属规格待确认"
+      },
+      "acceptance": [
+        "对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"
+      ],
+      "reviewer_role": "主美"
+    },
+    {
+      "id": "D-SCENE",
+      "name": "角落前后资产与绑定",
+      "type": "asset",
+      "requirement_ids": [
+        "R-CORNER"
+      ],
+      "spec": {
+        "baseline": "draft-2 / proposed",
+        "format": "见对应任务输出；引擎专属规格待确认"
+      },
+      "acceptance": [
+        "对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"
+      ],
+      "reviewer_role": "主美"
+    },
+    {
+      "id": "D-LOGIC",
+      "name": "订单业务逻辑与提交证据",
+      "type": "code",
+      "requirement_ids": [
+        "R-ORDER"
+      ],
+      "spec": {
+        "baseline": "draft-2 / proposed",
+        "format": "见对应任务输出；引擎专属规格待确认"
+      },
+      "acceptance": [
+        "对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"
+      ],
+      "reviewer_role": "技术负责人"
+    },
+    {
+      "id": "D-BIND",
+      "name": "UI与数据绑定",
+      "type": "integration",
+      "requirement_ids": [
+        "R-ORDER"
+      ],
+      "spec": {
+        "baseline": "draft-2 / proposed",
+        "format": "见对应任务输出；引擎专属规格待确认"
+      },
+      "acceptance": [
+        "对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"
+      ],
+      "reviewer_role": "技术负责人"
+    },
+    {
+      "id": "D-LOCALE",
+      "name": "可替换文本与长度检查",
+      "type": "localization",
+      "requirement_ids": [
+        "R-LOCALE"
+      ],
+      "spec": {
+        "baseline": "draft-2 / proposed",
+        "format": "见对应任务输出；引擎专属规格待确认"
+      },
+      "acceptance": [
+        "对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"
+      ],
+      "reviewer_role": "本地化负责人"
+    },
+    {
+      "id": "D-QA",
+      "name": "规则/异常/恢复验收记录",
+      "type": "qa",
+      "requirement_ids": [
+        "R-ORDER"
+      ],
+      "spec": {
+        "baseline": "draft-2 / proposed",
+        "format": "见对应任务输出；引擎专属规格待确认"
+      },
+      "acceptance": [
+        "对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"
+      ],
+      "reviewer_role": "QA负责人"
+    },
+    {
+      "id": "D-INTEGRATION",
+      "name": "角落与订单集成证据",
+      "type": "integration",
+      "requirement_ids": [
+        "R-CORNER"
+      ],
+      "spec": {
+        "baseline": "draft-2 / proposed",
+        "format": "见对应任务输出；引擎专属规格待确认"
+      },
+      "acceptance": [
+        "对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"
+      ],
+      "reviewer_role": "制作负责人"
+    },
+    {
+      "id": "D-HANDOFF",
+      "name": "版本与执行交接包",
+      "type": "handoff",
+      "requirement_ids": [
+        "R-ORDER"
+      ],
+      "spec": {
+        "baseline": "draft-2 / proposed",
+        "format": "见对应任务输出；引擎专属规格待确认"
+      },
+      "acceptance": [
+        "对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"
+      ],
+      "reviewer_role": "制作负责人"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T-01",
+      "owner_role": "主策",
+      "executor_kind": "either",
+      "deliverable_ids": [
+        "D-RULE"
+      ],
+      "depends_on": [],
+      "inputs": [
+        "brief/community-order"
+      ],
+      "input_versions": [
+        {
+          "ref": "brief/community-order",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        }
+      ],
+      "action": "说明 unmet/ready/submitting/completed/failed 的合法转换、重复提交与重进预期。",
+      "outputs": [
+        "design/order-state-contract.md"
+      ],
+      "entry_criteria": [
+        "对应输入版本已提供；影响本任务的正式规则与规格已确认"
+      ],
+      "acceptance": [
+        "不扣物品、不发奖励，并给出明确原因。"
+      ],
+      "acceptance_cases": [
+        {
+          "id": "AC-01",
+          "given": "设计状态契约覆盖物品不足场景",
+          "when": "评审设计文档与状态转换表",
+          "then": "文档明确禁止扣除和发奖，并规定提示原因；运行时验证交给程序与 QA。"
+        }
+      ],
+      "stop_conditions": [
+        "输入版本变更或规则冲突，列影响并交原负责人处理",
+        "缺少目标工程、有效美术包或规格时，不冒充制作完成"
+      ],
+      "status": "planned",
+      "artifacts": []
+    },
+    {
+      "id": "T-02",
+      "owner_role": "数值策划",
+      "executor_kind": "either",
+      "deliverable_ids": [
+        "D-CONFIG"
+      ],
+      "depends_on": [
+        "T-01"
+      ],
+      "inputs": [
+        "D-RULE"
+      ],
+      "input_versions": [
+        {
+          "ref": "D-RULE",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        }
+      ],
+      "action": "定义 item_id、required_count、reward_ref、corner_ref；数值保留待确认，不硬编码到表现层。",
+      "outputs": [
+        "data/order.schema.json",
+        "data/order.example.json"
+      ],
+      "entry_criteria": [
+        "对应输入版本已提供；影响本任务的正式规则与规格已确认"
+      ],
+      "acceptance": [
+        "拒绝无效配置，并定位字段；正式数值不凭空补全。"
+      ],
+      "acceptance_cases": [
+        {
+          "id": "AC-02",
+          "given": "缺失奖励引用或数量为零",
+          "when": "评审 schema 与无效配置样例",
+          "then": "schema 明确拒绝缺失奖励引用和零数量，并定位字段；正式数值保持待确认。"
+        }
+      ],
+      "stop_conditions": [
+        "输入版本变更或规则冲突，列影响并交原负责人处理",
+        "缺少目标工程、有效美术包或规格时，不冒充制作完成"
+      ],
+      "status": "planned",
+      "artifacts": []
+    },
+    {
+      "id": "T-03",
+      "owner_role": "技术负责人",
+      "executor_kind": "either",
+      "deliverable_ids": [
+        "D-TECH"
+      ],
+      "depends_on": [
+        "T-01"
+      ],
+      "inputs": [
+        "D-RULE"
+      ],
+      "input_versions": [
+        {
+          "ref": "D-RULE",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        }
+      ],
+      "action": "确定库存扣除、完成标记、奖励和存档的事务边界；记录重复请求键与失败恢复策略。",
+      "outputs": [
+        "engineering/order-submit-contract.md"
+      ],
+      "entry_criteria": [
+        "对应输入版本已提供；影响本任务的正式规则与规格已确认"
+      ],
+      "acceptance": [
+        "扣除与奖励最多生效一次；失败与恢复责任明确。"
+      ],
+      "acceptance_cases": [
+        {
+          "id": "AC-03",
+          "given": "同一订单收到重复提交",
+          "when": "评审事务序列",
+          "then": "扣除与奖励最多生效一次；失败与恢复责任明确。"
+        }
+      ],
+      "stop_conditions": [
+        "输入版本变更或规则冲突，列影响并交原负责人处理",
+        "缺少目标工程、有效美术包或规格时，不冒充制作完成"
+      ],
+      "status": "planned",
+      "artifacts": []
+    },
+    {
+      "id": "T-04",
+      "owner_role": "主美",
+      "executor_kind": "either",
+      "deliverable_ids": [
+        "D-BOM"
+      ],
+      "depends_on": [
+        "T-01"
+      ],
+      "inputs": [
+        "D-RULE"
+      ],
+      "input_versions": [
+        {
+          "ref": "D-RULE",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        }
+      ],
+      "action": "拆清基础组件、状态复用、角落前后资产与规格缺口，引用有效美术包。",
+      "outputs": [
+        "art/order-asset-bom.csv"
+      ],
+      "entry_criteria": [
+        "对应输入版本已提供；影响本任务的正式规则与规格已确认"
+      ],
+      "acceptance": [
+        "保留待补项，先做规范对齐；不将状态数当成图片数量。"
+      ],
+      "acceptance_cases": [
+        {
+          "id": "AC-04",
+          "given": "没有批准的美术包或引擎规格",
+          "when": "准备制作清单",
+          "then": "保留待补项，先做规范对齐；不将状态数当成图片数量。"
+        }
+      ],
+      "stop_conditions": [
+        "输入版本变更或规则冲突，列影响并交原负责人处理",
+        "缺少目标工程、有效美术包或规格时，不冒充制作完成"
+      ],
+      "status": "planned",
+      "artifacts": []
+    },
+    {
+      "id": "T-05",
+      "owner_role": "UI设计师",
+      "executor_kind": "either",
+      "deliverable_ids": [
+        "D-UI"
+      ],
+      "depends_on": [
+        "T-01",
+        "T-04"
+      ],
+      "inputs": [
+        "D-RULE",
+        "D-BOM"
+      ],
+      "input_versions": [
+        {
+          "ref": "D-RULE",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        },
+        {
+          "ref": "D-BOM",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        }
+      ],
+      "action": "为订单面板、按钮、数量和反馈定义五态组合，给出交互与禁用规则。",
+      "outputs": [
+        "art/order-ui-states.fig-or-equivalent",
+        "art/order-ui-spec.md"
+      ],
+      "entry_criteria": [
+        "对应输入版本已提供；影响本任务的正式规则与规格已确认"
+      ],
+      "acceptance": [
+        "保持可见进度并阻止重复触发；失败后恢复可重试状态。"
+      ],
+      "acceptance_cases": [
+        {
+          "id": "AC-05",
+          "given": "UI 规格展示 submitting 状态",
+          "when": "评审状态稿与交互标注",
+          "then": "标注可见进度、禁用重复触发及失败后重试状态；运行时交互由 T-08/T-10 验证。"
+        }
+      ],
+      "stop_conditions": [
+        "输入版本变更或规则冲突，列影响并交原负责人处理",
+        "缺少目标工程、有效美术包或规格时，不冒充制作完成"
+      ],
+      "status": "planned",
+      "artifacts": []
+    },
+    {
+      "id": "T-06",
+      "owner_role": "场景美术",
+      "executor_kind": "either",
+      "deliverable_ids": [
+        "D-SCENE"
+      ],
+      "depends_on": [
+        "T-04"
+      ],
+      "inputs": [
+        "D-BOM"
+      ],
+      "input_versions": [
+        {
+          "ref": "D-BOM",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        }
+      ],
+      "action": "交付一个角落的前后状态及锚点/遮挡/组合检查；复用与新制单列。",
+      "outputs": [
+        "art/corner-before",
+        "art/corner-after",
+        "art/corner-integration-spec.md"
+      ],
+      "entry_criteria": [
+        "对应输入版本已提供；影响本任务的正式规则与规格已确认"
+      ],
+      "acceptance": [
+        "锚点一致，无跳位或遮挡错误；尺寸/格式按正式规范。"
+      ],
+      "acceptance_cases": [
+        {
+          "id": "AC-06",
+          "given": "同一相机和定位基线",
+          "when": "叠放对照改造前后场景稿",
+          "then": "锚点一致，无跳位或遮挡错误；尺寸/格式按正式规范。"
+        }
+      ],
+      "stop_conditions": [
+        "输入版本变更或规则冲突，列影响并交原负责人处理",
+        "缺少目标工程、有效美术包或规格时，不冒充制作完成"
+      ],
+      "status": "planned",
+      "artifacts": []
+    },
+    {
+      "id": "T-07",
+      "owner_role": "玩法程序",
+      "executor_kind": "either",
+      "deliverable_ids": [
+        "D-LOGIC"
+      ],
+      "depends_on": [
+        "T-02",
+        "T-03"
+      ],
+      "inputs": [
+        "D-CONFIG",
+        "D-TECH"
+      ],
+      "input_versions": [
+        {
+          "ref": "D-CONFIG",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        },
+        {
+          "ref": "D-TECH",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        }
+      ],
+      "action": "按契约实现验证、扣除、完成与奖励；提供非法输入与重复提交的测试证据。",
+      "outputs": [
+        "code/order-service",
+        "tests/order-service-results",
+        "engineering/order-save-migration.md"
+      ],
+      "entry_criteria": [
+        "对应输入版本已提供；影响本任务的正式规则与规格已确认"
+      ],
+      "acceptance": [
+        "库存与奖励不重复改变；返回既有结果。"
+      ],
+      "acceptance_cases": [
+        {
+          "id": "AC-07",
+          "given": "第一次提交已经生效",
+          "when": "相同请求再次到达",
+          "then": "库存与奖励不重复改变；返回既有结果。"
+        }
+      ],
+      "stop_conditions": [
+        "输入版本变更或规则冲突，列影响并交原负责人处理",
+        "缺少目标工程、有效美术包或规格时，不冒充制作完成"
+      ],
+      "status": "planned",
+      "artifacts": []
+    },
+    {
+      "id": "T-08",
+      "owner_role": "客户端程序",
+      "executor_kind": "either",
+      "deliverable_ids": [
+        "D-BIND"
+      ],
+      "depends_on": [
+        "T-05",
+        "T-07",
+        "T-09"
+      ],
+      "inputs": [
+        "D-UI",
+        "D-LOGIC",
+        "D-LOCALE"
+      ],
+      "input_versions": [
+        {
+          "ref": "D-UI",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        },
+        {
+          "ref": "D-LOGIC",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        },
+        {
+          "ref": "D-LOCALE",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        }
+      ],
+      "action": "绑定库存、订单状态、文本键和表现；处理提交中、失败与重进。",
+      "outputs": [
+        "code/order-panel",
+        "evidence/order-state-capture"
+      ],
+      "entry_criteria": [
+        "对应输入版本已提供；影响本任务的正式规则与规格已确认"
+      ],
+      "acceptance": [
+        "显示完成态，不再次扣除或播放可重复领取流程。"
+      ],
+      "acceptance_cases": [
+        {
+          "id": "AC-08",
+          "given": "订单已完成并有保存状态",
+          "when": "退出后重进",
+          "then": "显示完成态，不再次扣除或播放可重复领取流程。"
+        }
+      ],
+      "stop_conditions": [
+        "输入版本变更或规则冲突，列影响并交原负责人处理",
+        "缺少目标工程、有效美术包或规格时，不冒充制作完成"
+      ],
+      "status": "planned",
+      "artifacts": []
+    },
+    {
+      "id": "T-09",
+      "owner_role": "本地化负责人",
+      "executor_kind": "either",
+      "deliverable_ids": [
+        "D-LOCALE"
+      ],
+      "depends_on": [
+        "T-01",
+        "T-05"
+      ],
+      "inputs": [
+        "D-RULE",
+        "D-UI"
+      ],
+      "input_versions": [
+        {
+          "ref": "D-RULE",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        },
+        {
+          "ref": "D-UI",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        }
+      ],
+      "action": "用文本键替代硬编码；数量和长文本按各语言检查，确认字体覆盖。",
+      "outputs": [
+        "localization/order-strings.csv",
+        "evidence/order-locale-review"
+      ],
+      "entry_criteria": [
+        "对应输入版本已提供；影响本任务的正式规则与规格已确认"
+      ],
+      "acceptance": [
+        "无截断、缺字或含义相反；数量与动作关系清楚。"
+      ],
+      "acceptance_cases": [
+        {
+          "id": "AC-09",
+          "given": "日文/简中和长英文测试文本",
+          "when": "在目标最小画幅的 UI 稿或文本测量样例中复核",
+          "then": "无截断、缺字或含义相反；数量与动作关系清楚。"
+        }
+      ],
+      "stop_conditions": [
+        "输入版本变更或规则冲突，列影响并交原负责人处理",
+        "缺少目标工程、有效美术包或规格时，不冒充制作完成"
+      ],
+      "status": "planned",
+      "artifacts": []
+    },
+    {
+      "id": "T-10",
+      "owner_role": "QA工程师",
+      "executor_kind": "either",
+      "deliverable_ids": [
+        "D-QA"
+      ],
+      "depends_on": [
+        "T-07",
+        "T-08"
+      ],
+      "inputs": [
+        "D-LOGIC",
+        "D-BIND"
+      ],
+      "input_versions": [
+        {
+          "ref": "D-LOGIC",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        },
+        {
+          "ref": "D-BIND",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        }
+      ],
+      "action": "执行不足/刚好/超额库存、重复提交、失败、恢复与无效配置场景。",
+      "outputs": [
+        "qa/order-cases.csv",
+        "qa/order-results.md"
+      ],
+      "entry_criteria": [
+        "对应输入版本已提供；影响本任务的正式规则与规格已确认"
+      ],
+      "acceptance": [
+        "一次扣除与一次奖励；第二次不能重复领取。"
+      ],
+      "acceptance_cases": [
+        {
+          "id": "AC-10",
+          "given": "库存恰好达到门槛",
+          "when": "提交一次后再次尝试",
+          "then": "一次扣除与一次奖励；第二次不能重复领取。"
+        }
+      ],
+      "stop_conditions": [
+        "输入版本变更或规则冲突，列影响并交原负责人处理",
+        "缺少目标工程、有效美术包或规格时，不冒充制作完成"
+      ],
+      "status": "planned",
+      "artifacts": []
+    },
+    {
+      "id": "T-11",
+      "owner_role": "集成程序",
+      "executor_kind": "either",
+      "deliverable_ids": [
+        "D-INTEGRATION"
+      ],
+      "depends_on": [
+        "T-06",
+        "T-08",
+        "T-10"
+      ],
+      "inputs": [
+        "D-SCENE",
+        "D-BIND",
+        "D-QA"
+      ],
+      "input_versions": [
+        {
+          "ref": "D-SCENE",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        },
+        {
+          "ref": "D-BIND",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        },
+        {
+          "ref": "D-QA",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        }
+      ],
+      "action": "将角落表现与订单完成状态集成，检查顺序、中断、恢复和资源引用。",
+      "outputs": [
+        "build-or-scene-reference",
+        "evidence/order-corner-integration"
+      ],
+      "entry_criteria": [
+        "对应输入版本已提供；影响本任务的正式规则与规格已确认"
+      ],
+      "acceptance": [
+        "已完成状态与角落外观一致，不再次结算。"
+      ],
+      "acceptance_cases": [
+        {
+          "id": "AC-11",
+          "given": "提交成功后表现被中断",
+          "when": "恢复场景",
+          "then": "已完成状态与角落外观一致，不再次结算。"
+        }
+      ],
+      "stop_conditions": [
+        "输入版本变更或规则冲突，列影响并交原负责人处理",
+        "缺少目标工程、有效美术包或规格时，不冒充制作完成"
+      ],
+      "status": "planned",
+      "artifacts": []
+    },
+    {
+      "id": "T-12",
+      "owner_role": "游戏制作项目经理",
+      "executor_kind": "either",
+      "deliverable_ids": [
+        "D-HANDOFF"
+      ],
+      "depends_on": [
+        "T-09",
+        "T-10",
+        "T-11"
+      ],
+      "inputs": [
+        "D-LOCALE",
+        "D-QA",
+        "D-INTEGRATION"
+      ],
+      "input_versions": [
+        {
+          "ref": "D-LOCALE",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        },
+        {
+          "ref": "D-QA",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        },
+        {
+          "ref": "D-INTEGRATION",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        }
+      ],
+      "action": "核对输入版本、制品、验收与未决项，组织接包并记录负责人决定。",
+      "outputs": [
+        "handoff/manifest.json",
+        "handoff/review-record.md"
+      ],
+      "entry_criteria": [
+        "对应输入版本已提供；影响本任务的正式规则与规格已确认"
+      ],
+      "acceptance": [
+        "保留缺口与任务状态，不将 planned/submitted 改成 accepted。"
+      ],
+      "acceptance_cases": [
+        {
+          "id": "AC-12",
+          "given": "某项缺实际制品或授权评审",
+          "when": "准备交接",
+          "then": "保留缺口与任务状态，不将 planned/submitted 改成 accepted。"
+        }
+      ],
+      "stop_conditions": [
+        "输入版本变更或规则冲突，列影响并交原负责人处理",
+        "缺少目标工程、有效美术包或规格时，不冒充制作完成"
+      ],
+      "status": "planned",
+      "artifacts": []
+    }
+  ],
+  "milestones": [
+    {
+      "id": "M-CONTRACT",
+      "goal": "范围与契约可评审",
+      "task_ids": [
+        "T-01",
+        "T-02",
+        "T-03",
+        "T-04"
+      ],
+      "exit_criteria": "规则、数据、技术与美术输入有负责人决定及可用版本"
+    },
+    {
+      "id": "M-HANDOFF",
+      "goal": "制品和验收完成后可交接",
+      "task_ids": [
+        "T-12"
+      ],
+      "exit_criteria": "真实制品、实际测试与有权限评审齐全；本案例尚未达成"
+    }
+  ],
+  "feedback": [],
+  "asset_bom": [
+    {
+      "id": "A-PANEL",
+      "family": "订单面板与提交按钮",
+      "states": [
+        "unmet",
+        "ready",
+        "submitting",
+        "completed",
+        "failed"
+      ],
+      "representation": "一个组件家族；状态由文本/颜色/交互规则组合，非五张纹理",
+      "quantity_basis": "一个订单界面；实际导出件数由有效美术规范决定",
+      "spec_status": "pending: Art Director 包、引擎格式、尺寸与字体"
+    },
+    {
+      "id": "A-CORNER",
+      "family": "社区角落",
+      "states": [
+        "before",
+        "after"
+      ],
+      "representation": "一处场景的前后逻辑状态；复用/新增资源分别核对",
+      "quantity_basis": "本例只包含一个角落，两个逻辑状态不自动等于两张图片",
+      "spec_status": "pending: 相机、锚点、层级与资源格式"
+    },
+    {
+      "id": "A-FEEDBACK",
+      "family": "提交反馈",
+      "states": [
+        "progress",
+        "success",
+        "failure"
+      ],
+      "representation": "动效/文本/音频需求；复用优先但需查项目实际资源",
+      "quantity_basis": "三个反馈语义；是否拆独立资源由技术与主美共同确认",
+      "spec_status": "pending: 动效时长、音频及可访问替代"
+    }
+  ]
+}

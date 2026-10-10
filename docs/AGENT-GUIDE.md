@@ -30,3 +30,17 @@
 ## 不要做
 
 不要把排期当成完成；不要替主策/主美作专业批准；不要在没有授权、工具和回执的情况下调用外部执行器；不要覆盖已分发版本；不要把“做一个游戏”拆成没有验收标准的空泛任务。
+
+## 深度案例入口
+
+[Protocol](../references/execution-depth.md) · [Case](../case-studies/community-order/README.md)
+
+```sh
+python scripts/production.py validate examples/community-order-detailed.json
+python scripts/production.py render examples/community-order-detailed.json --out outputs/community-order
+python scripts/production.py impact examples/community-order-detailed.json --changed D-CONFIG
+```
+
+## 工具 JSON 与执行门槛
+
+人类报告内容不等于 CLI 字段名。工具输入以 examples/community-order-detailed.json 为准。execution 包要求 inputs 与 input_versions 一一对应、无重复，内部 D-/T-/R-/M- 引用存在；外部材料也须在 inputs 明确登记。输入可用且必需前置任务 accepted 才能进入 ready/in_progress/submitted。文档任务验收文档，运行行为交给实现与 QA 验证。

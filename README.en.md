@@ -4,86 +4,68 @@
 
 ### Turn the intent into work people can start.
 
-**Clear direction. Owned work. Evidence of completion.**
+Turn production intent into specific handoffs: owner, input version, actions, output files, dependencies and acceptance. Rules, systems design, code, art, localization, QA and integration share stable IDs.
 
-Bring requirements, plans and feedback from the producer, design lead, art director and engineering lead. Your agent organizes shared understanding, deliverables, asset states, roles, dependencies and acceptance, then prepares work the team or another agent can take on.
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="assets/readme/hero-en.png?v=depth-v4">
+  <img src="assets/readme/hero-en.webp?v=depth-v4" width="100%" alt="Turn requirements, decisions and feedback into work packages for people or agents.">
+</picture>
 
-<a href="assets/readme/hero-en.mp4"><picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="assets/readme/hero-en.png?v=workflow-v3">
-  <img src="assets/readme/hero-en.gif?v=workflow-v3" width="100%" alt="Turn requirements, decisions and feedback into work packages for people or agents.">
-</picture></a>
-
-[24 seconds through one complete workflow · Watch MP4](assets/readme/hero-en.mp4) · [Transcript](assets/readme/transcript-en.md)
+[Download the full 24-second introduction · MP4](assets/readme/hero-en.mp4?raw=true) · [GIF](assets/readme/hero-en.gif) · [Transcript](assets/readme/transcript-en.md)
 
 ## Install, then ask your agent
-
-Install in an Agent Skills-compatible tool, such as Codex, Claude Code or Cursor:
 
 ```sh
 npx skills add https://github.com/NewenergyEric/game-production-manager
 ```
 
-Put the materials where your agent can read them, then describe the problem. Your agent handles file organization and commands.
+Install in an Agent Skills-compatible tool such as Codex, Claude Code or Cursor. Put your materials where the agent can read them, then describe the question.
 
-### The requirements exist. Help the team start
+### Break down a production brief
 
-> Use `$game-production-manager`. Read the existing design, art requirements and production constraints. Summarize our shared understanding and open decisions, then break this community order into scope, deliverables, role tasks and acceptance criteria. Preserve confirmed decisions.
+> Delivering an item restores a community corner. Break this down for engineering, art, systems design, copy and QA.
 
-**You get:** A SOW, deliverable and asset breakdown, role tasks, dependencies and the questions that need an owner.
+Receive 12 tasks and 12 deliverables with dependencies, versioned inputs and acceptance cases. Item chains, rewards, dimensions and schedules remain open when unspecified.
 
-### I want to hand a task to a teammate or agent
+### Open a specific task
 
-> Group this package by role. For each task, state the input version, action, output, dependencies, definition of done and conditions that require stopping to ask.
+> Expand T-07: how do we test transactions, saves and repeat submission? What blocks execution?
 
-**You get:** A task agreement people or agents can use. Specialist executors perform the production work and submit the actual artifacts.
+D-CONFIG and D-TECH are inputs. Validate, consume, reward and save; repeated submissions take effect once. Pending inputs keep the task planned.
 
-### A design rule changed. What else must change?
+### Handle feedback and change
 
-> The order rule changed. Trace its impact through existing deliverables and tasks. List what art, engineering and QA need to review. Prepare the change list, then issue a new version after confirmation.
+> The order configuration changed. What needs review? Must all scene art be redone?
 
-**You get:** Affected tasks, inputs and acceptance criteria. Existing tasks retain their original version until the change is agreed.
+The actual impact tool finds T-02, T-07, T-08, T-10, T-11 and T-12. T-06 scene art is unaffected under current dependencies; visual changes require explicit additional links.
+
+## See a concrete case
+
+**Original production plan: a community order restores a corner.** Validation, package export and change-impact tools were actually run. Includes 12 Given/When/Then acceptance cases and three asset-family BOM rows, with formal inputs still pending.
+
+[Full analysis and downloadable records](case-studies/community-order/README.en.md)
+
+[![Game Production Manager](case-studies/community-order/dashboard-en.png?v=depth-v4)](case-studies/community-order/dashboard-en.png)
 
 ## What the team receives
 
-- **Scope and delivery:** SOW, requirement traceability, asset bases/variants/states and acceptance.
-- **Role work:** owner, input, action, output, dependency and stop conditions.
-- **Version and feedback:** impact analysis, real submissions, review decisions and handoff records.
-
-## See how one community order is handed off
-
-The [Merge/community format example](examples/merge-package.json) starts with “deliver an item to transform a corner.” Design defines order rules, art specifies the scene and UI, and the project manager organizes the handoff.
-
-It contains three deliverables and three planned tasks. Changing `D-ORDER` traces to `T-RULE`, `T-ART` and `T-PACK`. This is an original draft; the real project still needs to confirm item chains, rewards, art pack and specifications.
-
-[![See how one community order is handed off](assets/readme/workflow-en.png?v=workflow-v3)](assets/readme/workflow-en.png)
-
-## Work with the other roles
-
-[Market Intelligence](https://github.com/NewenergyEric/game-market-intelligence) supplies evidence and recommendations. The [Reverse Analyst](https://github.com/NewenergyEric/game-reverse-analyst) supplies structure and unknowns. [Art Director](https://github.com/NewenergyEric/art-director-skill) owns the visual rules. The project manager turns confirmed direction into assigned work.
+- Scope and delivery agreement — `SOW.md`
+- 12 tasks with versioned inputs — `tasks.csv`
+- Acceptance cases and assets — `acceptance.csv · asset-bom.csv`
 
 <details>
-<summary><strong>Requirements, technical docs and validation</strong></summary>
+<summary>Boundaries, guides and validation</summary>
 
-Python 3.10+; the core uses the standard library. Seven deterministic tests cover task coverage, dependency cycles, impact propagation, output protection and acceptance evidence.
+This is a planning case, not a produced feature. All tasks remain planned. Task and logical-state counts are not exported file counts or schedules. Acceptance requires real artifacts, review evidence and an authorized reviewer.
 
-[Human guide](docs/HUMAN-GUIDE.en.md) · [Agent guide](docs/AGENT-GUIDE.en.md) · [Skill entry](SKILL.md) · [Validation and review](evals/)
+Core helpers use Python 3.10+ and the standard library. Remotion is optional presentation tooling.
+
+[Human guide](docs/HUMAN-GUIDE.en.md) · [Agent guide](docs/AGENT-GUIDE.en.md) · [SKILL.md](SKILL.md) · [Tests and review](evals/) · [Motion source](motion/README.md)
 
 ```sh
-python scripts/production.py validate examples/merge-package.json
-python scripts/production.py render examples/merge-package.json --out outputs/merge-sow
-python scripts/production.py impact examples/merge-package.json --changed D-ORDER
+python -m unittest discover -s tests -v
+python scripts/check_presentation.py
 ```
-
-[CI](https://github.com/NewenergyEric/game-production-manager/actions) · [Motion source](motion/README.md)
-
-</details>
-
-<details>
-<summary><strong>Capability boundaries and material use</strong></summary>
-
-This role organizes and tracks work. Assigned people or agents perform coding, art, audio, testing and builds, returning artifacts and evidence.
-
-Generating a plan does not complete a task. Accepted work requires artifacts, evidence and an authorized review. External tickets, assignments and messages require explicit authorization.
 
 </details>
 

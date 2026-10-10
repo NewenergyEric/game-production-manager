@@ -1,44 +1,128 @@
 {
   "market": {
     "repo": "game-market-intelligence",
-    "case": "case-studies/merge-community-public-signals",
+    "case": "case-studies/cross-market-entry",
     "zh": {
       "role": "游戏市场研究总监",
       "name": "MARKET INTELLIGENCE",
-      "tagline": ["看清市场，", "决定下一步。"],
-      "promise": "把一个立项问题，变成有来源的判断和下一轮验证。",
-      "prompt": "研究 Merge＋社区方向。告诉我机会、风险，以及先验证什么。",
-      "context": "公开研究案例 · Merge＋社区",
-      "steps": ["提出问题", "核对来源", "读懂信号", "安排验证", "交接结论"],
-      "beats": [
-        ["这个方向，", "值得做吗？", "给 Agent 项目方向、目标市场和你要做的决定。"],
-        ["找到数字，", "也带回出处。", "商店观察、发行商披露、行业估算，各自保留口径。"],
-        ["看增长，", "也看竞争。", "品类份额扩大，头部仍然集中。"],
-        ["现在最该，", "先验证什么？", "把市场判断，接到一轮能执行的验证。"],
-        ["团队接手时，", "依据也一起走。", "结论、来源、未知项和下一步，留在同一份研究包里。"]
+      "tagline": [
+        "看清市场，",
+        "决定下一步。"
       ],
-      "outputs": [["市场判断与风险", "report.md"], ["可分享研究报告", "report.html"], ["来源与指标底稿", "report.json"]],
+      "promise": "把类型、IP、地区、语言和付费方式，放进同一轮有证据的决策。",
+      "prompt": "Merge、IP 社交与买断模拟，适合谁？进入新地区前，还缺哪些证据？",
+      "context": "三款真实产品 · 六个比较维度",
+      "steps": [
+        "提出问题",
+        "核对来源",
+        "读懂信号",
+        "安排验证",
+        "交接结论"
+      ],
+      "beats": [
+        [
+          "不只看品类，",
+          "还要看生意。",
+          "先明确目标玩家、地区与团队条件。"
+        ],
+        [
+          "同一张底稿，",
+          "换六个视角。",
+          "类型、IP、地区、语言、付费与产能，逐项核对。"
+        ],
+        [
+          "有语言支持，",
+          "就有市场吗？",
+          "把产品能力与当地商业表现分开判断。"
+        ],
+        [
+          "缺的证据，",
+          "变成下一轮验证。",
+          "明确谁补资料、验证什么，以及何时停止。"
+        ],
+        [
+          "团队接手时，",
+          "依据也一起走。",
+          "比较底稿、来源与未知项，交给下一轮决策。"
+        ]
+      ],
+      "outputs": [
+        [
+          "跨类型比较底稿",
+          "comparison.csv"
+        ],
+        [
+          "可分享研究报告",
+          "report.html"
+        ],
+        [
+          "结论、来源与缺口",
+          "report.json"
+        ]
+      ],
       "close": "装上 Skill，直接对 Agent 说。",
-      "case_note": "公开信号支持下一轮验证；立项由负责人决定。"
+      "case_note": "公开资料比较；地区 CPI、LTV 与 IP 授权条款仍未知。"
     },
     "en": {
       "role": "Game Market Intelligence Director",
       "name": "MARKET INTELLIGENCE",
-      "tagline": ["Read the market.", "Choose the next move."],
-      "promise": "Turn a greenlight question into sourced findings and a practical next test.",
-      "prompt": "Research Merge + community. Show the opportunity, the risks, and what to test first.",
-      "context": "Public research case · Merge + community",
-      "steps": ["Ask", "Check sources", "Read signals", "Plan the test", "Hand off"],
-      "beats": [
-        ["Is this direction", "worth pursuing?", "Give your agent the idea, target market and decision you need to make."],
-        ["Find the numbers.", "Keep the sources." , "Store observations, publisher disclosures and estimates keep their own definitions."],
-        ["Read the growth.", "See the competition.", "Category share is growing. Revenue is still concentrated."],
-        ["What should we", "test first?", "Turn the market findings into a focused validation round."],
-        ["Hand off the call.", "Keep the evidence.", "Findings, sources, open questions and next steps travel together."]
+      "tagline": [
+        "Read the market.",
+        "Choose the next move."
       ],
-      "outputs": [["Findings and risks", "report.md"], ["Shareable research report", "report.html"], ["Sources and metric definitions", "report.json"]],
+      "promise": "Compare genre, IP, region, language and monetization in one evidence-led decision.",
+      "prompt": "Merge, IP-led social or paid simulation? What evidence is missing before entering a new region?",
+      "context": "Three real products · six comparison axes",
+      "steps": [
+        "Ask",
+        "Check sources",
+        "Read signals",
+        "Plan the test",
+        "Hand off"
+      ],
+      "beats": [
+        [
+          "Look beyond genre.",
+          "Understand the business.",
+          "Start with the audience, region and team constraints."
+        ],
+        [
+          "One evidence base.",
+          "Six useful lenses.",
+          "Compare genre, IP, region, language, payment and capacity."
+        ],
+        [
+          "A supported language.",
+          "A proven market?",
+          "Separate product capability from regional performance."
+        ],
+        [
+          "Missing evidence.",
+          "A concrete next test.",
+          "Assign an owner, a question and a stop condition."
+        ],
+        [
+          "Hand off the call.",
+          "Keep the evidence.",
+          "Comparison rows, sources and unknowns travel together."
+        ]
+      ],
+      "outputs": [
+        [
+          "Cross-genre comparison",
+          "comparison.csv"
+        ],
+        [
+          "Shareable research report",
+          "report.html"
+        ],
+        [
+          "Findings, sources and gaps",
+          "report.json"
+        ]
+      ],
       "close": "Install the Skill. Ask your agent.",
-      "case_note": "Public signals support a further test. The owner makes the greenlight call."
+      "case_note": "Public-source comparison; regional CPI/LTV and IP terms remain unknown."
     }
   },
   "reverse": {
@@ -47,82 +131,250 @@
     "zh": {
       "role": "游戏拆解与逆向分析师",
       "name": "GAME REVERSE ANALYST",
-      "tagline": ["看懂玩法，", "找到实现依据。"],
-      "promise": "从录屏、截图或授权工程开始，拆清规则、模块和资产关系。",
-      "prompt": "拆解这个 2048 工程。说明合并规则在哪里，以及相关模块怎么分工。",
-      "context": "2048 开源案例 · MIT · 静态分析",
-      "steps": ["明确问题", "拆出模块", "追到规则", "复核证据", "交接发现"],
-      "beats": [
-        ["这套玩法，", "怎样运转？", "给 Agent 合法可用的资料，说明最想弄清的问题。"],
-        ["先把系统，", "拆成看得懂的结构。", "输入、规则、网格、表现和存储，各自找到负责的模块。"],
-        ["一次合并，", "为什么停在这里？", "把看到的规则，追到具体实现位置。"],
-        ["说清发现，", "也说清依据。", "文件位置、版本和分析回执，让另一位成员接着复核。"],
-        ["学到的结构，", "交给下一位同事。", "策划读规则，程序读模块，主美读资产观察与缺口。"]
+      "tagline": [
+        "看懂玩法，",
+        "找到实现依据。"
       ],
-      "outputs": [["模块与关系索引", "analysis-index.json"], ["原始分析证据", "rea-output.json"], ["版本与运行回执", "receipt.json"]],
+      "promise": "沿着一条玩法规则，拆到代码、算法、数值与美术资产。",
+      "prompt": "这步为何不合成 8？新块概率是多少？主美到底要做几张图？",
+      "context": "2048 开源案例 · MIT · 静态分析",
+      "steps": [
+        "明确问题",
+        "拆出模块",
+        "追到算法",
+        "核对数值与资产",
+        "交接发现"
+      ],
+      "beats": [
+        [
+          "这套玩法，",
+          "怎样运转？",
+          "从一个具体问题，追到可复核的实现。"
+        ],
+        [
+          "输入到存档，",
+          "每一步都有位置。",
+          "输入、规则、网格、表现与存储，连成一条实现链。"
+        ],
+        [
+          "一次合并，",
+          "为什么停在这里？",
+          "把看到的规则，追到具体实现位置。"
+        ],
+        [
+          "概率与资产，",
+          "也要拆到依据。",
+          "数值可复算；组件状态与图片文件分别计数。"
+        ],
+        [
+          "程序、策划、主美，",
+          "各自拿到依据。",
+          "代码位置、公式、资产 BOM 与验证缺口，一起交接。"
+        ]
+      ],
+      "outputs": [
+        [
+          "代码、规则与数值",
+          "deep-dive.json"
+        ],
+        [
+          "美术资产与计数依据",
+          "asset-bom.csv"
+        ],
+        [
+          "输入哈希与公式复算",
+          "verification.json"
+        ]
+      ],
       "close": "装上 Skill，直接对 Agent 说。",
-      "case_note": "规则示意来自固定版本源码；本案例未运行目标游戏。"
+      "case_note": "公开案例成果；REA 原回执保留，目标游戏未执行。"
     },
     "en": {
       "role": "Game Reverse Analyst",
       "name": "GAME REVERSE ANALYST",
-      "tagline": ["Understand the play.", "Trace the implementation."],
-      "promise": "Start with footage, screenshots or authorized source. Map rules, modules and assets.",
-      "prompt": "Analyze this 2048 source. Locate the merge rule and explain how the modules work together.",
-      "context": "Open-source 2048 · MIT · static analysis",
-      "steps": ["Define the question", "Map modules", "Locate rules", "Review evidence", "Hand off"],
-      "beats": [
-        ["How does this", "game work?", "Give your agent usable materials and the question you want answered."],
-        ["Make the system", "easy to follow.", "Identify the modules behind input, rules, grid, display and storage."],
-        ["Why does the merge", "stop here?", "Follow a visible rule back to its implementation."],
-        ["Explain the finding.", "Show the evidence.", "File locations, version and receipts let another teammate review the work."],
-        ["Pass the structure", "to the next teammate.", "Designers get rules, engineers get modules, artists get asset observations and gaps."]
+      "tagline": [
+        "Understand the play.",
+        "Trace the implementation."
       ],
-      "outputs": [["Module and relationship index", "analysis-index.json"], ["Original analysis evidence", "rea-output.json"], ["Version and analysis receipt", "receipt.json"]],
+      "promise": "Follow a gameplay rule into code, algorithms, numbers and art assets.",
+      "prompt": "Why does this move not make an 8? What are the spawn odds? How many images do we need?",
+      "context": "Open-source 2048 · MIT · static analysis",
+      "steps": [
+        "Ask",
+        "Map modules",
+        "Trace algorithms",
+        "Check numbers + assets",
+        "Hand off"
+      ],
+      "beats": [
+        [
+          "How does this",
+          "game work?",
+          "Follow a concrete question to reviewable implementation."
+        ],
+        [
+          "From input to save.",
+          "Every step has a place.",
+          "Connect input, rules, grid, display and storage."
+        ],
+        [
+          "Why does the merge",
+          "stop here?",
+          "Follow a visible rule back to its implementation."
+        ],
+        [
+          "Numbers and assets.",
+          "Show the derivation.",
+          "Recompute formulas. Count states separately from image files."
+        ],
+        [
+          "Evidence for every",
+          "production discipline.",
+          "Hand off code locations, formulas, asset BOM and open tests."
+        ]
+      ],
+      "outputs": [
+        [
+          "Code, rules and numbers",
+          "deep-dive.json"
+        ],
+        [
+          "Art assets and counting basis",
+          "asset-bom.csv"
+        ],
+        [
+          "Input hashes and calculations",
+          "verification.json"
+        ]
+      ],
       "close": "Install the Skill. Ask your agent.",
-      "case_note": "Rule illustration from pinned source. The target game was not executed."
+      "case_note": "Public case artifacts; original REA receipt retained. Target not executed."
     }
   },
   "manager": {
     "repo": "game-production-manager",
-    "case": "examples/merge-package.json",
+    "case": "case-studies/community-order",
     "zh": {
       "role": "游戏制作项目经理",
       "name": "GAME PRODUCTION MANAGER",
-      "tagline": ["把制作意图，", "交成能开工的任务。"],
-      "promise": "把需求、决定和反馈，整理成团队或 Agent 能接手的工作包。",
-      "prompt": "把这条社区订单拆成团队任务。说明谁来做、交什么、怎样验收。",
-      "context": "Merge＋社区 · 原创格式案例 · 草案",
-      "steps": ["理解要求", "拆清交付", "安排依赖", "处理反馈", "交接工作"],
-      "beats": [
-        ["方向定了，", "团队怎么开工？", "把原要求、已有决定和限制一起交给 Agent。"],
-        ["一句需求，", "拆清要交什么。", "先写工作范围，再拆规则、资产状态和交接要求。"],
-        ["谁先做，", "谁接着做。", "每个岗位拿到输入、产物、依赖和验收条件。"],
-        ["需求改了，", "知道影响到哪里。", "沿原任务追踪反馈，让相关岗位知道哪些内容要复核。"],
-        ["把工作交出去，", "把验收写明白。", "人或 Agent 都按同一份任务约定提交结果。"]
+      "tagline": [
+        "把制作意图，",
+        "交成能开工的任务。"
       ],
-      "outputs": [["范围、交付物与验收", "SOW.md"], ["岗位任务与依赖", "tasks.csv"], ["按岗位分好的工作", "role-views.json"]],
+      "promise": "把需求、决定和反馈，整理成团队或 Agent 能接手的工作包。",
+      "prompt": "交付物品后改造社区角落。拆到程序、美术、数值、文案和 QA 能接手。",
+      "context": "原创制作计划 · 12 个任务 · 全部 planned",
+      "steps": [
+        "理解要求",
+        "拆清交付",
+        "安排依赖",
+        "处理反馈",
+        "交接工作"
+      ],
+      "beats": [
+        [
+          "一句制作要求，",
+          "拆到每次交接。",
+          "先写清规则、产物、依赖和仍待确定的输入。"
+        ],
+        [
+          "12 个任务，",
+          "每个都有交付物。",
+          "规则、配置、程序、美术、本地化、QA 与集成。"
+        ],
+        [
+          "点开一个任务，",
+          "就知道怎样验收。",
+          "版本输入、执行动作、输出文件和边界用例。"
+        ],
+        [
+          "数值改了，",
+          "谁需要重新检查？",
+          "沿依赖追踪影响，保留未受影响的工作。"
+        ],
+        [
+          "把工作交出去，",
+          "把验收写明白。",
+          "任务表、资产清单和验收用例使用同一套 ID。"
+        ]
+      ],
+      "outputs": [
+        [
+          "范围与交付约定",
+          "SOW.md"
+        ],
+        [
+          "12 个任务与版本输入",
+          "tasks.csv"
+        ],
+        [
+          "验收用例与资产清单",
+          "acceptance.csv · asset-bom.csv"
+        ]
+      ],
       "close": "装上 Skill，直接对 Agent 说。",
-      "case_note": "示例任务仍为 planned；实际制作由对应执行者完成。"
+      "case_note": "原创计划示例；输入待确认，未冒充已完成的功能。"
     },
     "en": {
       "role": "Game Production Manager",
       "name": "GAME PRODUCTION MANAGER",
-      "tagline": ["Turn the intent", "into work people can start."],
-      "promise": "Turn requirements, decisions and feedback into work packages for people or agents.",
-      "prompt": "Break this community order into team tasks. Say who owns each part, what to deliver and how to check it.",
-      "context": "Merge + community · original format example · draft",
-      "steps": ["Read the brief", "Define delivery", "Set dependencies", "Handle feedback", "Hand off"],
-      "beats": [
-        ["The direction is set.", "How do we start?", "Give your agent the original brief, existing decisions and constraints."],
-        ["One requirement.", "Clear deliverables.", "Define scope, then separate rules, asset states and handoff requirements."],
-        ["Who goes first?", "Who follows?", "Each role gets inputs, outputs, dependencies and acceptance criteria."],
-        ["A rule changed.", "What else is affected?", "Trace feedback through the tasks so each role knows what to review."],
-        ["Hand off the work.", "Define done.", "People and agents submit work against the same task agreement."]
+      "tagline": [
+        "Turn the intent",
+        "into work people can start."
       ],
-      "outputs": [["Scope, deliverables and acceptance", "SOW.md"], ["Role tasks and dependencies", "tasks.csv"], ["Work grouped by role", "role-views.json"]],
+      "promise": "Turn requirements, decisions and feedback into work packages for people or agents.",
+      "prompt": "Deliver an item, transform a corner. Break it down for code, art, systems design, copy and QA.",
+      "context": "Original production plan · 12 tasks · all planned",
+      "steps": [
+        "Read the brief",
+        "Define delivery",
+        "Set dependencies",
+        "Handle feedback",
+        "Hand off"
+      ],
+      "beats": [
+        [
+          "One production brief.",
+          "Every handoff defined.",
+          "Define rules, outputs, dependencies and unresolved inputs."
+        ],
+        [
+          "Twelve tasks.",
+          "Twelve clear handoffs.",
+          "Rules, config, code, art, localization, QA and integration."
+        ],
+        [
+          "Open a task.",
+          "Know how to check it.",
+          "Versioned inputs, actions, output files and boundary tests."
+        ],
+        [
+          "The numbers changed.",
+          "Who reviews it?",
+          "Trace dependencies while retaining unaffected work."
+        ],
+        [
+          "Hand off the work.",
+          "Define done.",
+          "Tasks, asset rows and acceptance cases share stable IDs."
+        ]
+      ],
+      "outputs": [
+        [
+          "Scope and delivery agreement",
+          "SOW.md"
+        ],
+        [
+          "12 tasks with versioned inputs",
+          "tasks.csv"
+        ],
+        [
+          "Acceptance cases and assets",
+          "acceptance.csv · asset-bom.csv"
+        ]
+      ],
       "close": "Install the Skill. Ask your agent.",
-      "case_note": "Example tasks remain planned. Assigned executors do the production work."
+      "case_note": "Original planning example. Pending inputs; no completed feature claimed."
     }
   }
 }

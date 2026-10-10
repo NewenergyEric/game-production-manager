@@ -28,10 +28,11 @@ FFmpeg is required for the GIF preview. Run the commands for both `zh` and `en`.
 
 ```sh
 ffmpeg -y -i out/v3/manager-zh.mp4 -c copy -movflags +faststart ../assets/readme/hero-zh.mp4
+ffmpeg -y -i out/v3/manager-zh.mp4 -vf "fps=20,scale=800:450:flags=lanczos" -c:v libwebp_anim -lossless 0 -quality 82 -compression_level 6 -loop 0 -an ../assets/readme/hero-zh.webp
 ffmpeg -y -i out/v3/manager-zh.mp4 -filter_complex "[0:v]fps=20,scale=800:450:flags=lanczos,split[a][b];[a]palettegen=max_colors=64:reserve_transparent=0[p];[b][p]paletteuse=dither=bayer:bayer_scale=4:diff_mode=rectangle" -loop 0 ../assets/readme/hero-zh.gif
 ```
 
-Use frame 680 as `hero-zh.png` / `hero-en.png`; use the corresponding `*-board-*-0.png` as the case board. Keep each GIF below 6 MiB. If necessary, reduce palette colors to 48 or 40 while preserving 20 FPS. / 第 680 帧用作静态封面，完整看板使用独立 board 输出。压缩颜色数时必须保留 20 FPS。
+Use frame 680 as `hero-zh.png` / `hero-en.png`; use the corresponding `*-board-*-0.png` as the case board. Animated WebP is the lighter default; GIF remains available. Keep WebP below 3 MiB and GIF below 6 MiB, both at 20 FPS. / 首页默认使用更小的动态 WebP，保留 GIF 下载；两者均保留 24 秒、20 FPS。MP4 保留 30 FPS 与 faststart；独立播放链接避免 GitHub 的 GIF 包装器覆盖目标。
 
 ## Content and checks / 内容与检查
 

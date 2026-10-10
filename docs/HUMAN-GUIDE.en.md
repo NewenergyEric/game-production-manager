@@ -1,52 +1,29 @@
 # Game Production Manager · Human guide
 
-[中文](HUMAN-GUIDE.md)
+Turn production intent into specific handoffs: owner, input version, actions, output files, dependencies and acceptance. Rules, systems design, code, art, localization, QA and integration share stable IDs.
 
-Turn requirements, decisions and feedback into work packages for people or agents.
+## Break down a production brief
 
-## Bring your materials
+> Delivering an item restores a community corner. Break this down for engineering, art, systems design, copy and QA.
 
-Give your agent the original brief, existing decisions and constraints.
-Incomplete material is fine to start; missing inputs that affect the next step stay visible.
+Receive 12 tasks and 12 deliverables with dependencies, versioned inputs and acceptance cases. Item chains, rewards, dimensions and schedules remain open when unspecified.
 
-## The requirements exist. Help the team start
+## Open a specific task
 
-> Use `$game-production-manager`. Read the existing design, art requirements and production constraints. Summarize our shared understanding and open decisions, then break this community order into scope, deliverables, role tasks and acceptance criteria. Preserve confirmed decisions.
+> Expand T-07: how do we test transactions, saves and repeat submission? What blocks execution?
 
-A SOW, deliverable and asset breakdown, role tasks, dependencies and the questions that need an owner.
+D-CONFIG and D-TECH are inputs. Validate, consume, reward and save; repeated submissions take effect once. Pending inputs keep the task planned.
 
-## I want to hand a task to a teammate or agent
+## Handle feedback and change
 
-> Group this package by role. For each task, state the input version, action, output, dependencies, definition of done and conditions that require stopping to ask.
+> The order configuration changed. What needs review? Must all scene art be redone?
 
-A task agreement people or agents can use. Specialist executors perform the production work and submit the actual artifacts.
+The actual impact tool finds T-02, T-07, T-08, T-10, T-11 and T-12. T-06 scene art is unaffected under current dependencies; visual changes require explicit additional links.
 
-## A design rule changed. What else must change?
+## Review and handoff
 
-> The order rule changed. Trace its impact through existing deliverables and tasks. List what art, engineering and QA need to review. Prepare the change list, then issue a new version after confirmation.
+This is a planning case, not a produced feature. All tasks remain planned. Task and logical-state counts are not exported file counts or schedules. Acceptance requires real artifacts, review evidence and an authorized reviewer.
 
-Affected tasks, inputs and acceptance criteria. Existing tasks retain their original version until the change is agreed.
+[Reproducible case](../case-studies/community-order/README.en.md)
 
-## How to review
-
-This role organizes and tracks work. Assigned people or agents perform coding, art, audio, testing and builds, returning artifacts and evidence.
-
-Generating a plan does not complete a task. Accepted work requires artifacts, evidence and an authorized review. External tickets, assignments and messages require explicit authorization.
-
-## Outputs and handoff
-
-- **Scope and delivery:** SOW, requirement traceability, asset bases/variants/states and acceptance.
-- **Role work:** owner, input, action, output, dependency and stop conditions.
-- **Version and feedback:** impact analysis, real submissions, review decisions and handoff records.
-
-[Market Intelligence](https://github.com/NewenergyEric/game-market-intelligence) supplies evidence and recommendations. The [Reverse Analyst](https://github.com/NewenergyEric/game-reverse-analyst) supplies structure and unknowns. [Art Director](https://github.com/NewenergyEric/art-director-skill) owns the visual rules. The project manager turns confirmed direction into assigned work.
-
-## Technical entry for your agent
-
-Python 3.10+; the core uses the standard library. Seven deterministic tests cover task coverage, dependency cycles, impact propagation, output protection and acceptance evidence.
-
-```sh
-python scripts/production.py validate examples/merge-package.json
-python scripts/production.py render examples/merge-package.json --out outputs/merge-sow
-python scripts/production.py impact examples/merge-package.json --changed D-ORDER
-```
+[Agent guide](AGENT-GUIDE.en.md)

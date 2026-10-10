@@ -1,0 +1,336 @@
+{
+  "market": {
+    "zh": {
+      "label": "MARKET INTELLIGENCE / COMPARISON DESK",
+      "title": "看同一款产品，也要换六个视角。",
+      "subtitle": "跨类型案例 · 2026-10-11 核对 · 来源日期与地区价格分别保留",
+      "widths": ".6fr 1.1fr 1.1fr 1.1fr",
+      "heads": [
+        "视角",
+        "Gossip Harbor",
+        "MONOPOLY GO!",
+        "Stardew Valley"
+      ],
+      "rows": [
+        [
+          "类型 / 循环",
+          "合并、剧情、餐厅修复",
+          "社交掷骰、地标、贴纸收集",
+          "乡村生活 RPG、种植、关系"
+        ],
+        [
+          "IP / 权利",
+          "外部 IP 条款未核定",
+          "Scopely × Hasbro 合作披露",
+          "ConcernedApe；不代表我方获授权"
+        ],
+        [
+          "地区 / 渠道",
+          "Google Play 英文页；非美国收入",
+          "发布时全球 iOS / Android",
+          "意大利 Steam；非全球统一价格"
+        ],
+        [
+          "语言 / 本地化",
+          "游戏内完整语言表未知",
+          "游戏内完整语言表未知",
+          "12 种界面语言；非完整配音"
+        ],
+        [
+          "付费方式",
+          "广告 + 内购；收入结构未知",
+          "免费 + 内购；付费漏斗未知",
+          "基础游戏 €13.99；原声另购"
+        ],
+        [
+          "内容 / 产能",
+          "缓存更新说明含周更章节",
+          "活动、贴纸意味着持续内容需求",
+          "内容与合作玩法；我方成本需估算"
+        ]
+      ],
+      "notes": [
+        [
+          "交叉判断",
+          "语言支持不代表地区收入；付费方式必须结合渠道与内容产能。"
+        ],
+        [
+          "下一步",
+          "制作人核对 IP 条款；增长负责人补地区 CPI/LTV；内容负责人验证更新产能。"
+        ]
+      ],
+      "footer": "01 · Google Play　02 · Scopely launch disclosure (2023)　03 · Steam App 413150 / IT\nreport.json / comparison.csv · 18 个比较单元逐项有证据 ID；缺失数据保留未知。"
+    },
+    "en": {
+      "label": "MARKET INTELLIGENCE / COMPARISON DESK",
+      "title": "One product. Six lenses on the business.",
+      "subtitle": "Cross-genre case · checked 2026-10-11 · source dates and regional prices retained",
+      "widths": ".6fr 1.1fr 1.1fr 1.1fr",
+      "heads": [
+        "LENS",
+        "Gossip Harbor",
+        "MONOPOLY GO!",
+        "Stardew Valley"
+      ],
+      "rows": [
+        [
+          "Genre / loop",
+          "Merge, story, restaurant restoration",
+          "Social dice, landmarks, stickers",
+          "Country-life RPG, farming, relationships"
+        ],
+        [
+          "IP / rights",
+          "External IP terms unverified",
+          "Scopely × Hasbro collaboration",
+          "ConcernedApe; no license granted to us"
+        ],
+        [
+          "Region / channel",
+          "English Google Play; not US revenue",
+          "Worldwide iOS/Android at launch",
+          "Italian Steam; not a global price"
+        ],
+        [
+          "Language",
+          "In-game language list unverified",
+          "In-game language list unverified",
+          "12 interface languages; not full voice"
+        ],
+        [
+          "Payment",
+          "Ads + IAP; revenue mix unknown",
+          "Free + IAP; payer funnel unknown",
+          "€13.99 base game; soundtrack separate"
+        ],
+        [
+          "Content / capacity",
+          "Cached notes mention weekly chapters",
+          "Events/stickers need recurring content",
+          "Content/co-op; our costs need estimates"
+        ]
+      ],
+      "notes": [
+        [
+          "CROSS-LENS FINDING",
+          "Language support does not prove regional revenue. Payment depends on channels and content capacity."
+        ],
+        [
+          "NEXT TEST",
+          "Producer checks IP terms; growth lead sources regional CPI/LTV; content lead tests update capacity."
+        ]
+      ],
+      "footer": "01 · Google Play　02 · Scopely launch disclosure (2023)　03 · Steam App 413150 / IT\nreport.json / comparison.csv · 18 evidence-linked cells; missing data stays unknown."
+    }
+  },
+  "reverse": {
+    "zh": {
+      "label": "GAME REVERSE ANALYST / EVIDENCE DESK",
+      "title": "规则、数值、资产，追到同一份源码。",
+      "subtitle": "2048 · MIT · 478b6ec · REA 6.3.0 + source reading + formula recomputation",
+      "widths": ".55fr 1.8fr 1.1fr",
+      "heads": [
+        "拆解层",
+        "具体发现 / 交付",
+        "证据位置"
+      ],
+      "rows": [
+        [
+          "代码逻辑",
+          "输入 → 终局检查 → 遍历 → 合并/滑动 → 生成 → 保存",
+          "game_manager.js:130–190"
+        ],
+        [
+          "算法规则",
+          "2,2,4,空 左移 → 4,4,空,空，+4；本轮不能再合并",
+          "game_manager.js:155–170"
+        ],
+        [
+          "数值设计",
+          "新生 2 / 4 概率 90% / 10%；期望面值 2.2，不等于得分",
+          "game_manager.js:69–75"
+        ],
+        [
+          "概率推导",
+          "10 次至少一个 4：1−0.9^10 ≈ 65.13%，假设抽样独立",
+          "verification.json / 公式复算"
+        ],
+        [
+          "美术 BOM",
+          "11 个数值样式 + super；CSS 组件，不是 11 张贴图",
+          "main.scss:335–450"
+        ],
+        [
+          "动效 / 文件",
+          "移动 100 ms；出现/合并 200 ms；字体 3 字重 × 3 格式",
+          "main.scss:22,329,429–450; fonts/"
+        ]
+      ],
+      "notes": [
+        [
+          "交给谁",
+          "程序/QA 测边界；数值策划定义策略后再测难度；主美按组件、变体、状态建规范。"
+        ],
+        [
+          "验证边界",
+          "18 个输入哈希已核验；公式已复算。目标游戏未执行；规则示例不含随机新生块。"
+        ]
+      ],
+      "footer": "gabrielecirulli/2048 · 478b6ec346e3787f589e4af751378d06ded4cbbc · MIT\ndeep-dive.json · asset-bom.csv · verification.json · 静态阅读不等于运行验证。"
+    },
+    "en": {
+      "label": "GAME REVERSE ANALYST / EVIDENCE DESK",
+      "title": "Rules, numbers and assets. One source trail.",
+      "subtitle": "2048 · MIT · 478b6ec · REA 6.3.0 + source reading + formula recomputation",
+      "widths": ".55fr 1.8fr 1.1fr",
+      "heads": [
+        "LAYER",
+        "FINDING / HANDOFF",
+        "EVIDENCE"
+      ],
+      "rows": [
+        [
+          "Code flow",
+          "Input → terminal check → traverse → merge/slide → spawn → save",
+          "game_manager.js:130–190"
+        ],
+        [
+          "Algorithm",
+          "2,2,4,empty left → 4,4,empty,empty, +4; no second merge",
+          "game_manager.js:155–170"
+        ],
+        [
+          "Numbers",
+          "Spawn 2 / 4 at 90% / 10%; expected tile value 2.2, not score",
+          "game_manager.js:69–75"
+        ],
+        [
+          "Probability",
+          "At least one 4 in ten: 1−0.9^10 ≈ 65.13%, if independent",
+          "verification.json / recalculated"
+        ],
+        [
+          "Art BOM",
+          "11 value styles + super; CSS component, not 11 textures",
+          "main.scss:335–450"
+        ],
+        [
+          "Motion / files",
+          "Move 100 ms; appear/merge 200 ms; font: 3 weights × 3 formats",
+          "main.scss:22,329,429–450; fonts/"
+        ]
+      ],
+      "notes": [
+        [
+          "HANDOFF",
+          "Engineering/QA test boundaries. Design defines a policy before difficulty tests. Art specifies components, variants and states."
+        ],
+        [
+          "VERIFICATION BOUNDARY",
+          "18 input hashes checked; formulas recomputed. Target not executed. Rule example excludes random spawn."
+        ]
+      ],
+      "footer": "gabrielecirulli/2048 · 478b6ec346e3787f589e4af751378d06ded4cbbc · MIT\ndeep-dive.json · asset-bom.csv · verification.json · Static reading is not runtime verification."
+    }
+  },
+  "manager": {
+    "zh": {
+      "label": "GAME PRODUCTION MANAGER / DELIVERY DESK",
+      "title": "一句制作要求，拆到十二次具体交接。",
+      "subtitle": "SOW / BOM / WBS · draft-2 · 社区订单改造角落 · 原创计划，非已制作功能",
+      "widths": ".5fr 1.15fr 1.55fr 1fr",
+      "heads": [
+        "任务",
+        "负责范围",
+        "交付物 / 输入",
+        "验收重点"
+      ],
+      "rows": [
+        [
+          "01–04",
+          "规则、配置、技术约定、BOM",
+          "状态表 / schema / 事务约定 / 资产家族",
+          "异常、版本、计数依据"
+        ],
+        [
+          "05–06",
+          "UI 五态、场景前后状态",
+          "UI 组件规格 / 场景状态稿",
+          "有效美术包、绑定规格"
+        ],
+        [
+          "07–09",
+          "程序逻辑、UI 绑定、本地化",
+          "订单补丁 / 事件绑定 / 文本键",
+          "幂等、状态一致、文本溢出"
+        ],
+        [
+          "10–12",
+          "QA、集成、验收交接",
+          "边界回执 / 集成清单 / 交接包",
+          "缺陷、真实制品、接收人"
+        ]
+      ],
+      "notes": [
+        [
+          "T-07 / 点开程序任务",
+          "输入：D-CONFIG + D-TECH，draft-2，待确认。\n动作：校验 → 扣除 → 发奖 → 存档。\n验收：重复提交，只扣除、发奖一次。"
+        ],
+        [
+          "D-CONFIG 变更 / 实际工具结果",
+          "T-02 → T-07 → T-08 → T-10 → T-11 → T-12\nT-06 场景制作未受本次影响。\n全部 planned；输入待确认时不能开工。"
+        ]
+      ],
+      "footer": "examples/community-order-detailed.json · SOW.md / tasks.csv / acceptance.csv / asset-bom.csv / impact.json\n任务与逻辑状态计数不等于导出文件数；工期与美术规格由真实项目确认。"
+    },
+    "en": {
+      "label": "GAME PRODUCTION MANAGER / DELIVERY DESK",
+      "title": "One production brief. Twelve concrete handoffs.",
+      "subtitle": "SOW / BOM / WBS · draft-2 · community order → corner restoration · original plan, not a built feature",
+      "widths": ".5fr 1.15fr 1.55fr 1fr",
+      "heads": [
+        "TASK",
+        "RESPONSIBILITY",
+        "DELIVERABLE / INPUT",
+        "ACCEPTANCE"
+      ],
+      "rows": [
+        [
+          "01–04",
+          "Rules, config, tech contract, BOM",
+          "State table / schema / transaction contract / families",
+          "Errors, versions, count basis"
+        ],
+        [
+          "05–06",
+          "Five UI states and before/after scene",
+          "UI component specs / scene state drafts",
+          "Active art pack, binding specs"
+        ],
+        [
+          "07–09",
+          "Game logic, UI binding, localization",
+          "Order patch / events / text keys",
+          "Idempotency, state parity, overflow"
+        ],
+        [
+          "10–12",
+          "QA, integration, acceptance handoff",
+          "Boundary receipts / integration list / handoff pack",
+          "Defects, real artifacts, receiver"
+        ]
+      ],
+      "notes": [
+        [
+          "T-07 / OPEN THE ENGINEERING TASK",
+          "Inputs: D-CONFIG + D-TECH, draft-2, pending.\nAction: validate → consume → reward → save.\nCheck: repeat submission consumes/rewards once."
+        ],
+        [
+          "D-CONFIG CHANGE / ACTUAL TOOL RESULT",
+          "T-02 → T-07 → T-08 → T-10 → T-11 → T-12\nT-06 scene art is unaffected here.\nAll planned; pending inputs block execution."
+        ]
+      ],
+      "footer": "examples/community-order-detailed.json · SOW.md / tasks.csv / acceptance.csv / asset-bom.csv / impact.json\nTasks and logical states are not exported file counts. Real projects decide schedules and art specs."
+    }
+  }
+}
