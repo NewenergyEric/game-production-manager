@@ -1,0 +1,15 @@
+{
+  "system": "shared role showcase v1",
+  "languages": ["zh-CN", "en"],
+  "assets": {
+    "hero-zh.gif": {"dimensions": "1280x720", "frames": 30, "duration_seconds": 6},
+    "hero-en.gif": {"dimensions": "1280x720", "frames": 30, "duration_seconds": 6},
+    "hero-zh.png": {"dimensions": "1280x720", "purpose": "reduced-motion fallback"},
+    "hero-en.png": {"dimensions": "1280x720", "purpose": "reduced-motion fallback"},
+    "workflow-zh.png": {"dimensions": "1600x900", "purpose": "Chinese execution-contract overview"},
+    "workflow-en.png": {"dimensions": "1600x900", "purpose": "English execution-contract overview"}
+  },
+  "tokens": {"navy": "#001f3f", "teal": "#007d86", "mint": "#92e4da", "accent": "#c6b7ff"},
+  "provenance": "Original composition informed by the Art Director visual system and the user-provided depth-showcase-en.mp4. No frames from the reference video are redistributed.",
+  "content_rule": "Chinese and English assets use one execution baseline and separate language composition."
+}
