@@ -1,6 +1,6 @@
 # One community order, ready for task-by-task handoff
 
-[中文](README.md)
+[中文](README.zh.md)
 
 **Producer question:** “An item delivery transforms a corner. What does design, code, art and QA receive? What changes if the order requires two items?”
 

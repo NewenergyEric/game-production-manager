@@ -3,255 +3,255 @@
   "version": "draft-2",
   "detail_level": "execution",
   "example_only": true,
-  "goal": "把一条社区订单拆到可被具体工种接手；不冒充已开发的游戏功能。",
-  "strategy": "沿用既有 Merge 系统，先确定规则与接口，再并行准备 UI、场景与文本，最后集成和验收。",
+  "goal": "Break one community order into specialist-ready tasks; this plan is not a completed game feature.",
+  "strategy": "Use the existing Merge system; define rules/interfaces, prepare UI, scene and text in parallel, then integrate and review.",
   "scope_in": [
-    "一条订单的条件、扣除、提交与完成反馈",
-    "一个社区角落改造前后状态",
-    "UI、本地化、规则测试与交接"
+    "Conditions, deduction, submission and completion feedback for one order",
+    "Before and after states of one neighborhood corner",
+    "UI, localization, rule tests and handoff"
   ],
   "scope_out": [
-    "完整游戏制作",
-    "正式物品数值、工期和预算承诺",
-    "擅自决定客户端/服务端与存档架构"
+    "Production of a complete game",
+    "Final item values, schedule and budget commitments",
+    "Unilaterally choosing client/server and persistence architecture"
   ],
   "constraints": [
-    "本案例为原创规划实验，不是用户项目批准范围",
-    "任务全部 planned；素材与工程规格由实际项目负责人提供"
+    "This is an original planning exercise, not approved scope for a user's project",
+    "All tasks remain planned; actual owners supply art and engineering specifications"
   ],
   "assumptions": [
-    "物品链、奖励、引擎、存档架构、美术包版本尚待确认"
+    "Item chain, rewards, engine, persistence architecture and art-pack version remain pending"
   ],
   "requirements": [
     {
       "id": "R-ORDER",
-      "text": "交付指定物品后完成订单；合法、失败、重复与恢复的预期清楚",
-      "source": "本仓库原创深度规划案例",
+      "text": "Delivering the required items completes the order; valid, failed, repeated and recovery behavior is explicit",
+      "source": "Original detailed planning case in this repository",
       "status": "proposed",
       "acceptance": [
-        "有具体验收案例与接收岗位"
+        "Concrete acceptance cases and a receiving role are defined"
       ],
-      "owner_role": "主策"
+      "owner_role": "Lead Designer"
     },
     {
       "id": "R-CORNER",
-      "text": "已完成订单对应角落从改造前到改造后，能复核资源绑定",
-      "source": "本仓库原创深度规划案例",
+      "text": "A completed order changes the corner from before to after, with checkable asset bindings",
+      "source": "Original detailed planning case in this repository",
       "status": "proposed",
       "acceptance": [
-        "有具体验收案例与接收岗位"
+        "Concrete acceptance cases and a receiving role are defined"
       ],
-      "owner_role": "主美"
+      "owner_role": "Art Director"
     },
     {
       "id": "R-LOCALE",
-      "text": "订单数量、动作、错误和完成反馈能替换语言并适配长度",
-      "source": "本仓库原创深度规划案例",
+      "text": "Order quantities, actions, errors and completion feedback can change language and fit the available space",
+      "source": "Original detailed planning case in this repository",
       "status": "proposed",
       "acceptance": [
-        "有具体验收案例与接收岗位"
+        "Concrete acceptance cases and a receiving role are defined"
       ],
-      "owner_role": "本地化负责人"
+      "owner_role": "Localization Lead"
     }
   ],
   "deliverables": [
     {
       "id": "D-RULE",
-      "name": "订单状态与规则契约",
+      "name": "Order state and rule contract",
       "type": "design",
       "requirement_ids": [
         "R-ORDER"
       ],
       "spec": {
         "baseline": "draft-2 / proposed",
-        "format": "见对应任务输出；引擎专属规格待确认"
+        "format": "See the task outputs; engine-specific specifications remain pending"
       },
       "acceptance": [
-        "对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"
+        "The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"
       ],
-      "reviewer_role": "主策"
+      "reviewer_role": "Lead Designer"
     },
     {
       "id": "D-CONFIG",
-      "name": "物品与奖励配置字段",
+      "name": "Item and reward configuration fields",
       "type": "data",
       "requirement_ids": [
         "R-ORDER"
       ],
       "spec": {
         "baseline": "draft-2 / proposed",
-        "format": "见对应任务输出；引擎专属规格待确认"
+        "format": "See the task outputs; engine-specific specifications remain pending"
       },
       "acceptance": [
-        "对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"
+        "The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"
       ],
-      "reviewer_role": "主策"
+      "reviewer_role": "Lead Designer"
     },
     {
       "id": "D-TECH",
-      "name": "提交/存档/幂等接口契约",
+      "name": "Submission, persistence and idempotency contract",
       "type": "technical",
       "requirement_ids": [
         "R-ORDER"
       ],
       "spec": {
         "baseline": "draft-2 / proposed",
-        "format": "见对应任务输出；引擎专属规格待确认"
+        "format": "See the task outputs; engine-specific specifications remain pending"
       },
       "acceptance": [
-        "对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"
+        "The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"
       ],
-      "reviewer_role": "技术负责人"
+      "reviewer_role": "Technical Lead"
     },
     {
       "id": "D-BOM",
-      "name": "资产家族与规格清单",
+      "name": "Asset family and specification inventory",
       "type": "asset",
       "requirement_ids": [
         "R-CORNER"
       ],
       "spec": {
         "baseline": "draft-2 / proposed",
-        "format": "见对应任务输出；引擎专属规格待确认"
+        "format": "See the task outputs; engine-specific specifications remain pending"
       },
       "acceptance": [
-        "对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"
+        "The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"
       ],
-      "reviewer_role": "主美"
+      "reviewer_role": "Art Director"
     },
     {
       "id": "D-UI",
-      "name": "订单组件与交互状态",
+      "name": "Order components and interaction states",
       "type": "ui",
       "requirement_ids": [
         "R-ORDER"
       ],
       "spec": {
         "baseline": "draft-2 / proposed",
-        "format": "见对应任务输出；引擎专属规格待确认"
+        "format": "See the task outputs; engine-specific specifications remain pending"
       },
       "acceptance": [
-        "对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"
+        "The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"
       ],
-      "reviewer_role": "主美"
+      "reviewer_role": "Art Director"
     },
     {
       "id": "D-SCENE",
-      "name": "角落前后资产与绑定",
+      "name": "Before/after corner assets and bindings",
       "type": "asset",
       "requirement_ids": [
         "R-CORNER"
       ],
       "spec": {
         "baseline": "draft-2 / proposed",
-        "format": "见对应任务输出；引擎专属规格待确认"
+        "format": "See the task outputs; engine-specific specifications remain pending"
       },
       "acceptance": [
-        "对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"
+        "The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"
       ],
-      "reviewer_role": "主美"
+      "reviewer_role": "Art Director"
     },
     {
       "id": "D-LOGIC",
-      "name": "订单业务逻辑与提交证据",
+      "name": "Order logic and submission evidence",
       "type": "code",
       "requirement_ids": [
         "R-ORDER"
       ],
       "spec": {
         "baseline": "draft-2 / proposed",
-        "format": "见对应任务输出；引擎专属规格待确认"
+        "format": "See the task outputs; engine-specific specifications remain pending"
       },
       "acceptance": [
-        "对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"
+        "The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"
       ],
-      "reviewer_role": "技术负责人"
+      "reviewer_role": "Technical Lead"
     },
     {
       "id": "D-BIND",
-      "name": "UI与数据绑定",
+      "name": "UI and data binding",
       "type": "integration",
       "requirement_ids": [
         "R-ORDER"
       ],
       "spec": {
         "baseline": "draft-2 / proposed",
-        "format": "见对应任务输出；引擎专属规格待确认"
+        "format": "See the task outputs; engine-specific specifications remain pending"
       },
       "acceptance": [
-        "对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"
+        "The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"
       ],
-      "reviewer_role": "技术负责人"
+      "reviewer_role": "Technical Lead"
     },
     {
       "id": "D-LOCALE",
-      "name": "可替换文本与长度检查",
+      "name": "Replaceable text and length checks",
       "type": "localization",
       "requirement_ids": [
         "R-LOCALE"
       ],
       "spec": {
         "baseline": "draft-2 / proposed",
-        "format": "见对应任务输出；引擎专属规格待确认"
+        "format": "See the task outputs; engine-specific specifications remain pending"
       },
       "acceptance": [
-        "对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"
+        "The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"
       ],
-      "reviewer_role": "本地化负责人"
+      "reviewer_role": "Localization Lead"
     },
     {
       "id": "D-QA",
-      "name": "规则/异常/恢复验收记录",
+      "name": "Rule, error and recovery acceptance records",
       "type": "qa",
       "requirement_ids": [
         "R-ORDER"
       ],
       "spec": {
         "baseline": "draft-2 / proposed",
-        "format": "见对应任务输出；引擎专属规格待确认"
+        "format": "See the task outputs; engine-specific specifications remain pending"
       },
       "acceptance": [
-        "对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"
+        "The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"
       ],
-      "reviewer_role": "QA负责人"
+      "reviewer_role": "QA Lead"
     },
     {
       "id": "D-INTEGRATION",
-      "name": "角落与订单集成证据",
+      "name": "Corner and order integration evidence",
       "type": "integration",
       "requirement_ids": [
         "R-CORNER"
       ],
       "spec": {
         "baseline": "draft-2 / proposed",
-        "format": "见对应任务输出；引擎专属规格待确认"
+        "format": "See the task outputs; engine-specific specifications remain pending"
       },
       "acceptance": [
-        "对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"
+        "The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"
       ],
-      "reviewer_role": "制作负责人"
+      "reviewer_role": "Production Lead"
     },
     {
       "id": "D-HANDOFF",
-      "name": "版本与执行交接包",
+      "name": "Versioned execution handoff package",
       "type": "handoff",
       "requirement_ids": [
         "R-ORDER"
       ],
       "spec": {
         "baseline": "draft-2 / proposed",
-        "format": "见对应任务输出；引擎专属规格待确认"
+        "format": "See the task outputs; engine-specific specifications remain pending"
       },
       "acceptance": [
-        "对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"
+        "The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"
       ],
-      "reviewer_role": "制作负责人"
+      "reviewer_role": "Production Lead"
     }
   ],
   "tasks": [
     {
       "id": "T-01",
-      "owner_role": "主策",
+      "owner_role": "Lead Designer",
       "executor_kind": "either",
       "deliverable_ids": [
         "D-RULE"
@@ -267,34 +267,34 @@
           "status": "pending"
         }
       ],
-      "action": "说明 unmet/ready/submitting/completed/failed 的合法转换、重复提交与重进预期。",
+      "action": "Define valid transitions among unmet/ready/submitting/completed/failed, including repeat submission and re-entry.",
       "outputs": [
         "design/order-state-contract.md"
       ],
       "entry_criteria": [
-        "对应输入版本已提供；影响本任务的正式规则与规格已确认"
+        "Required input versions are available and the task's rules/specifications are confirmed"
       ],
       "acceptance": [
-        "不扣物品、不发奖励，并给出明确原因。"
+        "Do not deduct items or award a reward; provide a clear reason."
       ],
       "acceptance_cases": [
         {
           "id": "AC-01",
-          "given": "设计状态契约覆盖物品不足场景",
-          "when": "评审设计文档与状态转换表",
-          "then": "文档明确禁止扣除和发奖，并规定提示原因；运行时验证交给程序与 QA。"
+          "given": "The design state contract covers insufficient items",
+          "when": "Review the design document and transition table",
+          "then": "The document explicitly prohibits deduction/reward and specifies the reason shown; engineering and QA perform runtime verification."
         }
       ],
       "stop_conditions": [
-        "输入版本变更或规则冲突，列影响并交原负责人处理",
-        "缺少目标工程、有效美术包或规格时，不冒充制作完成"
+        "If an input version changes or rules conflict, record impact and return the decision to its original owner",
+        "Missing target project, valid art pack or specifications cannot be presented as completed production"
       ],
       "status": "planned",
       "artifacts": []
     },
     {
       "id": "T-02",
-      "owner_role": "数值策划",
+      "owner_role": "Systems Designer",
       "executor_kind": "either",
       "deliverable_ids": [
         "D-CONFIG"
@@ -312,35 +312,35 @@
           "status": "pending"
         }
       ],
-      "action": "定义 item_id、required_count、reward_ref、corner_ref；数值保留待确认，不硬编码到表现层。",
+      "action": "Define item_id, required_count, reward_ref and corner_ref; keep values pending and avoid hardcoding them in the presentation layer.",
       "outputs": [
         "data/order.schema.json",
         "data/order.example.json"
       ],
       "entry_criteria": [
-        "对应输入版本已提供；影响本任务的正式规则与规格已确认"
+        "Required input versions are available and the task's rules/specifications are confirmed"
       ],
       "acceptance": [
-        "拒绝无效配置，并定位字段；正式数值不凭空补全。"
+        "Reject invalid configuration with field locations; do not invent final values."
       ],
       "acceptance_cases": [
         {
           "id": "AC-02",
-          "given": "缺失奖励引用或数量为零",
-          "when": "评审 schema 与无效配置样例",
-          "then": "schema 明确拒绝缺失奖励引用和零数量，并定位字段；正式数值保持待确认。"
+          "given": "A reward reference is missing or quantity is zero",
+          "when": "Review the schema and invalid-configuration samples",
+          "then": "The schema rejects a missing reward reference and zero quantity with a field location; final values remain pending."
         }
       ],
       "stop_conditions": [
-        "输入版本变更或规则冲突，列影响并交原负责人处理",
-        "缺少目标工程、有效美术包或规格时，不冒充制作完成"
+        "If an input version changes or rules conflict, record impact and return the decision to its original owner",
+        "Missing target project, valid art pack or specifications cannot be presented as completed production"
       ],
       "status": "planned",
       "artifacts": []
     },
     {
       "id": "T-03",
-      "owner_role": "技术负责人",
+      "owner_role": "Technical Lead",
       "executor_kind": "either",
       "deliverable_ids": [
         "D-TECH"
@@ -358,34 +358,34 @@
           "status": "pending"
         }
       ],
-      "action": "确定库存扣除、完成标记、奖励和存档的事务边界；记录重复请求键与失败恢复策略。",
+      "action": "Define transaction boundaries for inventory deduction, completion, rewards and persistence; record deduplication keys and failure recovery.",
       "outputs": [
         "engineering/order-submit-contract.md"
       ],
       "entry_criteria": [
-        "对应输入版本已提供；影响本任务的正式规则与规格已确认"
+        "Required input versions are available and the task's rules/specifications are confirmed"
       ],
       "acceptance": [
-        "扣除与奖励最多生效一次；失败与恢复责任明确。"
+        "Deduction and reward take effect at most once; failure/recovery ownership is explicit."
       ],
       "acceptance_cases": [
         {
           "id": "AC-03",
-          "given": "同一订单收到重复提交",
-          "when": "评审事务序列",
-          "then": "扣除与奖励最多生效一次；失败与恢复责任明确。"
+          "given": "The same order receives a repeated submission",
+          "when": "Review the transaction sequence",
+          "then": "Deduction and reward take effect at most once; failure/recovery ownership is explicit."
         }
       ],
       "stop_conditions": [
-        "输入版本变更或规则冲突，列影响并交原负责人处理",
-        "缺少目标工程、有效美术包或规格时，不冒充制作完成"
+        "If an input version changes or rules conflict, record impact and return the decision to its original owner",
+        "Missing target project, valid art pack or specifications cannot be presented as completed production"
       ],
       "status": "planned",
       "artifacts": []
     },
     {
       "id": "T-04",
-      "owner_role": "主美",
+      "owner_role": "Art Director",
       "executor_kind": "either",
       "deliverable_ids": [
         "D-BOM"
@@ -403,34 +403,34 @@
           "status": "pending"
         }
       ],
-      "action": "拆清基础组件、状态复用、角落前后资产与规格缺口，引用有效美术包。",
+      "action": "Separate base components, state reuse, before/after corner assets and specification gaps; reference a valid art pack.",
       "outputs": [
         "art/order-asset-bom.csv"
       ],
       "entry_criteria": [
-        "对应输入版本已提供；影响本任务的正式规则与规格已确认"
+        "Required input versions are available and the task's rules/specifications are confirmed"
       ],
       "acceptance": [
-        "保留待补项，先做规范对齐；不将状态数当成图片数量。"
+        "Keep missing inputs visible and align specifications first; do not equate states with image count."
       ],
       "acceptance_cases": [
         {
           "id": "AC-04",
-          "given": "没有批准的美术包或引擎规格",
-          "when": "准备制作清单",
-          "then": "保留待补项，先做规范对齐；不将状态数当成图片数量。"
+          "given": "No approved art pack or engine specification is available",
+          "when": "Prepare production inventory",
+          "then": "Keep missing inputs visible and align specifications first; do not equate states with image count."
         }
       ],
       "stop_conditions": [
-        "输入版本变更或规则冲突，列影响并交原负责人处理",
-        "缺少目标工程、有效美术包或规格时，不冒充制作完成"
+        "If an input version changes or rules conflict, record impact and return the decision to its original owner",
+        "Missing target project, valid art pack or specifications cannot be presented as completed production"
       ],
       "status": "planned",
       "artifacts": []
     },
     {
       "id": "T-05",
-      "owner_role": "UI设计师",
+      "owner_role": "UI Designer",
       "executor_kind": "either",
       "deliverable_ids": [
         "D-UI"
@@ -455,35 +455,35 @@
           "status": "pending"
         }
       ],
-      "action": "为订单面板、按钮、数量和反馈定义五态组合，给出交互与禁用规则。",
+      "action": "Define five state combinations for the order panel, button, quantity and feedback, including interaction and disabled rules.",
       "outputs": [
         "art/order-ui-states.fig-or-equivalent",
         "art/order-ui-spec.md"
       ],
       "entry_criteria": [
-        "对应输入版本已提供；影响本任务的正式规则与规格已确认"
+        "Required input versions are available and the task's rules/specifications are confirmed"
       ],
       "acceptance": [
-        "保持可见进度并阻止重复触发；失败后恢复可重试状态。"
+        "Keep progress visible and prevent repeat triggering; restore a retryable state after failure."
       ],
       "acceptance_cases": [
         {
           "id": "AC-05",
-          "given": "UI 规格展示 submitting 状态",
-          "when": "评审状态稿与交互标注",
-          "then": "标注可见进度、禁用重复触发及失败后重试状态；运行时交互由 T-08/T-10 验证。"
+          "given": "The UI specification includes the submitting state",
+          "when": "Review state drafts and interaction annotations",
+          "then": "Annotate visible progress, repeat-trigger prevention and retry-after-failure; T-08/T-10 verify runtime interaction."
         }
       ],
       "stop_conditions": [
-        "输入版本变更或规则冲突，列影响并交原负责人处理",
-        "缺少目标工程、有效美术包或规格时，不冒充制作完成"
+        "If an input version changes or rules conflict, record impact and return the decision to its original owner",
+        "Missing target project, valid art pack or specifications cannot be presented as completed production"
       ],
       "status": "planned",
       "artifacts": []
     },
     {
       "id": "T-06",
-      "owner_role": "场景美术",
+      "owner_role": "Environment Artist",
       "executor_kind": "either",
       "deliverable_ids": [
         "D-SCENE"
@@ -501,36 +501,36 @@
           "status": "pending"
         }
       ],
-      "action": "交付一个角落的前后状态及锚点/遮挡/组合检查；复用与新制单列。",
+      "action": "Deliver before/after states for one corner with anchor, occlusion and composition checks; separate reused and new work.",
       "outputs": [
         "art/corner-before",
         "art/corner-after",
         "art/corner-integration-spec.md"
       ],
       "entry_criteria": [
-        "对应输入版本已提供；影响本任务的正式规则与规格已确认"
+        "Required input versions are available and the task's rules/specifications are confirmed"
       ],
       "acceptance": [
-        "锚点一致，无跳位或遮挡错误；尺寸/格式按正式规范。"
+        "Anchors match without position jumps or occlusion errors; dimensions/formats follow the valid specification."
       ],
       "acceptance_cases": [
         {
           "id": "AC-06",
-          "given": "同一相机和定位基线",
-          "when": "叠放对照改造前后场景稿",
-          "then": "锚点一致，无跳位或遮挡错误；尺寸/格式按正式规范。"
+          "given": "The same camera and positioning baseline",
+          "when": "Overlay before/after scene drafts",
+          "then": "Anchors match without position jumps or occlusion errors; dimensions/formats follow the valid specification."
         }
       ],
       "stop_conditions": [
-        "输入版本变更或规则冲突，列影响并交原负责人处理",
-        "缺少目标工程、有效美术包或规格时，不冒充制作完成"
+        "If an input version changes or rules conflict, record impact and return the decision to its original owner",
+        "Missing target project, valid art pack or specifications cannot be presented as completed production"
       ],
       "status": "planned",
       "artifacts": []
     },
     {
       "id": "T-07",
-      "owner_role": "玩法程序",
+      "owner_role": "Gameplay Engineer",
       "executor_kind": "either",
       "deliverable_ids": [
         "D-LOGIC"
@@ -555,36 +555,36 @@
           "status": "pending"
         }
       ],
-      "action": "按契约实现验证、扣除、完成与奖励；提供非法输入与重复提交的测试证据。",
+      "action": "Implement validation, deduction, completion and reward against the contract; supply invalid-input and repeat-submission test evidence.",
       "outputs": [
         "code/order-service",
         "tests/order-service-results",
         "engineering/order-save-migration.md"
       ],
       "entry_criteria": [
-        "对应输入版本已提供；影响本任务的正式规则与规格已确认"
+        "Required input versions are available and the task's rules/specifications are confirmed"
       ],
       "acceptance": [
-        "库存与奖励不重复改变；返回既有结果。"
+        "Inventory and rewards are not changed twice; return the existing result."
       ],
       "acceptance_cases": [
         {
           "id": "AC-07",
-          "given": "第一次提交已经生效",
-          "when": "相同请求再次到达",
-          "then": "库存与奖励不重复改变；返回既有结果。"
+          "given": "The first submission has already taken effect",
+          "when": "The same request arrives again",
+          "then": "Inventory and rewards are not changed twice; return the existing result."
         }
       ],
       "stop_conditions": [
-        "输入版本变更或规则冲突，列影响并交原负责人处理",
-        "缺少目标工程、有效美术包或规格时，不冒充制作完成"
+        "If an input version changes or rules conflict, record impact and return the decision to its original owner",
+        "Missing target project, valid art pack or specifications cannot be presented as completed production"
       ],
       "status": "planned",
       "artifacts": []
     },
     {
       "id": "T-08",
-      "owner_role": "客户端程序",
+      "owner_role": "Client Engineer",
       "executor_kind": "either",
       "deliverable_ids": [
         "D-BIND"
@@ -616,35 +616,35 @@
           "status": "pending"
         }
       ],
-      "action": "绑定库存、订单状态、文本键和表现；处理提交中、失败与重进。",
+      "action": "Bind inventory, order state, text keys and presentation; handle submission, failure and re-entry.",
       "outputs": [
         "code/order-panel",
         "evidence/order-state-capture"
       ],
       "entry_criteria": [
-        "对应输入版本已提供；影响本任务的正式规则与规格已确认"
+        "Required input versions are available and the task's rules/specifications are confirmed"
       ],
       "acceptance": [
-        "显示完成态，不再次扣除或播放可重复领取流程。"
+        "Show completion without another deduction or a claim-again flow."
       ],
       "acceptance_cases": [
         {
           "id": "AC-08",
-          "given": "订单已完成并有保存状态",
-          "when": "退出后重进",
-          "then": "显示完成态，不再次扣除或播放可重复领取流程。"
+          "given": "The order is completed and its state is saved",
+          "when": "Exit and re-enter",
+          "then": "Show completion without another deduction or a claim-again flow."
         }
       ],
       "stop_conditions": [
-        "输入版本变更或规则冲突，列影响并交原负责人处理",
-        "缺少目标工程、有效美术包或规格时，不冒充制作完成"
+        "If an input version changes or rules conflict, record impact and return the decision to its original owner",
+        "Missing target project, valid art pack or specifications cannot be presented as completed production"
       ],
       "status": "planned",
       "artifacts": []
     },
     {
       "id": "T-09",
-      "owner_role": "本地化负责人",
+      "owner_role": "Localization Lead",
       "executor_kind": "either",
       "deliverable_ids": [
         "D-LOCALE"
@@ -669,35 +669,35 @@
           "status": "pending"
         }
       ],
-      "action": "用文本键替代硬编码；数量和长文本按各语言检查，确认字体覆盖。",
+      "action": "Use text keys instead of hardcoded strings; check quantities, long text and glyph coverage in each language.",
       "outputs": [
         "localization/order-strings.csv",
         "evidence/order-locale-review"
       ],
       "entry_criteria": [
-        "对应输入版本已提供；影响本任务的正式规则与规格已确认"
+        "Required input versions are available and the task's rules/specifications are confirmed"
       ],
       "acceptance": [
-        "无截断、缺字或含义相反；数量与动作关系清楚。"
+        "No clipping, missing glyphs or reversed meaning; quantities and actions are clear."
       ],
       "acceptance_cases": [
         {
           "id": "AC-09",
-          "given": "日文/简中和长英文测试文本",
-          "when": "在目标最小画幅的 UI 稿或文本测量样例中复核",
-          "then": "无截断、缺字或含义相反；数量与动作关系清楚。"
+          "given": "Japanese, Simplified Chinese and long English test text",
+          "when": "Review a UI draft or text measurement sample at the target minimum viewport",
+          "then": "No clipping, missing glyphs or reversed meaning; quantities and actions are clear."
         }
       ],
       "stop_conditions": [
-        "输入版本变更或规则冲突，列影响并交原负责人处理",
-        "缺少目标工程、有效美术包或规格时，不冒充制作完成"
+        "If an input version changes or rules conflict, record impact and return the decision to its original owner",
+        "Missing target project, valid art pack or specifications cannot be presented as completed production"
       ],
       "status": "planned",
       "artifacts": []
     },
     {
       "id": "T-10",
-      "owner_role": "QA工程师",
+      "owner_role": "QA Engineer",
       "executor_kind": "either",
       "deliverable_ids": [
         "D-QA"
@@ -722,35 +722,35 @@
           "status": "pending"
         }
       ],
-      "action": "执行不足/刚好/超额库存、重复提交、失败、恢复与无效配置场景。",
+      "action": "Test insufficient/exact/excess inventory, repeated submission, failure, recovery and invalid configuration.",
       "outputs": [
         "qa/order-cases.csv",
         "qa/order-results.md"
       ],
       "entry_criteria": [
-        "对应输入版本已提供；影响本任务的正式规则与规格已确认"
+        "Required input versions are available and the task's rules/specifications are confirmed"
       ],
       "acceptance": [
-        "一次扣除与一次奖励；第二次不能重复领取。"
+        "One deduction and one reward; a second attempt cannot claim again."
       ],
       "acceptance_cases": [
         {
           "id": "AC-10",
-          "given": "库存恰好达到门槛",
-          "when": "提交一次后再次尝试",
-          "then": "一次扣除与一次奖励；第二次不能重复领取。"
+          "given": "Inventory exactly meets the requirement",
+          "when": "Submit once, then try again",
+          "then": "One deduction and one reward; a second attempt cannot claim again."
         }
       ],
       "stop_conditions": [
-        "输入版本变更或规则冲突，列影响并交原负责人处理",
-        "缺少目标工程、有效美术包或规格时，不冒充制作完成"
+        "If an input version changes or rules conflict, record impact and return the decision to its original owner",
+        "Missing target project, valid art pack or specifications cannot be presented as completed production"
       ],
       "status": "planned",
       "artifacts": []
     },
     {
       "id": "T-11",
-      "owner_role": "集成程序",
+      "owner_role": "Integration Engineer",
       "executor_kind": "either",
       "deliverable_ids": [
         "D-INTEGRATION"
@@ -782,35 +782,35 @@
           "status": "pending"
         }
       ],
-      "action": "将角落表现与订单完成状态集成，检查顺序、中断、恢复和资源引用。",
+      "action": "Integrate corner visuals with order completion; check ordering, interruption, recovery and asset references.",
       "outputs": [
         "build-or-scene-reference",
         "evidence/order-corner-integration"
       ],
       "entry_criteria": [
-        "对应输入版本已提供；影响本任务的正式规则与规格已确认"
+        "Required input versions are available and the task's rules/specifications are confirmed"
       ],
       "acceptance": [
-        "已完成状态与角落外观一致，不再次结算。"
+        "Completed order state matches the corner appearance without settling again."
       ],
       "acceptance_cases": [
         {
           "id": "AC-11",
-          "given": "提交成功后表现被中断",
-          "when": "恢复场景",
-          "then": "已完成状态与角落外观一致，不再次结算。"
+          "given": "Presentation is interrupted after a successful submission",
+          "when": "Restore the scene",
+          "then": "Completed order state matches the corner appearance without settling again."
         }
       ],
       "stop_conditions": [
-        "输入版本变更或规则冲突，列影响并交原负责人处理",
-        "缺少目标工程、有效美术包或规格时，不冒充制作完成"
+        "If an input version changes or rules conflict, record impact and return the decision to its original owner",
+        "Missing target project, valid art pack or specifications cannot be presented as completed production"
       ],
       "status": "planned",
       "artifacts": []
     },
     {
       "id": "T-12",
-      "owner_role": "游戏制作项目经理",
+      "owner_role": "Game Production Manager",
       "executor_kind": "either",
       "deliverable_ids": [
         "D-HANDOFF"
@@ -842,28 +842,28 @@
           "status": "pending"
         }
       ],
-      "action": "核对输入版本、制品、验收与未决项，组织接包并记录负责人决定。",
+      "action": "Check input versions, artifacts, acceptance and open questions; coordinate handoff and record owner decisions.",
       "outputs": [
         "handoff/manifest.json",
         "handoff/review-record.md"
       ],
       "entry_criteria": [
-        "对应输入版本已提供；影响本任务的正式规则与规格已确认"
+        "Required input versions are available and the task's rules/specifications are confirmed"
       ],
       "acceptance": [
-        "保留缺口与任务状态，不将 planned/submitted 改成 accepted。"
+        "Preserve the gap and task state; do not change planned/submitted to accepted."
       ],
       "acceptance_cases": [
         {
           "id": "AC-12",
-          "given": "某项缺实际制品或授权评审",
-          "when": "准备交接",
-          "then": "保留缺口与任务状态，不将 planned/submitted 改成 accepted。"
+          "given": "An item lacks an actual artifact or authorized review",
+          "when": "Prepare handoff",
+          "then": "Preserve the gap and task state; do not change planned/submitted to accepted."
         }
       ],
       "stop_conditions": [
-        "输入版本变更或规则冲突，列影响并交原负责人处理",
-        "缺少目标工程、有效美术包或规格时，不冒充制作完成"
+        "If an input version changes or rules conflict, record impact and return the decision to its original owner",
+        "Missing target project, valid art pack or specifications cannot be presented as completed production"
       ],
       "status": "planned",
       "artifacts": []
@@ -872,29 +872,29 @@
   "milestones": [
     {
       "id": "M-CONTRACT",
-      "goal": "范围与契约可评审",
+      "goal": "Scope and contracts are ready for review",
       "task_ids": [
         "T-01",
         "T-02",
         "T-03",
         "T-04"
       ],
-      "exit_criteria": "规则、数据、技术与美术输入有负责人决定及可用版本"
+      "exit_criteria": "Rule, data, technical and art inputs have owner decisions and available versions"
     },
     {
       "id": "M-HANDOFF",
-      "goal": "制品和验收完成后可交接",
+      "goal": "Handoff is ready after artifacts and acceptance are complete",
       "task_ids": [
         "T-12"
       ],
-      "exit_criteria": "真实制品、实际测试与有权限评审齐全；本案例尚未达成"
+      "exit_criteria": "Actual artifacts, tests and authorized reviews are complete; this case has not reached that state"
     }
   ],
   "feedback": [],
   "asset_bom": [
     {
       "id": "A-PANEL",
-      "family": "订单面板与提交按钮",
+      "family": "Order panel and submit button",
       "states": [
         "unmet",
         "ready",
@@ -902,32 +902,32 @@
         "completed",
         "failed"
       ],
-      "representation": "一个组件家族；状态由文本/颜色/交互规则组合，非五张纹理",
-      "quantity_basis": "一个订单界面；实际导出件数由有效美术规范决定",
-      "spec_status": "pending: Art Director 包、引擎格式、尺寸与字体"
+      "representation": "One component family; states combine text, color and interaction rules, not five textures",
+      "quantity_basis": "One order interface; actual export count depends on the valid art specification",
+      "spec_status": "pending: Art Director pack, engine format, dimensions and fonts"
     },
     {
       "id": "A-CORNER",
-      "family": "社区角落",
+      "family": "Neighborhood corner",
       "states": [
         "before",
         "after"
       ],
-      "representation": "一处场景的前后逻辑状态；复用/新增资源分别核对",
-      "quantity_basis": "本例只包含一个角落，两个逻辑状态不自动等于两张图片",
-      "spec_status": "pending: 相机、锚点、层级与资源格式"
+      "representation": "Before/after logical states of one scene; check reused and new resources separately",
+      "quantity_basis": "The case covers one corner; two logical states do not automatically mean two images",
+      "spec_status": "pending: camera, anchors, hierarchy and asset format"
     },
     {
       "id": "A-FEEDBACK",
-      "family": "提交反馈",
+      "family": "Submission feedback",
       "states": [
         "progress",
         "success",
         "failure"
       ],
-      "representation": "动效/文本/音频需求；复用优先但需查项目实际资源",
-      "quantity_basis": "三个反馈语义；是否拆独立资源由技术与主美共同确认",
-      "spec_status": "pending: 动效时长、音频及可访问替代"
+      "representation": "Motion, text and audio requirements; check actual project resources before assuming reuse",
+      "quantity_basis": "Three feedback meanings; technical and art leads decide whether they need separate resources",
+      "spec_status": "pending: motion duration, audio and accessible alternatives"
     }
   ]
 }

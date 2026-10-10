@@ -1,0 +1,4 @@
+﻿id,family,states,representation,quantity_basis,spec_status
+A-PANEL,订单面板与提交按钮,"[""unmet"", ""ready"", ""submitting"", ""completed"", ""failed""]",一个组件家族；状态由文本/颜色/交互规则组合，非五张纹理,一个订单界面；实际导出件数由有效美术规范决定,pending: Art Director 包、引擎格式、尺寸与字体
+A-CORNER,社区角落,"[""before"", ""after""]",一处场景的前后逻辑状态；复用/新增资源分别核对,本例只包含一个角落，两个逻辑状态不自动等于两张图片,pending: 相机、锚点、层级与资源格式
+A-FEEDBACK,提交反馈,"[""progress"", ""success"", ""failure""]",动效/文本/音频需求；复用优先但需查项目实际资源,三个反馈语义；是否拆独立资源由技术与主美共同确认,pending: 动效时长、音频及可访问替代

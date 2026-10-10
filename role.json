@@ -3,6 +3,12 @@
   "skill": "game-production-manager",
   "role_zh": "游戏制作项目经理",
   "role_en": "Game Production Manager",
-  "purpose": "把游戏目标、策略和反馈拆成团队可执行、可验收的 SOW、资产清单、工作包和任务。",
-  "version": "0.1.0"
+  "purpose": "Turn game decisions into scoped, executable work packages.",
+  "version": "0.1.0",
+  "purpose_zh": "把游戏目标、策略和反馈拆成团队可执行、可验收的 SOW、资产清单、工作包和任务。",
+  "default_language": "en",
+  "supported_languages": [
+    "en",
+    "zh"
+  ]
 }

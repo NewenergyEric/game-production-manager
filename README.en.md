@@ -1,4 +1,4 @@
-[中文](README.md)
+[中文](README.zh.md)
 
 # Game Production Manager
 
@@ -43,7 +43,7 @@ The actual impact tool finds T-02, T-07, T-08, T-10, T-11 and T-12. T-06 scene a
 
 **Original production plan: a community order restores a corner.** Validation, package export and change-impact tools were actually run. Includes 12 Given/When/Then acceptance cases and three asset-family BOM rows, with formal inputs still pending.
 
-[Full analysis and downloadable records](case-studies/community-order/README.en.md)
+[Full analysis and downloadable records](case-studies/community-order/README.md)
 
 [![Game Production Manager](case-studies/community-order/dashboard-en.png?v=depth-v4)](case-studies/community-order/dashboard-en.png)
 
@@ -60,7 +60,7 @@ This is a planning case, not a produced feature. All tasks remain planned. Task 
 
 Core helpers use Python 3.10+ and the standard library. Remotion is optional presentation tooling.
 
-[Human guide](docs/HUMAN-GUIDE.en.md) · [Agent guide](docs/AGENT-GUIDE.en.md) · [SKILL.md](SKILL.md) · [Tests and review](evals/) · [Motion source](motion/README.md)
+[Human guide](docs/HUMAN-GUIDE.md) · [Agent guide](docs/AGENT-GUIDE.md) · [SKILL.md](SKILL.md) · [Tests and review](evals/) · [Motion source](motion/README.md)
 
 ```sh
 python -m unittest discover -s tests -v
@@ -70,3 +70,11 @@ python scripts/check_presentation.py
 </details>
 
 [MIT License](LICENSE) · Made by Eric and Agents.
+
+## Four roles. One game worth making.
+
+For a solo creator these are four hats; for a team they are connected responsibilities. Explore what is worth making, what competitors do, the resources it requires, and the original art that defines it.
+
+[How the roles exchange evidence, scope and visual assets](docs/WORKFLOW.md) · [Art Director](https://github.com/NewenergyEric/art-director-skill)
+
+![Market intelligence → competitor analysis → production assessment → original art direction; prototype and cost feedback revise earlier decisions.](assets/readme/workflow-en.png)

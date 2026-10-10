@@ -1,6 +1,6 @@
 # Agent Guide · game-production-manager
 
-[中文](AGENT-GUIDE.md)
+[中文](AGENT-GUIDE.zh.md)
 
 ## Read order
 
@@ -27,7 +27,7 @@ At minimum include `requirements`, `deliverables`, `tasks`, `milestones`, `accep
 
 ## Depth-case entry
 
-[Protocol](../references/execution-depth.md) · [Case](../case-studies/community-order/README.en.md)
+[Protocol](../references/execution-depth.md) · [Case](../case-studies/community-order/README.md)
 
 ```sh
 python scripts/production.py validate examples/community-order-detailed.json
