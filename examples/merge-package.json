@@ -1,0 +1,183 @@
+{
+  "id": "merge-community-format-example",
+  "version": "draft-1",
+  "example_only": true,
+  "goal": "用一条订单演示从要求到团队工作包的拆解方法。",
+  "strategy": "复用现有 Merge 系统，先澄清订单和一个社区角落的交接。",
+  "scope_in": [
+    "一条订单的状态和交付要求",
+    "一个社区角落的前后状态",
+    "任务与验收交接"
+  ],
+  "scope_out": [
+    "完整商业游戏制作",
+    "自动调用引擎或生图",
+    "正式项目排期承诺"
+  ],
+  "constraints": [
+    "引擎、资源与正式规则由实际项目决定"
+  ],
+  "assumptions": [
+    "示例为原创格式测试；不作为用户项目的批准基线"
+  ],
+  "requirements": [
+    {
+      "id": "R-ORDER",
+      "text": "玩家交付符合条件的物品后触发角落改造。",
+      "source": "原创格式案例，非用户决定",
+      "status": "proposed",
+      "acceptance": [
+        "完成条件、扣除与奖励的责任清楚"
+      ],
+      "owner_role": "主策"
+    }
+  ],
+  "deliverables": [
+    {
+      "id": "D-ORDER",
+      "requirement_ids": [
+        "R-ORDER"
+      ],
+      "name": "订单规则与状态说明",
+      "type": "design",
+      "spec": {
+        "states": [
+          "未满足",
+          "可提交",
+          "已完成"
+        ],
+        "unknowns": [
+          "正式物品链",
+          "消耗与奖励值"
+        ]
+      },
+      "acceptance": [
+        "主策明确合法/非法/重复提交的预期"
+      ],
+      "reviewer_role": "主策"
+    },
+    {
+      "id": "D-ART",
+      "requirement_ids": [
+        "R-ORDER"
+      ],
+      "name": "角落与订单 UI 资产要求",
+      "type": "asset",
+      "spec": {
+        "category": "scene/ui",
+        "family": "由现有美术包确认",
+        "base_or_variant": "一套基础及前后状态",
+        "states": [
+          "改造前",
+          "改造后"
+        ],
+        "source_format": "待引擎与主美确认",
+        "art_pack_ref": "待引用有效版本"
+      },
+      "acceptance": [
+        "主美确认家族、状态、规格和组合验收"
+      ],
+      "reviewer_role": "主美"
+    },
+    {
+      "id": "D-HANDOFF",
+      "requirement_ids": [
+        "R-ORDER"
+      ],
+      "name": "执行与验收交接包",
+      "type": "handoff",
+      "spec": {
+        "contains": [
+          "输入版本",
+          "依赖",
+          "职责",
+          "验收",
+          "未决项"
+        ]
+      },
+      "acceptance": [
+        "程序/美术/QA 能复述并接下各自任务"
+      ],
+      "reviewer_role": "制作负责人"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T-RULE",
+      "deliverable_ids": [
+        "D-ORDER"
+      ],
+      "depends_on": [],
+      "owner_role": "主策",
+      "executor_kind": "either",
+      "inputs": [
+        "原需求与有效策划版本（待真实材料替换）"
+      ],
+      "action": "澄清订单条件与状态，记录未知与设计决定。",
+      "acceptance": [
+        "状态转换完整",
+        "重复提交行为明确"
+      ],
+      "status": "planned",
+      "artifacts": []
+    },
+    {
+      "id": "T-ART",
+      "deliverable_ids": [
+        "D-ART"
+      ],
+      "depends_on": [
+        "T-RULE"
+      ],
+      "owner_role": "主美",
+      "executor_kind": "either",
+      "inputs": [
+        "D-ORDER",
+        "Art Director 当前有效包（待确认）"
+      ],
+      "action": "拆分家族、基础件/变体、状态和交付规格。",
+      "acceptance": [
+        "任务引用明确版本",
+        "缺样板或规格的项目单列"
+      ],
+      "status": "planned",
+      "artifacts": []
+    },
+    {
+      "id": "T-PACK",
+      "deliverable_ids": [
+        "D-HANDOFF"
+      ],
+      "depends_on": [
+        "T-RULE",
+        "T-ART"
+      ],
+      "owner_role": "游戏制作项目经理",
+      "executor_kind": "either",
+      "inputs": [
+        "D-ORDER",
+        "D-ART"
+      ],
+      "action": "合并职责、依赖、验收与问题，组织接包检查。",
+      "acceptance": [
+        "每个交付物有责任和接收岗位",
+        "无悬空依赖"
+      ],
+      "status": "planned",
+      "artifacts": []
+    }
+  ],
+  "milestones": [
+    {
+      "id": "M-HANDOFF",
+      "goal": "形成可被团队理解的执行包",
+      "task_ids": [
+        "T-RULE",
+        "T-ART",
+        "T-PACK"
+      ],
+      "exit_criteria": "接收岗位能继续工作，未知不伪装成已决定。"
+    }
+  ],
+  "feedback": []
+}

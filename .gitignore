@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+.npm-cache/
+outputs/
+private/
+inbox/
+*.local.*
+.env
+.env.*
+!.env.example
+# Local planning carry-over is maintained outside the public package.
+/research/

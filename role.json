@@ -1,0 +1,8 @@
+{
+  "schema_version": "0.1",
+  "skill": "game-production-manager",
+  "role_zh": "游戏制作项目经理",
+  "role_en": "Game Production Manager",
+  "purpose": "确保策划与制作人的目标、计划、策略和反馈被团队理解，拆成 SOW、资产、任务和可验收目标。",
+  "version": "0.1.0"
+}
