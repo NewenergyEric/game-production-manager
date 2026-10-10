@@ -1,57 +1,90 @@
-# Game Production Manager
-
 [中文](README.md)
 
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="assets/readme/hero-en.png">
-  <img src="assets/readme/hero-en.gif" alt="Game Production Manager: turn intent into executable work." width="1280">
-</picture>
+# Game Production Manager
 
-[▶ Watch the 24-second MP4](assets/readme/hero-en.mp4) · [中文 MP4](assets/readme/hero-zh.mp4)
+### Turn the intent into work people can start.
 
-Turn the goals, plans, strategies, and feedback from game directors, producers, Art Directors, and technical leads into SOWs, asset lists, work packages, human/agent tasks, milestones, and acceptance targets. This role understands, coordinates, and tracks work. Named executors still create the game, code, art, audio, and tests.
+**Clear direction. Owned work. Evidence of completion.**
 
-[30-second start](docs/HUMAN-GUIDE.en.md) · [Agent guide](docs/AGENT-GUIDE.en.md) · [Read the canonical skill](SKILL.md) · [Production contract](references/production-contract.md) · [Darwin review](evals/darwin-review.md)
+Bring requirements, plans and feedback from the producer, design lead, art director and engineering lead. Your agent organizes shared understanding, deliverables, asset states, roles, dependencies and acceptance, then prepares work the team or another agent can take on.
 
-![Validate](https://github.com/NewenergyEric/game-production-manager/actions/workflows/validate.yml/badge.svg) ![MIT](https://img.shields.io/badge/license-MIT-151715.svg) ![Agent Skills](https://img.shields.io/badge/Agent%20Skills-compatible-225d4b.svg)
+<a href="assets/readme/hero-en.mp4"><picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="assets/readme/hero-en.png?v=workflow-v3">
+  <img src="assets/readme/hero-en.gif?v=workflow-v3" width="100%" alt="Turn requirements, decisions and feedback into work packages for people or agents.">
+</picture></a>
 
-## What it owns
+[24 seconds through one complete workflow · Watch MP4](assets/readme/hero-en.mp4) · [Transcript](assets/readme/transcript-en.md)
 
-[![Execution contract from intent to acceptance](assets/readme/workflow-en.png)](assets/readme/workflow-en.png)
+## Install, then ask your agent
 
-```text
-Goal / requirement → Feature → Deliverables and assets → Work packages → Role tasks
-                                             ↓
-                               Dependencies / milestones / acceptance / receipts
+Install in an Agent Skills-compatible tool, such as Codex, Claude Code or Cursor:
+
+```sh
+npx skills add https://github.com/NewenergyEric/game-production-manager
 ```
 
-Every task names its owner, input, action, output, dependencies, stop conditions, and evidence requirement. `render` creates the SOW, task CSV, role views, and preserved source package. `impact` traces downstream effects of feedback. Without a real artifact and review evidence, a task cannot become `accepted`.
+Put the materials where your agent can read them, then describe the problem. Your agent handles file organization and commands.
 
-## Start now
+### The requirements exist. Help the team start
 
-```text
-git clone https://github.com/NewenergyEric/game-production-manager.git
-cd game-production-manager
+> Use `$game-production-manager`. Read the existing design, art requirements and production constraints. Summarize our shared understanding and open decisions, then break this community order into scope, deliverables, role tasks and acceptance criteria. Preserve confirmed decisions.
+
+**You get:** A SOW, deliverable and asset breakdown, role tasks, dependencies and the questions that need an owner.
+
+### I want to hand a task to a teammate or agent
+
+> Group this package by role. For each task, state the input version, action, output, dependencies, definition of done and conditions that require stopping to ask.
+
+**You get:** A task agreement people or agents can use. Specialist executors perform the production work and submit the actual artifacts.
+
+### A design rule changed. What else must change?
+
+> The order rule changed. Trace its impact through existing deliverables and tasks. List what art, engineering and QA need to review. Prepare the change list, then issue a new version after confirmation.
+
+**You get:** Affected tasks, inputs and acceptance criteria. Existing tasks retain their original version until the change is agreed.
+
+## What the team receives
+
+- **Scope and delivery:** SOW, requirement traceability, asset bases/variants/states and acceptance.
+- **Role work:** owner, input, action, output, dependency and stop conditions.
+- **Version and feedback:** impact analysis, real submissions, review decisions and handoff records.
+
+## See how one community order is handed off
+
+The [Merge/community format example](examples/merge-package.json) starts with “deliver an item to transform a corner.” Design defines order rules, art specifies the scene and UI, and the project manager organizes the handoff.
+
+It contains three deliverables and three planned tasks. Changing `D-ORDER` traces to `T-RULE`, `T-ART` and `T-PACK`. This is an original draft; the real project still needs to confirm item chains, rewards, art pack and specifications.
+
+[![See how one community order is handed off](assets/readme/workflow-en.png?v=workflow-v3)](assets/readme/workflow-en.png)
+
+## Work with the other roles
+
+[Market Intelligence](https://github.com/NewenergyEric/game-market-intelligence) supplies evidence and recommendations. The [Reverse Analyst](https://github.com/NewenergyEric/game-reverse-analyst) supplies structure and unknowns. [Art Director](https://github.com/NewenergyEric/art-director-skill) owns the visual rules. The project manager turns confirmed direction into assigned work.
+
+<details>
+<summary><strong>Requirements, technical docs and validation</strong></summary>
+
+Python 3.10+; the core uses the standard library. Seven deterministic tests cover task coverage, dependency cycles, impact propagation, output protection and acceptance evidence.
+
+[Human guide](docs/HUMAN-GUIDE.en.md) · [Agent guide](docs/AGENT-GUIDE.en.md) · [Skill entry](SKILL.md) · [Validation and review](evals/)
+
+```sh
 python scripts/production.py validate examples/merge-package.json
 python scripts/production.py render examples/merge-package.json --out outputs/merge-sow
 python scripts/production.py impact examples/merge-package.json --changed D-ORDER
 ```
 
-Ask an agent with GitHub or local-file access to read `SKILL.md` first, then provide the source requirements, confirmed decisions, constraints, and feedback. The core tool uses only the Python 3.10+ standard library.
+[CI](https://github.com/NewenergyEric/game-production-manager/actions) · [Motion source](motion/README.md)
 
-## Role handoffs
+</details>
 
-| Role | Delivery |
-|---|---|
-| [Game Market Intelligence Director](https://github.com/NewenergyEric/game-market-intelligence) | Market evidence, business judgment, and validation gaps |
-| [Game Reverse Analyst](https://github.com/NewenergyEric/game-reverse-analyst) | Mechanics, architecture, asset structure, BOM, and unknowns |
-| Game Production Manager | SOW, WBS, tasks, acceptance, and change impact for confirmed direction |
-| [Art Director](https://github.com/NewenergyEric/art-director-skill) | Art baseline, asset families, exemplars, and professional review |
+<details>
+<summary><strong>Capability boundaries and material use</strong></summary>
 
-## Boundaries
+This role organizes and tracks work. Assigned people or agents perform coding, art, audio, testing and builds, returning artifacts and evidence.
 
-A completed plan is not a completed production. Without an actual deliverable, test evidence, and acceptance authority, do not mark work `accepted`. When an agent is asked to produce the work directly, first define its execution contract, required tools and permissions, budget, and stop conditions. Do not fabricate output, assign outside people automatically, or overwrite a distributed baseline.
+Generating a plan does not complete a task. Accepted work requires artifacts, evidence and an authorized review. External tickets, assignments and messages require explicit authorization.
 
-The Merge/community example demonstrates the package format; it is not an approved game scope. Run `python -m unittest discover -s tests -v` to validate the tool. Tests, Darwin prompts, and available work are in [`evals/`](evals/) and [ROADMAP.md](ROADMAP.md); project comparisons are in the [GitHub reference scan](references/github-reference-scan.md).
+</details>
 
-MIT licensed. Private project material, credentials, and real deliverables stay outside the repository.
+[MIT License](LICENSE) · Made by Eric and Agents.
