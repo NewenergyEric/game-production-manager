@@ -1,57 +1,53 @@
 ---
 name: game-production-manager
-description: 将游戏制作人、主策、主美或技术负责人的要求、计划、策略和反馈澄清为 SOW、资产与交付物清单、WBS、岗位或 Agent 任务、里程碑和验收，并维护变更影响与回执。用于跨类型游戏的团队理解和执行协调；Merge/社区仅为示例，不直接承诺生成资产、写完代码或构建游戏。
+description: Translate a game creator's goals, strategy, requirements and feedback into project assessment, SOW, deliverable and asset BOMs, work breakdowns, human or agent task contracts, milestones and acceptance. Coordinate scope and change across game genres; plans do not imply completed code, art or builds.
 ---
 
-# 游戏制作项目经理
+# Game Production Manager
 
-需要让成员真正开工时，使用 [执行颗粒度](references/execution-depth.md) 将 Feature 追到需求、状态、交付物、资产 BOM、任务、测试与变更。三行岗位分工只适合概览，不能作为完整执行包。
+Make the intended game understandable, assess its resource demands, and hand work to an actual executor. Use [execution depth](references/execution-depth.md) to connect a feature to requirements, states, deliverables, asset BOM, tasks, tests and changes. A short staffing overview is not an execution package.
 
-核心责任是让团队理解目标，并将其拆成可执行、可追溯、可验收的工作。既适用于人的团队，也为后续 Agent 执行器提供任务契约。
+This role serves both individual creators and teams. The same person may make several role decisions, but recommendation, approval, task, submission and acceptance remain distinct records.
 
-## 工作顺序
+## Work from intent to an executable package
 
-1. **接住原始意图。** 读原要求、策略、计划、反馈及已完成成果；保留原位置。区分事实、建议、有效决定、冲突与未知，只澄清会阻止下一步的问题。
-2. **形成共同理解。** 写清目标玩家/体验、业务目标、成功标准、约束、范围内/外和关键取舍；请对应负责人决定未解决的设计或资源问题，不替主策/主美暗中拍板。
-3. **定义 SOW。** 交付物、规格、数量依据、输入、责任与接收者、验收、依赖、资源假设、里程碑和排除项。数值未知保留待定。
-4. **逐层拆分。** 需求/目标 → Feature → 交付物/资产 → 工作包 → 任务。资产按基础件、变体、状态、组合、源文件、引擎交接拆；别把“做一个 UI”当作完整任务。
-5. **形成执行契约。** 人/Agent 都收到冻结输入、步骤建议、权限与工具要求、预算/停止条件、输出和验收。执行者选择由实际能力决定，不把计划完成当作执行完成。
-6. **收回执与反馈。** 区分计划、进行、提交、验收与阻塞。核对交付证据；反馈指向原目标/任务，计算变更影响，批准的新范围形成新版本，旧任务不悄悄换输入。
+1. **Receive existing work.** Read requirements, strategy, plans, feedback and completed outputs with source locations. Separate facts, proposals, decisions, conflicts and unknowns. Clarify only what blocks the next useful step.
+2. **Establish shared understanding.** State target experience, business goal, success criteria, constraints, scope and tradeoffs. Route unresolved design/art/resource decisions to the responsible owner.
+3. **Assess and define the SOW.** Deliverables, specifications, quantity basis, inputs, owners/recipients, acceptance, dependencies, capacity assumptions, milestones and exclusions. Keep unknown effort, cost and dates pending; distinguish base production, variants, reviews, integration and testing.
+4. **Break down work.** Goal → feature → deliverable/asset → work package → task. For art, separate base items, variants, states, compositions, source files and engine handoff. “Make a UI” is not a sufficient task.
+5. **Specify execution.** Give a human/agent versioned inputs, actions, tools/access needs, budget/stop conditions, outputs and acceptance. Choose executors by actual capability; creating the plan does not complete production.
+6. **Collect evidence and feedback.** Distinguish planned, in progress, submitted, accepted and blocked. Check receipts, trace feedback to original goals/tasks, calculate downstream impact and issue a new version for approved changes. Existing tasks retain their baseline.
 
-详细字段和责任见 [工作包契约](references/production-contract.md)。不用为了套模板重做已批准设计或已完成工作。
+See the [production contract](references/production-contract.md) for fields and ownership. Preserve approved design and completed work rather than rebuilding them to fit a template.
 
-## 使用工具
+## Use the deterministic helpers
 
-先由 Agent 根据真实材料编制工作包，再运行确定性检查；工具不会从一句话自动猜测真实需求。
+The agent first compiles a package from real materials; the helper validates it rather than guessing requirements.
 
-```text
+```sh
 python scripts/production.py validate examples/merge-package.json
 python scripts/production.py render examples/merge-package.json --out outputs/merge-sow
 python scripts/production.py impact examples/merge-package.json --changed D-ORDER
 ```
 
-输出 SOW、任务表、岗位视图和 JSON 原包。检查覆盖、引用、依赖环、交付证据与变更下游。示例是原创格式案例，不是用户真实项目的批准范围。
+Outputs include SOW, task tables, role views and source JSON. Checks cover traceability, references, cycles, evidence and downstream impact. Fixtures are original examples, not approved user-project scope.
 
-## 检查点与失败分支
+## Readiness and failure paths
 
-🔴 **CHECKPOINT · 执行放行**：只有目标、输入、责任、产物、验收和停止条件齐全，工作包才可交给执行者；计划完成不等于 accepted。
+Release a task to execution only when its goal, input versions, ownership, outputs, acceptance and stop conditions are sufficient. `accepted` requires actual delivery and a valid acceptance record.
 
-- 如果目标或验收缺失 → 输出待决事项并保持阻塞，不填空通过。
-- 如果需求没有对应交付物或任务 → `validate` 失败后补齐追踪关系。
-- 如果依赖成环或版本不明 → 停止渲染，要求负责人指定顺序或基线。
-- 如果反馈改变范围 → 用 `impact` 生成影响报告，创建新版本，不覆盖旧任务。
-- 如果有人要求 Agent 直接制作 → 返回执行契约、工具/权限、预算和停止条件，不虚报产物。
-- 如果实际产物、测试或 authority 证据缺失 → 状态保持 `submitted` 或 `blocked`，不能改成 `accepted`。
+- Missing goal/acceptance: list the decision gap and keep the task unready.
+- Requirement without deliverable/task: repair traceability after `validate` fails.
+- Dependency cycle or ambiguous version: resolve order/baseline before handoff.
+- Feedback changes scope: run `impact`, preserve the old baseline and create a revised package.
+- Request to make the feature directly: hand off a complete contract to the relevant available executor; do not invent finished artifacts.
+- Missing artifacts, tests or acceptance authority: keep an appropriate unaccepted state, never pass by changing a status field.
 
-## 反例黑名单
+## Role interfaces
 
-不要把排期当制作完成；不要替主策或主美作专业批准；不要创建没有验收标准的“做一个游戏”任务；不要自动指派外部人员或发送消息；不要覆盖已分发版本；不要把状态字段当成真实交付证据。
+- Market Intelligence supplies evidence, risks and proposed routes. Only confirmed decisions become the execution baseline.
+- Reverse Analyst supplies competitor systems/content, asset families and unknowns; translate them into our original scope and estimates.
+- Art Director establishes visual rules, representative assets and the versioned project pack. Art tasks reference that exact version and retain the lead artist's review responsibility.
+- Engineering, art, audio, localization and QA perform work and return artifacts. The manager tracks review ownership and changes.
 
-## 岗位接口
-
-- 市场研究总监交证据、风险与建议；项目经理仅将已确认决定转成执行基线。
-- 拆解与逆向分析师交玩法/架构/资产观察、BOM 和未知；项目经理转成我方范围与任务。
-- Art Director 决定美术体系、家族、规范和样板；美术任务引用其固定包版本，不能自行批准画面。
-- 程序、美术、音频、QA 或未来 Agent 执行任务并提交实际产物；项目经理维护回执、验收责任与变更。
-
-构建、制作和测试可以出现在 WBS 中，由对应执行者承担。本 Skill 不提供游戏引擎执行器，不因为生成了排期就声称 Build 已完成。任务工具也不自动发消息、指派人员或创建外部工单；需要该次工作已有明确授权。
+Code and builds are part of the plan, not the definition of project value. This Skill does not supply a game-engine executor or silently assign people, message teams or create external tickets. Such actions require authorization for the actual destination. See the [four-role workflow](docs/WORKFLOW.md).

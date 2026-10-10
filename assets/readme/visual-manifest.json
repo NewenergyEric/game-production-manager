@@ -126,6 +126,22 @@
         1600,
         1040
       ]
+    },
+    "assets/readme/workflow-en.png": {
+      "sha256": "fffcf1e7d3f0eb2f275a51b506b9faee75198ddb5c0d8b504eb27491b762d2e3",
+      "bytes": 246479,
+      "dimensions": [
+        1600,
+        900
+      ]
+    },
+    "assets/readme/workflow-zh.png": {
+      "sha256": "fb0514d7e2292c06320ac2ffa7a91e75d7911e0f6dc0cba08abe1ed96a83f2f4",
+      "bytes": 329251,
+      "dimensions": [
+        1600,
+        900
+      ]
     }
   },
   "tokens": {
@@ -138,5 +154,6 @@
   "reference": "https://github.com/NewenergyEric/art-director-skill",
   "provenance": "Original role-specific Remotion composition. Font: Noto Sans SC variable subset, SIL OFL. No proprietary fonts or target-game art copied.",
   "content_rule": "Human prompts, concrete steps and actual tool outputs. Both languages share the same case baseline. Complete boards are rendered independently from animation.",
-  "case_baseline": "examples/community-order-detailed.json"
+  "case_baseline": "examples/community-order-detailed.json",
+  "default_language": "en"
 }

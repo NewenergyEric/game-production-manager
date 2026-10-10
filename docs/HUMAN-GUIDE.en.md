@@ -1,3 +1,5 @@
+[中文](HUMAN-GUIDE.zh.md)
+
 # Game Production Manager · Human guide
 
 Turn production intent into specific handoffs: owner, input version, actions, output files, dependencies and acceptance. Rules, systems design, code, art, localization, QA and integration share stable IDs.
@@ -24,6 +26,6 @@ The actual impact tool finds T-02, T-07, T-08, T-10, T-11 and T-12. T-06 scene a
 
 This is a planning case, not a produced feature. All tasks remain planned. Task and logical-state counts are not exported file counts or schedules. Acceptance requires real artifacts, review evidence and an authorized reviewer.
 
-[Reproducible case](../case-studies/community-order/README.en.md)
+[Reproducible case](../case-studies/community-order/README.md)
 
-[Agent guide](AGENT-GUIDE.en.md)
+[Agent guide](AGENT-GUIDE.md)

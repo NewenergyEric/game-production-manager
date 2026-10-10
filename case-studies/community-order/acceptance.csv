@@ -1,13 +1,13 @@
 ﻿task_id,case_id,given,when,then
-T-01,AC-01,设计状态契约覆盖物品不足场景,评审设计文档与状态转换表,文档明确禁止扣除和发奖，并规定提示原因；运行时验证交给程序与 QA。
-T-02,AC-02,缺失奖励引用或数量为零,评审 schema 与无效配置样例,schema 明确拒绝缺失奖励引用和零数量，并定位字段；正式数值保持待确认。
-T-03,AC-03,同一订单收到重复提交,评审事务序列,扣除与奖励最多生效一次；失败与恢复责任明确。
-T-04,AC-04,没有批准的美术包或引擎规格,准备制作清单,保留待补项，先做规范对齐；不将状态数当成图片数量。
-T-05,AC-05,UI 规格展示 submitting 状态,评审状态稿与交互标注,标注可见进度、禁用重复触发及失败后重试状态；运行时交互由 T-08/T-10 验证。
-T-06,AC-06,同一相机和定位基线,叠放对照改造前后场景稿,锚点一致，无跳位或遮挡错误；尺寸/格式按正式规范。
-T-07,AC-07,第一次提交已经生效,相同请求再次到达,库存与奖励不重复改变；返回既有结果。
-T-08,AC-08,订单已完成并有保存状态,退出后重进,显示完成态，不再次扣除或播放可重复领取流程。
-T-09,AC-09,日文/简中和长英文测试文本,在目标最小画幅的 UI 稿或文本测量样例中复核,无截断、缺字或含义相反；数量与动作关系清楚。
-T-10,AC-10,库存恰好达到门槛,提交一次后再次尝试,一次扣除与一次奖励；第二次不能重复领取。
-T-11,AC-11,提交成功后表现被中断,恢复场景,已完成状态与角落外观一致，不再次结算。
-T-12,AC-12,某项缺实际制品或授权评审,准备交接,保留缺口与任务状态，不将 planned/submitted 改成 accepted。
+T-01,AC-01,The design state contract covers insufficient items,Review the design document and transition table,The document explicitly prohibits deduction/reward and specifies the reason shown; engineering and QA perform runtime verification.
+T-02,AC-02,A reward reference is missing or quantity is zero,Review the schema and invalid-configuration samples,The schema rejects a missing reward reference and zero quantity with a field location; final values remain pending.
+T-03,AC-03,The same order receives a repeated submission,Review the transaction sequence,Deduction and reward take effect at most once; failure/recovery ownership is explicit.
+T-04,AC-04,No approved art pack or engine specification is available,Prepare production inventory,Keep missing inputs visible and align specifications first; do not equate states with image count.
+T-05,AC-05,The UI specification includes the submitting state,Review state drafts and interaction annotations,"Annotate visible progress, repeat-trigger prevention and retry-after-failure; T-08/T-10 verify runtime interaction."
+T-06,AC-06,The same camera and positioning baseline,Overlay before/after scene drafts,Anchors match without position jumps or occlusion errors; dimensions/formats follow the valid specification.
+T-07,AC-07,The first submission has already taken effect,The same request arrives again,Inventory and rewards are not changed twice; return the existing result.
+T-08,AC-08,The order is completed and its state is saved,Exit and re-enter,Show completion without another deduction or a claim-again flow.
+T-09,AC-09,"Japanese, Simplified Chinese and long English test text",Review a UI draft or text measurement sample at the target minimum viewport,"No clipping, missing glyphs or reversed meaning; quantities and actions are clear."
+T-10,AC-10,Inventory exactly meets the requirement,"Submit once, then try again",One deduction and one reward; a second attempt cannot claim again.
+T-11,AC-11,Presentation is interrupted after a successful submission,Restore the scene,Completed order state matches the corner appearance without settling again.
+T-12,AC-12,An item lacks an actual artifact or authorized review,Prepare handoff,Preserve the gap and task state; do not change planned/submitted to accepted.

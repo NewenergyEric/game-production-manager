@@ -1,10 +1,12 @@
-# 下一步与验收
+[中文](ROADMAP.zh.md)
 
-首版已有：岗位 Skill、SOW/WBS/资产交付契约、工作包校验、岗位视图和变更影响工具。
+# Verified scope and next work
 
-1. 输入真实制作记录与有效策划，输出沿用/冲突/待定清单；让负责人确认关键取舍。
-2. 完成一个 Feature 的真实 SOW、资产与任务拆分，交给另一位成员复述和接包。验收：能开始具体工作，不只读懂概述。
-3. 以实际反馈修订一个包，记录影响、决定、旧任务处理和新版本。验收：新旧基线不混淆。
-4. 根据明确需求再接一种任务系统或 Agent 执行器；保持输入版本、预算、回执和人工验收。当前工具不自动发外部任务或执行制作。
+Available: role Skill, SOW/WBS/asset contracts, validation, role views and impact tracing. The [community-order case](case-studies/community-order/) has 12 planned tasks with versioned inputs, outputs, acceptance and a three-family asset BOM.
 
-程序、美术、音频、QA 和构建是可被拆成任务的工作。项目经理对共同理解、组织与追踪负责，不替代这些专业执行能力。
+1. Use real production records and valid design decisions; expose retained decisions, conflicts and gaps.
+2. Hand a real feature package to another person or capable agent. Acceptance means they can begin the concrete task, not merely summarize it.
+3. Revise a package using actual feedback, preserving impact, decisions, treatment of old tasks and new versions.
+4. Integrate a task system or executor only when requested, retaining inputs, budget, receipts and acceptance responsibility. Current helpers do not dispatch or perform production.
+
+Engineering, art, audio, QA and builds are specialist work. This role coordinates understanding, assessment and traceability.

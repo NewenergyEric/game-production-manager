@@ -1,29 +1,31 @@
-# 游戏制作项目经理 · 使用说明
+[中文](HUMAN-GUIDE.zh.md)
 
-把制作意图变成逐项可交接的工作：谁做、从哪个版本开始、做哪些动作、提交什么文件、依赖谁，以及怎样验收。规则、数值、程序、美术、本地化、QA 与集成沿同一组 ID 关联。
+# Game Production Manager · Human guide
 
-## 把一句要求拆细
+Turn production intent into specific handoffs: owner, input version, actions, output files, dependencies and acceptance. Rules, systems design, code, art, localization, QA and integration share stable IDs.
 
-> 玩家交付物品后改造社区角落。拆成程序、美术、数值、文案、QA 能接手的任务。
+## Break down a production brief
 
-得到 12 个任务、12 个交付物、依赖关系、版本输入和逐项验收；物品链、奖励、尺寸和工期不凭空补全。
+> Delivering an item restores a community corner. Break this down for engineering, art, systems design, copy and QA.
 
-## 点开一个具体任务
+Receive 12 tasks and 12 deliverables with dependencies, versioned inputs and acceptance cases. Item chains, rewards, dimensions and schedules remain open when unspecified.
 
-> 把 T-07 展开，说明事务、存档和重复提交如何检查，什么时候不能开工。
+## Open a specific task
 
-输入 D-CONFIG 与 D-TECH；明确校验、扣除、发奖、存档动作；重复提交只生效一次。输入未确认时保持 planned。
+> Expand T-07: how do we test transactions, saves and repeat submission? What blocks execution?
 
-## 处理反馈与变更
+D-CONFIG and D-TECH are inputs. Validate, consume, reward and save; repeated submissions take effect once. Pending inputs keep the task planned.
 
-> 订单配置改了，哪些任务需要重新检查？场景美术要全部重做吗？
+## Handle feedback and change
 
-工具实际追踪到 T-02、T-07、T-08、T-10、T-11、T-12；当前依赖下 T-06 场景制作不受影响，外观改动需另补关系。
+> The order configuration changed. What needs review? Must all scene art be redone?
 
-## 复核与交接
+The actual impact tool finds T-02, T-07, T-08, T-10, T-11 and T-12. T-06 scene art is unaffected under current dependencies; visual changes require explicit additional links.
 
-这是执行计划案例，功能尚未制作，所有任务仍为 planned。任务数量和逻辑状态不等于导出文件数或工期。真实制品、复核证据与有权限的验收记录齐备后，才可标记 accepted。
+## Review and handoff
 
-[可复现案例](../case-studies/community-order/README.md)
+This is a planning case, not a produced feature. All tasks remain planned. Task and logical-state counts are not exported file counts or schedules. Acceptance requires real artifacts, review evidence and an authorized reviewer.
+
+[Reproducible case](../case-studies/community-order/README.md)
 
 [Agent guide](AGENT-GUIDE.md)

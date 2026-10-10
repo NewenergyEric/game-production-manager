@@ -150,16 +150,16 @@ def render(data, out):
     errors = validate(data)
     if errors: raise ValueError('; '.join(errors))
     out.mkdir(parents=True, exist_ok=False)
-    lines = [f"# SOW · {data['id']} · {data['version']}", '', '**目标：** ' + data['goal'], '', '**策略：** ' + data['strategy'], '']
-    for key, label in [('scope_in','范围内'),('scope_out','范围外'),('constraints','约束'),('assumptions','假设与待定')]:
+    lines = [f"# SOW · {data['id']} · {data['version']}", '', '**Goal:** ' + data['goal'], '', '**Strategy:** ' + data['strategy'], '']
+    for key, label in [('scope_in','In scope'),('scope_out','Out of scope'),('constraints','Constraints'),('assumptions','Assumptions and open decisions')]:
         lines += ['## ' + label, ''] + ['- ' + str(v) for v in data[key]] + ['']
-    lines += ['## 交付物与验收', '']
+    lines += ['## Deliverables and acceptance', '']
     for d in data['deliverables']:
-        lines += [f"### {d['id']} · {d['name']}", '', '规格：' + json.dumps(d['spec'],ensure_ascii=False), '',
-                  '验收：' + json.dumps(d['acceptance'],ensure_ascii=False), '', '接收岗位：' + d['reviewer_role'], '']
-    lines += ['## 里程碑', '']
-    for m in data['milestones']: lines += [f"- {m['id']}：{m.get('goal','')}；退出条件：{m['exit_criteria']}"]
-    lines += ['', '本文件是执行计划。制作、代码和 Build 由任务执行者提交；文档生成不改变任务完成状态。', '']
+        lines += [f"### {d['id']} · {d['name']}", '', 'Specification: ' + json.dumps(d['spec'],ensure_ascii=False), '',
+                  'Acceptance: ' + json.dumps(d['acceptance'],ensure_ascii=False), '', 'Receiving role: ' + d['reviewer_role'], '']
+    lines += ['## Milestones', '']
+    for m in data['milestones']: lines += [f"- {m['id']}：{m.get('goal','')}；Exit criteria: {m['exit_criteria']}"]
+    lines += ['', 'This is an execution plan. Executors submit actual art, code and builds; generating this document does not complete a task.', '']
     (out/'SOW.md').write_text('\n'.join(lines),encoding='utf-8')
     fields = ['id','owner_role','executor_kind','deliverable_ids','depends_on','inputs','input_versions','action','outputs','entry_criteria','acceptance','stop_conditions','status']
     with (out/'tasks.csv').open('w',encoding='utf-8-sig',newline='') as file:
