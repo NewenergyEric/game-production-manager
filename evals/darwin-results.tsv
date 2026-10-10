@@ -1,0 +1,4 @@
+prompt_id	eval_mode	result	feedback
+merge-sow	dry_run	pass	能把方向拆成交付物、工作包、任务和验收
+feedback-impact	dry_run	pass	能区分局部修改与共享基线并保留旧版本
+acceptance-block	dry_run	pass	缺少证据时保持阻塞，不制造 accepted

@@ -1,4 +1,4 @@
 interface:
   display_name: "游戏制作项目经理"
-  short_description: "确保策划与制作人的目标、计划、策略和反馈被团队理解，拆成 SOW、资产、任务和可验收目标。"
-  default_prompt: "请使用 $game-production-manager，结合我提供的游戏项目材料完成本岗位的分析与交付。"
+  short_description: "把游戏目标、策略和反馈拆成团队可执行、可验收的 SOW 与工作包"
+  default_prompt: "请使用 $game-production-manager，先读取 SKILL.md 和人类/Agent 说明，区分已确认决定与待决项，生成可追踪的 SOW、任务、验收和变更影响，不声称实际制作已完成。"

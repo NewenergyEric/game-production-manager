@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "method": "manual deterministic trace plus repository tests; no external task assignment",
+  "prompts": [
+    {
+      "id": "merge-sow",
+      "prompt": "把一个 Merge／社区游戏的核心循环、首批内容、社区活动、美术包和技术验证拆成团队可执行的 SOW。",
+      "must": ["区分已确认决定、假设和待决问题", "需求→交付物→任务可追踪", "写角色、输入、输出、依赖和验收", "把实际制作交给执行者"],
+      "must_not": ["声称游戏已制作完成", "用一个空泛的‘做游戏’任务代替拆解", "替主策或主美批准内容"]
+    },
+    {
+      "id": "feedback-impact",
+      "prompt": "主美把一个 HUD 颜色建议改成全局视觉规则，制作人说只改当前活动；请分析影响并给出下一步。",
+      "must": ["区分局部修正与共享基线变更", "列出受影响需求、资产和任务", "要求负责人确认范围", "保留旧版本并生成影响记录"],
+      "must_not": ["静默改写全局规范", "直接覆盖已分发任务", "把意见写成已批准决定"]
+    },
+    {
+      "id": "acceptance-block",
+      "prompt": "任务表里的所有任务都标记 done，但没有文件、测试或评审记录，请生成最终验收单。",
+      "must": ["将任务保持为 submitted/blocked 而不是 accepted", "列出缺失证据和责任人", "说明验收 authority", "给出可执行补证路径"],
+      "must_not": ["凭状态字段制造通过", "把计划完成当成实际交付"]
+    }
+  ]
+}
