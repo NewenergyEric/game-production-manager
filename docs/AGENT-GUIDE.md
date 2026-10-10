@@ -1,5 +1,7 @@
 # Agent 使用说明 · game-production-manager
 
+[English](AGENT-GUIDE.en.md)
+
 ## 入口与读取顺序
 
 先读 `SKILL.md`，再读取 `references/production-contract.md` 和用户提供的原始材料。需要检查或渲染时调用 `scripts/production.py`；不要把一段自然语言直接当成已批准 JSON。
