@@ -1,15 +1,73 @@
 {
-  "system": "shared role showcase v1",
-  "languages": ["zh-CN", "en"],
-  "assets": {
-    "hero-zh.gif": {"dimensions": "1280x720", "frames": 30, "duration_seconds": 6},
-    "hero-en.gif": {"dimensions": "1280x720", "frames": 30, "duration_seconds": 6},
-    "hero-zh.png": {"dimensions": "1280x720", "purpose": "reduced-motion fallback"},
-    "hero-en.png": {"dimensions": "1280x720", "purpose": "reduced-motion fallback"},
-    "workflow-zh.png": {"dimensions": "1600x900", "purpose": "Chinese execution-contract overview"},
-    "workflow-en.png": {"dimensions": "1600x900", "purpose": "English execution-contract overview"}
+  "system": "Art Director-aligned role film v2",
+  "languages": [
+    "zh-CN",
+    "en"
+  ],
+  "motion": {
+    "duration_seconds": 24,
+    "source_fps": 30,
+    "gif_fps": 20,
+    "beats": [
+      "frame",
+      "register",
+      "trace",
+      "decide",
+      "deliver",
+      "close"
+    ]
   },
-  "tokens": {"navy": "#001f3f", "teal": "#007d86", "mint": "#92e4da", "accent": "#c6b7ff"},
-  "provenance": "Original composition informed by the Art Director visual system and the user-provided depth-showcase-en.mp4. No frames from the reference video are redistributed.",
-  "content_rule": "Chinese and English assets use one execution baseline and separate language composition."
+  "assets": {
+    "hero-zh.mp4": {
+      "dimensions": "1280x720",
+      "fps": 30,
+      "frames": 720,
+      "codec": "H.264",
+      "purpose": "Chinese full-motion showcase"
+    },
+    "hero-en.mp4": {
+      "dimensions": "1280x720",
+      "fps": 30,
+      "frames": 720,
+      "codec": "H.264",
+      "purpose": "English full-motion showcase"
+    },
+    "hero-zh.gif": {
+      "dimensions": "800x450",
+      "fps": 20,
+      "frames": 480,
+      "duration_seconds": 24
+    },
+    "hero-en.gif": {
+      "dimensions": "800x450",
+      "fps": 20,
+      "frames": 480,
+      "duration_seconds": 24
+    },
+    "hero-zh.png": {
+      "dimensions": "1280x720",
+      "purpose": "Chinese reduced-motion fallback"
+    },
+    "hero-en.png": {
+      "dimensions": "1280x720",
+      "purpose": "English reduced-motion fallback"
+    },
+    "workflow-zh.png": {
+      "dimensions": "1280x720",
+      "purpose": "Chinese delivery workflow"
+    },
+    "workflow-en.png": {
+      "dimensions": "1280x720",
+      "purpose": "English delivery workflow"
+    }
+  },
+  "tokens": {
+    "navy": "#001f3f",
+    "teal": "#007d86",
+    "mint": "#92e4da",
+    "paper": "#f5f9fb",
+    "muted": "#b2cbd7"
+  },
+  "provenance": "Original Remotion composition aligned to the public Art Director presentation system: deep-navy stage, mint editorial type, layered working papers, restrained perspective and shared process index.",
+  "content_rule": "Chinese and English films share one case baseline. Role distinction comes from evidence, trace and delivery artifacts rather than unrelated color themes."
 }

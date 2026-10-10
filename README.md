@@ -7,6 +7,8 @@
   <img src="assets/readme/hero-zh.gif" alt="游戏制作项目经理：接住意图，拆成可执行工作。" width="1280">
 </picture>
 
+[▶ 观看 24 秒 MP4](assets/readme/hero-zh.mp4) · [English MP4](assets/readme/hero-en.mp4)
+
 把主策、制作人、主美或技术负责人的目标、计划、策略和反馈，拆成 SOW、资产清单、工作包、岗位／Agent 任务、里程碑和验收目标。这个岗位负责理解、协调和追踪；实际游戏、代码和美术制作由明确的执行者完成。
 
 [30 秒开始](docs/HUMAN-GUIDE.md) · [Agent 调用说明](docs/AGENT-GUIDE.md) · [读取 Skill](SKILL.md) · [工作包契约](references/production-contract.md) · [Darwin 审查](evals/darwin-review.md)

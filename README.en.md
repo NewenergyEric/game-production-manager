@@ -7,6 +7,8 @@
   <img src="assets/readme/hero-en.gif" alt="Game Production Manager: turn intent into executable work." width="1280">
 </picture>
 
+[▶ Watch the 24-second MP4](assets/readme/hero-en.mp4) · [中文 MP4](assets/readme/hero-zh.mp4)
+
 Turn the goals, plans, strategies, and feedback from game directors, producers, Art Directors, and technical leads into SOWs, asset lists, work packages, human/agent tasks, milestones, and acceptance targets. This role understands, coordinates, and tracks work. Named executors still create the game, code, art, audio, and tests.
 
 [30-second start](docs/HUMAN-GUIDE.en.md) · [Agent guide](docs/AGENT-GUIDE.en.md) · [Read the canonical skill](SKILL.md) · [Production contract](references/production-contract.md) · [Darwin review](evals/darwin-review.md)
