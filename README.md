@@ -1,55 +1,90 @@
-# 游戏制作项目经理
-
 [English](README.en.md)
 
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="assets/readme/hero-zh.png">
-  <img src="assets/readme/hero-zh.gif" alt="游戏制作项目经理：接住意图，拆成可执行工作。" width="1280">
-</picture>
+# 游戏制作项目经理
 
-把主策、制作人、主美或技术负责人的目标、计划、策略和反馈，拆成 SOW、资产清单、工作包、岗位／Agent 任务、里程碑和验收目标。这个岗位负责理解、协调和追踪；实际游戏、代码和美术制作由明确的执行者完成。
+### 把制作意图，交成能开工的任务。
 
-[30 秒开始](docs/HUMAN-GUIDE.md) · [Agent 调用说明](docs/AGENT-GUIDE.md) · [读取 Skill](SKILL.md) · [工作包契约](references/production-contract.md) · [Darwin 审查](evals/darwin-review.md)
+**方向有人定，工作有人接，完成有依据。**
 
-![Validate](https://github.com/NewenergyEric/game-production-manager/actions/workflows/validate.yml/badge.svg) ![MIT](https://img.shields.io/badge/license-MIT-151715.svg) ![Agent Skills](https://img.shields.io/badge/Agent%20Skills-compatible-225d4b.svg)
+把制作人、主策、主美和技术负责人的要求、计划与反馈交给 Agent。它整理共同理解，拆清交付物、资产状态、责任岗位、依赖和验收，把既有工作接起来，交给团队或 Agent 执行。
 
-## 它负责什么
+<a href="assets/readme/hero-zh.mp4"><picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="assets/readme/hero-zh.png?v=workflow-v3">
+  <img src="assets/readme/hero-zh.gif?v=workflow-v3" width="100%" alt="把需求、决定和反馈，整理成团队或 Agent 能接手的工作包。">
+</picture></a>
 
-[![从意图到验收的执行契约](assets/readme/workflow-zh.png)](assets/readme/workflow-zh.png)
+[24 秒，走完一次完整工作 · 播放 MP4](assets/readme/hero-zh.mp4) · [文字版](assets/readme/transcript-zh.md)
 
-```text
-目标 / 需求 → Feature → 交付物与资产 → 工作包 → 岗位任务
-                                  ↓
-                         依赖 / 里程碑 / 验收 / 回执
+## 装好，然后直接说
+
+在支持 Agent Skills 的工具中安装，例如 Codex、Claude Code 或 Cursor：
+
+```sh
+npx skills add https://github.com/NewenergyEric/game-production-manager
 ```
 
-每个任务带责任角色、输入、动作、输出、依赖、停止条件和证据要求。`render` 生成 SOW、任务 CSV、岗位视图和原包，`impact` 追踪反馈对下游任务的影响。没有实际制品和复核证据，状态不能进入 `accepted`。
+把资料放进 Agent 能读取的文件夹，再说出要解决的问题。文件整理和命令由 Agent 处理。
 
-## 立即使用
+### 需求已经有了，帮团队开始工作
 
-```text
-git clone https://github.com/NewenergyEric/game-production-manager.git
-cd game-production-manager
+> 使用 `$game-production-manager`。这些是已有策划、主美要求和制作限制。先整理共同理解与待决事项，再把这条社区订单拆成工作范围、交付物、岗位任务和验收条件。保留已经确认的决定。
+
+**你会得到：** SOW、交付物和资产拆分、岗位任务、依赖，以及需要负责人决定的问题。
+
+### 把任务交给成员或另一个 Agent
+
+> 把这个工作包按岗位整理。每项任务说明输入版本、要做的动作、输出、依赖、什么算完成，以及遇到什么情况要停下询问。
+
+**你会得到：** 能够接手的任务约定。人或 Agent 使用同一套输入和验收标准，专业执行者负责实际制作并提交制品。
+
+### 主策改了一条规则，哪些工作要跟着改
+
+> 订单规则调整了。沿着原交付物与任务检查影响，列出需要主美、程序和 QA 复核的内容。先给变更清单，确认后形成新版本。
+
+**你会得到：** 关联任务、输入和验收条件的变更影响。旧任务保留原版本，避免做到一半要求悄悄变化。
+
+## 最后交给团队什么
+
+- **范围与交付：** SOW、需求追踪、资产基础件／变体／状态与验收。
+- **岗位工作：** 责任、输入、动作、产物、依赖与停止条件。
+- **版本与反馈：** 影响分析、实际提交、复核决定和交接记录。
+
+## 看一条社区订单如何交接
+
+[Merge／社区格式样例](examples/merge-package.json)以“交付物品后改造一个角落”为原始意图：主策定义订单规则，主美拆场景与 UI 要求，项目经理组织接包。
+
+它包含 3 个交付物和 3 项计划任务；改变 `D-ORDER` 可追踪到 `T-RULE`、`T-ART` 和 `T-PACK`。这是原创草案，正式物品链、奖励、美术包和规格仍待真实项目确认。
+
+[![看一条社区订单如何交接](assets/readme/workflow-zh.png?v=workflow-v3)](assets/readme/workflow-zh.png)
+
+## 和其他岗位一起用
+
+[市场研究](https://github.com/NewenergyEric/game-market-intelligence)提供证据与建议；[拆解分析师](https://github.com/NewenergyEric/game-reverse-analyst)提供结构与未知；[Art Director](https://github.com/NewenergyEric/art-director-skill)负责专业美术规则；项目经理把确认后的工作交给合适的执行岗位。
+
+<details>
+<summary><strong>安装要求、技术文档与验证</strong></summary>
+
+Python 3.10+，核心工具仅用标准库。7 项确定性测试覆盖任务与交付覆盖、依赖环、变更传播、输出保护和验收证据。
+
+[人类详细说明](docs/HUMAN-GUIDE.md) · [Agent 调用说明](docs/AGENT-GUIDE.md) · [Skill 入口](SKILL.md) · [验证与审查](evals/)
+
+```sh
 python scripts/production.py validate examples/merge-package.json
 python scripts/production.py render examples/merge-package.json --out outputs/merge-sow
 python scripts/production.py impact examples/merge-package.json --changed D-ORDER
 ```
 
-把仓库交给能读取 GitHub 或本地文件的 Agent，要求它先读 `SKILL.md`，再提供原始需求、已确认决定、限制和反馈。Python 3.10+，核心工具只使用标准库。
+[CI](https://github.com/NewenergyEric/game-production-manager/actions) · [Motion source](motion/README.md)
 
-## 岗位协作
+</details>
 
-| 岗位 | 交付 |
-|---|---|
-| [游戏市场研究总监](https://github.com/NewenergyEric/game-market-intelligence) | 市场证据、经营判断和待验证项 |
-| [游戏拆解与逆向分析师](https://github.com/NewenergyEric/game-reverse-analyst) | 玩法、架构、资产结构、BOM 和未知项 |
-| 游戏制作项目经理 | 已确认方向的 SOW、WBS、任务、验收和变更影响 |
-| [美术总监](https://github.com/NewenergyEric/art-director-skill) | 美术基线、资产家族、样板和专业评审 |
+<details>
+<summary><strong>能力边界与资料使用</strong></summary>
 
-## 重要边界
+这个岗位组织和追踪工作。实际代码、美术、音频、测试与构建由对应的人或 Agent 执行，并返回制品和证据。
 
-计划完成不等于制作完成；没有实际产物、测试证据和验收 authority，不得标记 `accepted`。如果 Agent 被要求直接制作，先输出执行契约、所需工具／权限、预算和停止条件，不虚报结果，不自动指派外部人员，也不覆盖已经分发的版本。
+计划生成不会把任务标为完成。进入 accepted 需要实际制品、复核证据和有权限的验收记录；外部工单、人员指派和消息发送按明确授权进行。
 
-示例是 Merge／社区方向的格式案例，不是已批准的游戏范围。运行 `python -m unittest discover -s tests -v` 验证工具。测试、Darwin prompts 和可接手任务见 [`evals/`](evals/) 与 [ROADMAP.md](ROADMAP.md)；同类项目取舍见 [GitHub 参考扫描](references/github-reference-scan.md)。
+</details>
 
-本仓库使用 MIT；私人项目资料、账号配置和真实交付物不随仓库发布。
+[MIT License](LICENSE) · 由 Eric 与 Agents 一起制作。

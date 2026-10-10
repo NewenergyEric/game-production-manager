@@ -1,15 +1,120 @@
 {
-  "system": "shared role showcase v1",
-  "languages": ["zh-CN", "en"],
-  "assets": {
-    "hero-zh.gif": {"dimensions": "1280x720", "frames": 30, "duration_seconds": 6},
-    "hero-en.gif": {"dimensions": "1280x720", "frames": 30, "duration_seconds": 6},
-    "hero-zh.png": {"dimensions": "1280x720", "purpose": "reduced-motion fallback"},
-    "hero-en.png": {"dimensions": "1280x720", "purpose": "reduced-motion fallback"},
-    "workflow-zh.png": {"dimensions": "1600x900", "purpose": "Chinese execution-contract overview"},
-    "workflow-en.png": {"dimensions": "1600x900", "purpose": "English execution-contract overview"}
+  "system": "Art Director-aligned role film v3",
+  "languages": [
+    "zh-CN",
+    "en"
+  ],
+  "motion": {
+    "duration_seconds": 24,
+    "source_fps": 30,
+    "gif_fps": 20,
+    "chapter_frames": [
+      0,
+      120,
+      252,
+      384,
+      510,
+      630,
+      720
+    ],
+    "reviewed_frames": [
+      70,
+      218,
+      360,
+      480,
+      600,
+      680
+    ]
   },
-  "tokens": {"navy": "#001f3f", "teal": "#007d86", "mint": "#92e4da", "accent": "#c6b7ff"},
-  "provenance": "Original composition informed by the Art Director visual system and the user-provided depth-showcase-en.mp4. No frames from the reference video are redistributed.",
-  "content_rule": "Chinese and English assets use one execution baseline and separate language composition."
+  "assets": {
+    "assets/readme/hero-zh.mp4": {
+      "bytes": 1972165,
+      "sha256": "794e41869bdbd8093e26e320fa43ea51b7f7db4f990d61e74d7fd848dbf9f910",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "duration_seconds": 24,
+      "fps": 30,
+      "frames": 720
+    },
+    "assets/readme/hero-zh.gif": {
+      "bytes": 5128593,
+      "sha256": "4e4159fb584fda296f5f420a2087b0218e7423554b439fe6f4313e5810016f5e",
+      "dimensions": [
+        800,
+        450
+      ],
+      "duration_seconds": 24,
+      "fps": 20,
+      "frames": 480,
+      "palette_colors": 64
+    },
+    "assets/readme/hero-zh.png": {
+      "bytes": 557363,
+      "sha256": "bd74400e6eb1c6d44da301fca86ba7b1a019116242d96a675ce4b606d727a05d",
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    "assets/readme/workflow-zh.png": {
+      "bytes": 216045,
+      "sha256": "9a47faf321b3f178c4eacb5cca18eee1ffd3352ad47e0792819025b9e392da99",
+      "dimensions": [
+        1600,
+        1040
+      ]
+    },
+    "assets/readme/hero-en.mp4": {
+      "bytes": 2090390,
+      "sha256": "1a9f4d7c43de33f9f6384a91f7767fc4c56c0caa9b6bb4bb4eb8a05ea25647a4",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "duration_seconds": 24,
+      "fps": 30,
+      "frames": 720
+    },
+    "assets/readme/hero-en.gif": {
+      "bytes": 5480158,
+      "sha256": "d44e1502ed9d0c21f3722d19203eaa5ab0a39934e76ae91badbf049080965c9f",
+      "dimensions": [
+        800,
+        450
+      ],
+      "duration_seconds": 24,
+      "fps": 20,
+      "frames": 480,
+      "palette_colors": 64
+    },
+    "assets/readme/hero-en.png": {
+      "bytes": 556591,
+      "sha256": "b9c13c8a58217883f5486e0d179c208412f17cd7add9a131d171efbeec7d35fd",
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    "assets/readme/workflow-en.png": {
+      "bytes": 204246,
+      "sha256": "cbac3c56d86b8c37e1c4397365df053c6633f7ba43a12f63dcf16dfadec854c9",
+      "dimensions": [
+        1600,
+        1040
+      ]
+    }
+  },
+  "tokens": {
+    "navy": "#001f3f",
+    "teal": "#007d86",
+    "mint": "#92e4da",
+    "paper": "#f5f9fb",
+    "muted": "#b2cbd7"
+  },
+  "reference": "https://github.com/NewenergyEric/art-director-skill",
+  "provenance": "Original role-specific Remotion composition. Font: Noto Sans SC variable subset, SIL OFL. No proprietary fonts or target-game art copied.",
+  "content_rule": "Human prompts, concrete steps and actual tool outputs. Both languages share the same case baseline. Complete boards are rendered independently from animation.",
+  "case_baseline": "examples/merge-package.json"
 }

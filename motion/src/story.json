@@ -1,0 +1,128 @@
+{
+  "market": {
+    "repo": "game-market-intelligence",
+    "case": "case-studies/merge-community-public-signals",
+    "zh": {
+      "role": "游戏市场研究总监",
+      "name": "MARKET INTELLIGENCE",
+      "tagline": ["看清市场，", "决定下一步。"],
+      "promise": "把一个立项问题，变成有来源的判断和下一轮验证。",
+      "prompt": "研究 Merge＋社区方向。告诉我机会、风险，以及先验证什么。",
+      "context": "公开研究案例 · Merge＋社区",
+      "steps": ["提出问题", "核对来源", "读懂信号", "安排验证", "交接结论"],
+      "beats": [
+        ["这个方向，", "值得做吗？", "给 Agent 项目方向、目标市场和你要做的决定。"],
+        ["找到数字，", "也带回出处。", "商店观察、发行商披露、行业估算，各自保留口径。"],
+        ["看增长，", "也看竞争。", "品类份额扩大，头部仍然集中。"],
+        ["现在最该，", "先验证什么？", "把市场判断，接到一轮能执行的验证。"],
+        ["团队接手时，", "依据也一起走。", "结论、来源、未知项和下一步，留在同一份研究包里。"]
+      ],
+      "outputs": [["市场判断与风险", "report.md"], ["可分享研究报告", "report.html"], ["来源与指标底稿", "report.json"]],
+      "close": "装上 Skill，直接对 Agent 说。",
+      "case_note": "公开信号支持下一轮验证；立项由负责人决定。"
+    },
+    "en": {
+      "role": "Game Market Intelligence Director",
+      "name": "MARKET INTELLIGENCE",
+      "tagline": ["Read the market.", "Choose the next move."],
+      "promise": "Turn a greenlight question into sourced findings and a practical next test.",
+      "prompt": "Research Merge + community. Show the opportunity, the risks, and what to test first.",
+      "context": "Public research case · Merge + community",
+      "steps": ["Ask", "Check sources", "Read signals", "Plan the test", "Hand off"],
+      "beats": [
+        ["Is this direction", "worth pursuing?", "Give your agent the idea, target market and decision you need to make."],
+        ["Find the numbers.", "Keep the sources." , "Store observations, publisher disclosures and estimates keep their own definitions."],
+        ["Read the growth.", "See the competition.", "Category share is growing. Revenue is still concentrated."],
+        ["What should we", "test first?", "Turn the market findings into a focused validation round."],
+        ["Hand off the call.", "Keep the evidence.", "Findings, sources, open questions and next steps travel together."]
+      ],
+      "outputs": [["Findings and risks", "report.md"], ["Shareable research report", "report.html"], ["Sources and metric definitions", "report.json"]],
+      "close": "Install the Skill. Ask your agent.",
+      "case_note": "Public signals support a further test. The owner makes the greenlight call."
+    }
+  },
+  "reverse": {
+    "repo": "game-reverse-analyst",
+    "case": "case-studies/2048-open-source",
+    "zh": {
+      "role": "游戏拆解与逆向分析师",
+      "name": "GAME REVERSE ANALYST",
+      "tagline": ["看懂玩法，", "找到实现依据。"],
+      "promise": "从录屏、截图或授权工程开始，拆清规则、模块和资产关系。",
+      "prompt": "拆解这个 2048 工程。说明合并规则在哪里，以及相关模块怎么分工。",
+      "context": "2048 开源案例 · MIT · 静态分析",
+      "steps": ["明确问题", "拆出模块", "追到规则", "复核证据", "交接发现"],
+      "beats": [
+        ["这套玩法，", "怎样运转？", "给 Agent 合法可用的资料，说明最想弄清的问题。"],
+        ["先把系统，", "拆成看得懂的结构。", "输入、规则、网格、表现和存储，各自找到负责的模块。"],
+        ["一次合并，", "为什么停在这里？", "把看到的规则，追到具体实现位置。"],
+        ["说清发现，", "也说清依据。", "文件位置、版本和分析回执，让另一位成员接着复核。"],
+        ["学到的结构，", "交给下一位同事。", "策划读规则，程序读模块，主美读资产观察与缺口。"]
+      ],
+      "outputs": [["模块与关系索引", "analysis-index.json"], ["原始分析证据", "rea-output.json"], ["版本与运行回执", "receipt.json"]],
+      "close": "装上 Skill，直接对 Agent 说。",
+      "case_note": "规则示意来自固定版本源码；本案例未运行目标游戏。"
+    },
+    "en": {
+      "role": "Game Reverse Analyst",
+      "name": "GAME REVERSE ANALYST",
+      "tagline": ["Understand the play.", "Trace the implementation."],
+      "promise": "Start with footage, screenshots or authorized source. Map rules, modules and assets.",
+      "prompt": "Analyze this 2048 source. Locate the merge rule and explain how the modules work together.",
+      "context": "Open-source 2048 · MIT · static analysis",
+      "steps": ["Define the question", "Map modules", "Locate rules", "Review evidence", "Hand off"],
+      "beats": [
+        ["How does this", "game work?", "Give your agent usable materials and the question you want answered."],
+        ["Make the system", "easy to follow.", "Identify the modules behind input, rules, grid, display and storage."],
+        ["Why does the merge", "stop here?", "Follow a visible rule back to its implementation."],
+        ["Explain the finding.", "Show the evidence.", "File locations, version and receipts let another teammate review the work."],
+        ["Pass the structure", "to the next teammate.", "Designers get rules, engineers get modules, artists get asset observations and gaps."]
+      ],
+      "outputs": [["Module and relationship index", "analysis-index.json"], ["Original analysis evidence", "rea-output.json"], ["Version and analysis receipt", "receipt.json"]],
+      "close": "Install the Skill. Ask your agent.",
+      "case_note": "Rule illustration from pinned source. The target game was not executed."
+    }
+  },
+  "manager": {
+    "repo": "game-production-manager",
+    "case": "examples/merge-package.json",
+    "zh": {
+      "role": "游戏制作项目经理",
+      "name": "GAME PRODUCTION MANAGER",
+      "tagline": ["把制作意图，", "交成能开工的任务。"],
+      "promise": "把需求、决定和反馈，整理成团队或 Agent 能接手的工作包。",
+      "prompt": "把这条社区订单拆成团队任务。说明谁来做、交什么、怎样验收。",
+      "context": "Merge＋社区 · 原创格式案例 · 草案",
+      "steps": ["理解要求", "拆清交付", "安排依赖", "处理反馈", "交接工作"],
+      "beats": [
+        ["方向定了，", "团队怎么开工？", "把原要求、已有决定和限制一起交给 Agent。"],
+        ["一句需求，", "拆清要交什么。", "先写工作范围，再拆规则、资产状态和交接要求。"],
+        ["谁先做，", "谁接着做。", "每个岗位拿到输入、产物、依赖和验收条件。"],
+        ["需求改了，", "知道影响到哪里。", "沿原任务追踪反馈，让相关岗位知道哪些内容要复核。"],
+        ["把工作交出去，", "把验收写明白。", "人或 Agent 都按同一份任务约定提交结果。"]
+      ],
+      "outputs": [["范围、交付物与验收", "SOW.md"], ["岗位任务与依赖", "tasks.csv"], ["按岗位分好的工作", "role-views.json"]],
+      "close": "装上 Skill，直接对 Agent 说。",
+      "case_note": "示例任务仍为 planned；实际制作由对应执行者完成。"
+    },
+    "en": {
+      "role": "Game Production Manager",
+      "name": "GAME PRODUCTION MANAGER",
+      "tagline": ["Turn the intent", "into work people can start."],
+      "promise": "Turn requirements, decisions and feedback into work packages for people or agents.",
+      "prompt": "Break this community order into team tasks. Say who owns each part, what to deliver and how to check it.",
+      "context": "Merge + community · original format example · draft",
+      "steps": ["Read the brief", "Define delivery", "Set dependencies", "Handle feedback", "Hand off"],
+      "beats": [
+        ["The direction is set.", "How do we start?", "Give your agent the original brief, existing decisions and constraints."],
+        ["One requirement.", "Clear deliverables.", "Define scope, then separate rules, asset states and handoff requirements."],
+        ["Who goes first?", "Who follows?", "Each role gets inputs, outputs, dependencies and acceptance criteria."],
+        ["A rule changed.", "What else is affected?", "Trace feedback through the tasks so each role knows what to review."],
+        ["Hand off the work.", "Define done.", "People and agents submit work against the same task agreement."]
+      ],
+      "outputs": [["Scope, deliverables and acceptance", "SOW.md"], ["Role tasks and dependencies", "tasks.csv"], ["Work grouped by role", "role-views.json"]],
+      "close": "Install the Skill. Ask your agent.",
+      "case_note": "Example tasks remain planned. Assigned executors do the production work."
+    }
+  }
+}
