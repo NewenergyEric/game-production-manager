@@ -1,0 +1,14 @@
+{
+  "changed_ids": [
+    "D-CONFIG"
+  ],
+  "affected_task_ids": [
+    "T-02",
+    "T-07",
+    "T-08",
+    "T-10",
+    "T-11",
+    "T-12"
+  ],
+  "action": "Review scope, inputs, estimates and acceptance; no tasks or approved decisions were modified."
+}

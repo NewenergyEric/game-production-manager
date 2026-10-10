@@ -1,5 +1,5 @@
 {
-  "system": "Art Director-aligned role film v3",
+  "system": "Art Director-aligned depth case film v4",
   "languages": [
     "zh-CN",
     "en"
@@ -28,8 +28,8 @@
   },
   "assets": {
     "assets/readme/hero-zh.mp4": {
-      "bytes": 1972165,
-      "sha256": "794e41869bdbd8093e26e320fa43ea51b7f7db4f990d61e74d7fd848dbf9f910",
+      "bytes": 1536674,
+      "sha256": "2ce4aa7f9a3ec325b64e7101d032cdda00c03e934e289ca54b8d652b2ed61ddf",
       "dimensions": [
         1280,
         720
@@ -39,8 +39,8 @@
       "frames": 720
     },
     "assets/readme/hero-zh.gif": {
-      "bytes": 5128593,
-      "sha256": "4e4159fb584fda296f5f420a2087b0218e7423554b439fe6f4313e5810016f5e",
+      "bytes": 5114772,
+      "sha256": "3c703e6af108b4d73e4141edaf6032d1825e5f4f0b115f44188d8803131a7f4d",
       "dimensions": [
         800,
         450
@@ -50,25 +50,36 @@
       "frames": 480,
       "palette_colors": 64
     },
+    "assets/readme/hero-zh.webp": {
+      "bytes": 2135078,
+      "sha256": "9d038de3f3a8b8e9b4c1fafc503060e5e2bf9deec13f18b7f41952157896274e",
+      "dimensions": [
+        800,
+        450
+      ],
+      "duration_seconds": 24,
+      "fps": 20,
+      "frames": 480
+    },
     "assets/readme/hero-zh.png": {
-      "bytes": 557363,
-      "sha256": "bd74400e6eb1c6d44da301fca86ba7b1a019116242d96a675ce4b606d727a05d",
+      "bytes": 558765,
+      "sha256": "e30113a56259953f77d2bb8d8a0e773d8a709c22891ae0a84a3c6987e07b203c",
       "dimensions": [
         1280,
         720
       ]
     },
-    "assets/readme/workflow-zh.png": {
-      "bytes": 216045,
-      "sha256": "9a47faf321b3f178c4eacb5cca18eee1ffd3352ad47e0792819025b9e392da99",
+    "case-studies/community-order/dashboard-zh.png": {
+      "bytes": 209088,
+      "sha256": "1ad05c551718258d91084976cf8fb2cad4b09df952dedcee88cc4d6e4bd34479",
       "dimensions": [
         1600,
         1040
       ]
     },
     "assets/readme/hero-en.mp4": {
-      "bytes": 2090390,
-      "sha256": "1a9f4d7c43de33f9f6384a91f7767fc4c56c0caa9b6bb4bb4eb8a05ea25647a4",
+      "bytes": 1578902,
+      "sha256": "1c855a47ec888f3e420f8b36cb63e835c129d6c27dfd17e2cee818be4e5519ff",
       "dimensions": [
         1280,
         720
@@ -78,8 +89,8 @@
       "frames": 720
     },
     "assets/readme/hero-en.gif": {
-      "bytes": 5480158,
-      "sha256": "d44e1502ed9d0c21f3722d19203eaa5ab0a39934e76ae91badbf049080965c9f",
+      "bytes": 5485106,
+      "sha256": "033c1c95a34accf495a6dc45b1f46258c3979f66fedaf4bd7287299c96c37e12",
       "dimensions": [
         800,
         450
@@ -89,17 +100,28 @@
       "frames": 480,
       "palette_colors": 64
     },
+    "assets/readme/hero-en.webp": {
+      "bytes": 2305738,
+      "sha256": "6938f86134ac2a4e69166eb9efad0b91f7bd4bfc99c9a5d7862551b823186461",
+      "dimensions": [
+        800,
+        450
+      ],
+      "duration_seconds": 24,
+      "fps": 20,
+      "frames": 480
+    },
     "assets/readme/hero-en.png": {
-      "bytes": 556591,
-      "sha256": "b9c13c8a58217883f5486e0d179c208412f17cd7add9a131d171efbeec7d35fd",
+      "bytes": 551540,
+      "sha256": "20a86f8d674b9542ae3507e171c4f9f9f4f893a21b7188ab4054c5c966ade87d",
       "dimensions": [
         1280,
         720
       ]
     },
-    "assets/readme/workflow-en.png": {
-      "bytes": 204246,
-      "sha256": "cbac3c56d86b8c37e1c4397365df053c6633f7ba43a12f63dcf16dfadec854c9",
+    "case-studies/community-order/dashboard-en.png": {
+      "bytes": 185940,
+      "sha256": "c1be9a8d24875a92e811d812b9fc28d017c46b0f863300ece404fec9042d1d5b",
       "dimensions": [
         1600,
         1040
@@ -116,5 +138,5 @@
   "reference": "https://github.com/NewenergyEric/art-director-skill",
   "provenance": "Original role-specific Remotion composition. Font: Noto Sans SC variable subset, SIL OFL. No proprietary fonts or target-game art copied.",
   "content_rule": "Human prompts, concrete steps and actual tool outputs. Both languages share the same case baseline. Complete boards are rendered independently from animation.",
-  "case_baseline": "examples/merge-package.json"
+  "case_baseline": "examples/community-order-detailed.json"
 }

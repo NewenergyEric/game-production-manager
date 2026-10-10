@@ -1,25 +1,27 @@
 # Game Production Manager · 24s
 
-Merge + community · original format example · draft
+Original production plan · 12 tasks · all planned
 
-## 1. The direction is set. How do we start?
+## 1. One production brief. Every handoff defined.
 
-Give your agent the original brief, existing decisions and constraints.
+Define rules, outputs, dependencies and unresolved inputs.
 
-## 2. One requirement. Clear deliverables.
+## 2. Twelve tasks. Twelve clear handoffs.
 
-Define scope, then separate rules, asset states and handoff requirements.
+Rules, config, code, art, localization, QA and integration.
 
-## 3. Who goes first? Who follows?
+## 3. Open a task. Know how to check it.
 
-Each role gets inputs, outputs, dependencies and acceptance criteria.
+Versioned inputs, actions, output files and boundary tests.
 
-## 4. A rule changed. What else is affected?
+## 4. The numbers changed. Who reviews it?
 
-Trace feedback through the tasks so each role knows what to review.
+Trace dependencies while retaining unaffected work.
 
 ## 5. Hand off the work. Define done.
 
-People and agents submit work against the same task agreement.
+Tasks, asset rows and acceptance cases share stable IDs.
 
-Example tasks remain planned. Assigned executors do the production work.
+Original planning example. Pending inputs; no completed feature claimed.
+
+[Case](../../case-studies/community-order/README.en.md)
