@@ -1,0 +1,33 @@
+name: 使用反馈与案例 / Feedback and cases
+description: 分享一次实际尝试、缺口或可公开的结果 / Share an actual attempt, gap or public result.
+title: "[Feedback] "
+body:
+  - type: markdown
+    attributes:
+      value: 请只提交可公开资料，区分计划、运行结果与验收。 / Share only public material; distinguish plans, execution and acceptance.
+  - type: textarea
+    id: goal
+    attributes:
+      label: 你要完成什么？ / What was your goal?
+      description: 岗位、使用场景和预期交付物 / Role, situation and expected output.
+    validations:
+      required: true
+  - type: textarea
+    id: attempt
+    attributes:
+      label: 尝试了什么，得到什么？ / What did you try and receive?
+      description: 如方便，提供版本、公开输入与可检查的输出。 / Include the version and inspectable public inputs or outputs when possible.
+    validations:
+      required: true
+  - type: textarea
+    id: gap
+    attributes:
+      label: 哪一步还接不上？ / What was still missing?
+      description: 希望继续完成的动作、缺失依据或理解困难。 / The next action, missing evidence or confusing step.
+  - type: checkboxes
+    id: permission
+    attributes:
+      label: 公开范围 / Public material
+      options:
+        - label: 我有权公开上述材料，已移除私人信息。 / I may publish this material and have removed private information.
+          required: true
