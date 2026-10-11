@@ -29,10 +29,10 @@ Changing `D-CONFIG` traces to `T-02 → T-07 → T-08 → T-10 → T-11 → T-12
 
 A duplicate submission settles once; insufficient inventory is not deducted; reload restores the saved state; interrupted feedback recovers consistently; long text and glyph coverage are checked per language. Five UI states belong to one component family, not automatically five texture files.
 
-[完整执行包 / Full package](../../examples/community-order-detailed.json) · [任务 / Tasks](tasks.csv) · [验收 / Acceptance](acceptance.csv) · [资产 BOM](asset-bom.csv) · [变更影响 / Impact](impact.json)
+[完整执行包 / Full package](../../examples/community-order-detailed.en.json) · [任务 / Tasks](tasks.en.csv) · [验收 / Acceptance](acceptance.en.csv) · [资产 BOM](asset-bom.en.csv) · [变更影响 / Impact](impact.json)
 
 ```sh
-python scripts/production.py validate examples/community-order-detailed.json
-python scripts/production.py render examples/community-order-detailed.json --out outputs/community-order
-python scripts/production.py impact examples/community-order-detailed.json --changed D-CONFIG
+python scripts/production.py validate examples/community-order-detailed.en.json
+python scripts/production.py render examples/community-order-detailed.en.json --out outputs/community-order --lang en
+python scripts/production.py impact examples/community-order-detailed.en.json --changed D-CONFIG
 ```

@@ -1,30 +1,30 @@
-[中文](execution-depth.zh.md)
+# 到什么颗粒度才算可接手
 
-# Granularity that an executor can actually use
+不按“策划一项、程序一项、美术一项”结束拆分。选择一个玩家可感知的 Feature，保留其已确认规则，把新增建议标为 proposed。
 
-Choose a player-visible feature. Preserve confirmed rules and label new suggestions `proposed`; a design/code/art staffing list is only an overview.
+## 一条任务的交接契约
 
-## Task handoff
+每项可执行工作至少给出：
 
-- **Why:** source requirement and decision version, scope in/out.
-- **Start from:** files, versions, providing role, availability and prerequisite tasks. Discovery/contracts may proceed while production tasks remain planned/blocked for missing inputs.
-- **Action:** module, configuration, component or asset family; states and errors to address.
-- **Output:** file/object/interface names, format, specification, quantity basis and recipient. Logical state count is not automatically file count.
-- **Acceptance:** observable Given/When/Then, boundary values, review environment, evidence and reviewer.
-- **Stop:** conflict with approved scope, changed dependency, missing spec or access. Record the issue and impact instead of inventing a decision.
+- **为什么做：** 来源需求与决策版本，范围内/外。
+- **拿什么开始：** 输入文件、版本、提供岗位、可用状态与前置任务。缺输入时可先做调研/契约任务，生产任务保持 planned/blocked。
+- **具体动作：** 改哪个模块、配置、组件或资产家族，处理哪些状态和异常。
+- **交什么：** 文件/对象/接口名、格式、规格、数量依据及接收岗位。逻辑状态数不自动等于美术文件数。
+- **怎样算完成：** 可观察的 Given/When/Then、边界值、验收环境、证据和评审岗位。
+- **何时停下：** 与批准范围冲突、依赖版本改变、规格缺失或权限不足时，记录问题与影响；不擅自补一个决定。
 
-Split oversized work by independently deliverable/checkable outputs; combine mechanical steps that cannot be accepted separately. Use real staffing, throughput and history for dates. Twelve tasks do not mean twelve days.
+任务过大时按可独立提交/验证的交付物继续拆。任务过小时合并那些无法单独验收的机械步骤。工期由实际人员、产能与历史样本估计；拆出 12 个任务不表示 12 天。
 
-## Three connected traces
+## 三条相连的线
 
-1. `requirement → player state/rule → deliverable → task → acceptance case`.
-2. `asset family → base/variant/state → art-pack version → engine spec → integration/composition review`.
-3. `feedback/change → original decision → affected deliverable → downstream task/acceptance → new version`.
+1. `需求 → 玩家状态/规则 → 交付物 → 任务 → 验收案例`：防止只分工、没有覆盖。
+2. `资产家族 → 基础件/变体/状态 → 引用的美术包 → 引擎规格 → 集成/组合验收`：明确复用、新制与适配；技术规格待确认时保持缺口。
+3. `反馈/变更 → 原决定 → 受影响交付物 → 下游任务/验收 → 新版本`：只列影响，不自动重写已批准基线。
 
-## Community-order example
+## 示例：订单交付后改造社区角落
 
-Separate order rules, item config, submit transaction, UI binding, before/after scene assets, text/localization, QA, integration and handoff. Repeat submission, insufficient items, re-entry, failure feedback and long text need explicit expectations. Actual project owners decide server, save and idempotency strategy.
+先区分订单规则、物品配置、提交事务、UI 绑定、角落前后资产、文本与本地化、QA、集成和接包。重复提交、物品不足、重进、失败反馈与长文本需要各自预期；服务端、存档与幂等策略由真实项目确定。
 
-Run `validate / render / impact` on the [detailed package](../examples/community-order-detailed.json). It is an original planning case; every task is planned. Running its validators and exports does not develop or accept a game feature.
+用 [详细执行包](../examples/community-order-detailed.json) 跑 `validate / render / impact`。它是原创规划案例，全部任务保持 planned；执行脚本验证计划与影响传播，不代表游戏制作或验收完成。
 
-`detail_level: execution` requires `input_versions / outputs / entry_criteria / stop_conditions / acceptance_cases`. Pending inputs are valid in a plan, not a reason to mark downstream work ready or accepted. Complete the prerequisite work before advancing dependent tasks.
+`detail_level: execution` 的包要求任务提供 `input_versions / outputs / entry_criteria / stop_conditions / acceptance_cases`。输入可以记录 pending，但不能把计划状态写成 ready 或 accepted。先完成补齐输入的任务，再让下游开工。

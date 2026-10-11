@@ -22,6 +22,10 @@ class ProductionTests(unittest.TestCase):
             for name,count in [('tasks.csv',12),('acceptance.csv',12),('asset-bom.csv',3)]:
                 with (out/name).open(encoding='utf-8-sig') as f: self.assertEqual(len(list(csv.DictReader(f))),count)
             self.assertTrue(all(t['status']=='planned' for t in json.loads((out/'package.json').read_text(encoding='utf-8'))['tasks']))
+            self.assertIn('**目标:**',(out/'SOW.md').read_text(encoding='utf-8'))
+            english=Path(directory)/'sow-en';module.render(case,english,'en')
+            self.assertIn('**Goal:**',(english/'SOW.md').read_text(encoding='utf-8'))
+            self.assertEqual((english/'package.json').read_bytes(),(out/'package.json').read_bytes())
     def test_pending_inputs_and_empty_acceptance_block_execution(self):
         case=json.loads((ROOT/'examples/community-order-detailed.json').read_text(encoding='utf-8'))
         case['tasks'][6]['status']='ready'

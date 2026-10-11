@@ -1,6 +1,6 @@
 # Agent 使用说明 · game-production-manager
 
-[English](AGENT-GUIDE.md)
+[English](AGENT-GUIDE.en.md)
 
 ## 入口与读取顺序
 
@@ -33,7 +33,7 @@
 
 ## 深度案例入口
 
-[Protocol](../references/execution-depth.zh.md) · [Case](../case-studies/community-order/README.zh.md)
+[Protocol](../references/execution-depth.md) · [Case](../case-studies/community-order/README.md)
 
 ```sh
 python scripts/production.py validate examples/community-order-detailed.json

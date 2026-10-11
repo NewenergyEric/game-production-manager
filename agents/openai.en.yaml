@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Production Manager"
+  short_description: "Turn game decisions into scoped, executable work packages."
+  default_prompt: "Use $game-production-manager to turn my goals and feedback into a versioned SOW, asset BOM, task handoffs, acceptance cases and change impact."

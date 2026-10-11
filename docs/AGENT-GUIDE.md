@@ -1,31 +1,37 @@
-# Agent Guide · game-production-manager
+# Agent 使用说明 · game-production-manager
 
-[中文](AGENT-GUIDE.zh.md)
+[English](AGENT-GUIDE.en.md)
 
-## Read order
+## 入口与读取顺序
 
-Read `SKILL.md`, then `references/production-contract.md` and the user's source material. Use `scripts/production.py` for validation, rendering, and impact analysis. Do not treat natural-language input as approved JSON.
+先读 `SKILL.md`，再读取 `references/production-contract.md` 和用户提供的原始材料。需要检查或渲染时调用 `scripts/production.py`；不要把一段自然语言直接当成已批准 JSON。
 
-## Standard workflow
+## 标准工作流
 
-1. Extract goal, success criteria, constraints, scope, assumptions, and confirmed decisions.
-2. Link requirements to features, deliverables/assets, work packages, tasks, milestones, and acceptance.
-3. Give every task an owner, input, action, output, dependencies, stop conditions, and evidence requirement.
-4. Run `validate` for coverage, duplicate IDs, dependency cycles, and acceptance evidence.
-5. Run `render` for SOW, CSV, and role views; use `impact` for downstream feedback effects.
-6. Hand off to executors and record submitted, accepted, or blocked only after real artifacts return.
+1. 提取目标、成功标准、约束、范围、假设和已确认决定。
+2. 将需求连接到 Feature、交付物/资产、工作包、任务、里程碑和验收。
+3. 为每个任务写责任角色、输入、动作、输出、依赖、停止条件和证据要求。
+4. 用 `validate` 检查覆盖、重复 ID、依赖环和验收证据。
+5. 用 `render` 生成 SOW、CSV 和岗位视图；反馈用 `impact` 追踪下游影响。
+6. 交接给执行者，收到真实产物后再记录提交、验收或阻塞。
 
-## Failure branches
+## 失败分支
 
-- Goal or acceptance missing: create an open decision and keep work blocked.
-- Requirement has no deliverable/task: fail validation and restore traceability.
-- Dependency cycle or unknown input version: preserve the block and request a sequence/baseline decision.
-- Feedback changes scope: create a new version and impact report; do not overwrite old tasks.
-- Agent asked to execute directly: return the execution contract, required permissions, budget, and stop conditions.
+- 如果目标或验收缺失 → 输出待决事项，禁止把“完成”写成接受。
+- 如果需求没有对应交付物/任务 → 阻止渲染通过，补齐追踪关系。
+- 如果依赖成环或输入版本不明 → 保留阻塞，要求负责人指定顺序/版本。
+- 如果反馈改变范围 → 生成新版本和影响报告，不覆盖旧任务。
+- 如果 Agent 被要求直接制作 → 返回执行契约、所需权限和停止条件，不能虚报产物。
 
-At minimum include `requirements`, `deliverables`, `tasks`, `milestones`, `acceptance`, `feedback`, and `handoff`. Every accepted item needs artifact evidence, review authority, and resolved dependencies. Never present a schedule or status field as completed production.
+## 输出契约
 
-## Depth-case entry
+最少包含 `requirements`、`deliverables`、`tasks`、`milestones`、`acceptance`、`feedback` 和 `handoff`。每个 accepted 项必须带产物证据、评审 authority 和依赖状态。
+
+## 不要做
+
+不要把排期当成完成；不要替主策/主美作专业批准；不要在没有授权、工具和回执的情况下调用外部执行器；不要覆盖已分发版本；不要把“做一个游戏”拆成没有验收标准的空泛任务。
+
+## 深度案例入口
 
 [Protocol](../references/execution-depth.md) · [Case](../case-studies/community-order/README.md)
 
@@ -35,6 +41,6 @@ python scripts/production.py render examples/community-order-detailed.json --out
 python scripts/production.py impact examples/community-order-detailed.json --changed D-CONFIG
 ```
 
-## Tool JSON and execution gates
+## 工具 JSON 与执行门槛
 
-Human report sections are not CLI field names. Use examples/community-order-detailed.json as the tool input contract. Execution packages require exactly one version record per declared input, valid internal D-/T-/R-/M- references and explicitly registered external materials. Available inputs and accepted prerequisites are required for ready/in_progress/submitted. Document tasks review documents; implementation and QA verify runtime behavior.
+人类报告内容不等于 CLI 字段名。工具输入以 examples/community-order-detailed.json 为准。execution 包要求 inputs 与 input_versions 一一对应、无重复，内部 D-/T-/R-/M- 引用存在；外部材料也须在 inputs 明确登记。输入可用且必需前置任务 accepted 才能进入 ready/in_progress/submitted。文档任务验收文档，运行行为交给实现与 QA 验证。

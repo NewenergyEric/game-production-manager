@@ -1,131 +1,131 @@
 # SOW · community-order-execution-example · draft-2
 
-**Goal:** Break one community order into specialist-ready tasks; this plan is not a completed game feature.
+**目标:** 把一条社区订单拆到可被具体工种接手；不冒充已开发的游戏功能。
 
-**Strategy:** Use the existing Merge system; define rules/interfaces, prepare UI, scene and text in parallel, then integrate and review.
+**策略:** 沿用既有 Merge 系统，先确定规则与接口，再并行准备 UI、场景与文本，最后集成和验收。
 
-## In scope
+## 范围内
 
-- Conditions, deduction, submission and completion feedback for one order
-- Before and after states of one neighborhood corner
-- UI, localization, rule tests and handoff
+- 一条订单的条件、扣除、提交与完成反馈
+- 一个社区角落改造前后状态
+- UI、本地化、规则测试与交接
 
-## Out of scope
+## 范围外
 
-- Production of a complete game
-- Final item values, schedule and budget commitments
-- Unilaterally choosing client/server and persistence architecture
+- 完整游戏制作
+- 正式物品数值、工期和预算承诺
+- 擅自决定客户端/服务端与存档架构
 
-## Constraints
+## 约束
 
-- This is an original planning exercise, not approved scope for a user's project
-- All tasks remain planned; actual owners supply art and engineering specifications
+- 本案例为原创规划实验，不是用户项目批准范围
+- 任务全部 planned；素材与工程规格由实际项目负责人提供
 
-## Assumptions and open decisions
+## 假设与待定
 
-- Item chain, rewards, engine, persistence architecture and art-pack version remain pending
+- 物品链、奖励、引擎、存档架构、美术包版本尚待确认
 
-## Deliverables and acceptance
+## 交付物与验收
 
-### D-RULE · Order state and rule contract
+### D-RULE · 订单状态与规则契约
 
-Specification: {"baseline": "draft-2 / proposed", "format": "See the task outputs; engine-specific specifications remain pending"}
+规格: {"baseline": "draft-2 / proposed", "format": "见对应任务输出；引擎专属规格待确认"}
 
-Acceptance: ["The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"]
+验收: ["对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"]
 
-Receiving role: Lead Designer
+接收岗位: 主策
 
-### D-CONFIG · Item and reward configuration fields
+### D-CONFIG · 物品与奖励配置字段
 
-Specification: {"baseline": "draft-2 / proposed", "format": "See the task outputs; engine-specific specifications remain pending"}
+规格: {"baseline": "draft-2 / proposed", "format": "见对应任务输出；引擎专属规格待确认"}
 
-Acceptance: ["The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"]
+验收: ["对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"]
 
-Receiving role: Lead Designer
+接收岗位: 主策
 
-### D-TECH · Submission, persistence and idempotency contract
+### D-TECH · 提交/存档/幂等接口契约
 
-Specification: {"baseline": "draft-2 / proposed", "format": "See the task outputs; engine-specific specifications remain pending"}
+规格: {"baseline": "draft-2 / proposed", "format": "见对应任务输出；引擎专属规格待确认"}
 
-Acceptance: ["The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"]
+验收: ["对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"]
 
-Receiving role: Technical Lead
+接收岗位: 技术负责人
 
-### D-BOM · Asset family and specification inventory
+### D-BOM · 资产家族与规格清单
 
-Specification: {"baseline": "draft-2 / proposed", "format": "See the task outputs; engine-specific specifications remain pending"}
+规格: {"baseline": "draft-2 / proposed", "format": "见对应任务输出；引擎专属规格待确认"}
 
-Acceptance: ["The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"]
+验收: ["对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"]
 
-Receiving role: Art Director
+接收岗位: 主美
 
-### D-UI · Order components and interaction states
+### D-UI · 订单组件与交互状态
 
-Specification: {"baseline": "draft-2 / proposed", "format": "See the task outputs; engine-specific specifications remain pending"}
+规格: {"baseline": "draft-2 / proposed", "format": "见对应任务输出；引擎专属规格待确认"}
 
-Acceptance: ["The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"]
+验收: ["对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"]
 
-Receiving role: Art Director
+接收岗位: 主美
 
-### D-SCENE · Before/after corner assets and bindings
+### D-SCENE · 角落前后资产与绑定
 
-Specification: {"baseline": "draft-2 / proposed", "format": "See the task outputs; engine-specific specifications remain pending"}
+规格: {"baseline": "draft-2 / proposed", "format": "见对应任务输出；引擎专属规格待确认"}
 
-Acceptance: ["The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"]
+验收: ["对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"]
 
-Receiving role: Art Director
+接收岗位: 主美
 
-### D-LOGIC · Order logic and submission evidence
+### D-LOGIC · 订单业务逻辑与提交证据
 
-Specification: {"baseline": "draft-2 / proposed", "format": "See the task outputs; engine-specific specifications remain pending"}
+规格: {"baseline": "draft-2 / proposed", "format": "见对应任务输出；引擎专属规格待确认"}
 
-Acceptance: ["The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"]
+验收: ["对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"]
 
-Receiving role: Technical Lead
+接收岗位: 技术负责人
 
-### D-BIND · UI and data binding
+### D-BIND · UI与数据绑定
 
-Specification: {"baseline": "draft-2 / proposed", "format": "See the task outputs; engine-specific specifications remain pending"}
+规格: {"baseline": "draft-2 / proposed", "format": "见对应任务输出；引擎专属规格待确认"}
 
-Acceptance: ["The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"]
+验收: ["对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"]
 
-Receiving role: Technical Lead
+接收岗位: 技术负责人
 
-### D-LOCALE · Replaceable text and length checks
+### D-LOCALE · 可替换文本与长度检查
 
-Specification: {"baseline": "draft-2 / proposed", "format": "See the task outputs; engine-specific specifications remain pending"}
+规格: {"baseline": "draft-2 / proposed", "format": "见对应任务输出；引擎专属规格待确认"}
 
-Acceptance: ["The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"]
+验收: ["对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"]
 
-Receiving role: Localization Lead
+接收岗位: 本地化负责人
 
-### D-QA · Rule, error and recovery acceptance records
+### D-QA · 规则/异常/恢复验收记录
 
-Specification: {"baseline": "draft-2 / proposed", "format": "See the task outputs; engine-specific specifications remain pending"}
+规格: {"baseline": "draft-2 / proposed", "format": "见对应任务输出；引擎专属规格待确认"}
 
-Acceptance: ["The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"]
+验收: ["对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"]
 
-Receiving role: QA Lead
+接收岗位: QA负责人
 
-### D-INTEGRATION · Corner and order integration evidence
+### D-INTEGRATION · 角落与订单集成证据
 
-Specification: {"baseline": "draft-2 / proposed", "format": "See the task outputs; engine-specific specifications remain pending"}
+规格: {"baseline": "draft-2 / proposed", "format": "见对应任务输出；引擎专属规格待确认"}
 
-Acceptance: ["The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"]
+验收: ["对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"]
 
-Receiving role: Production Lead
+接收岗位: 制作负责人
 
-### D-HANDOFF · Versioned execution handoff package
+### D-HANDOFF · 版本与执行交接包
 
-Specification: {"baseline": "draft-2 / proposed", "format": "See the task outputs; engine-specific specifications remain pending"}
+规格: {"baseline": "draft-2 / proposed", "format": "见对应任务输出；引擎专属规格待确认"}
 
-Acceptance: ["The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"]
+验收: ["对应任务的 Given/When/Then 有可检查证据；接收岗位记录评审"]
 
-Receiving role: Production Lead
+接收岗位: 制作负责人
 
-## Milestones
+## 里程碑
 
-- M-CONTRACT：Scope and contracts are ready for review；Exit criteria: Rule, data, technical and art inputs have owner decisions and available versions
-- M-HANDOFF：Handoff is ready after artifacts and acceptance are complete；Exit criteria: Actual artifacts, tests and authorized reviews are complete; this case has not reached that state
+- M-CONTRACT：范围与契约可评审；退出条件: 规则、数据、技术与美术输入有负责人决定及可用版本
+- M-HANDOFF：制品和验收完成后可交接；退出条件: 真实制品、实际测试与有权限评审齐全；本案例尚未达成
 
-This is an execution plan. Executors submit actual art, code and builds; generating this document does not complete a task.
+本文件是执行计划。制作、代码和 Build 由任务执行者提交；文档生成不改变任务完成状态。

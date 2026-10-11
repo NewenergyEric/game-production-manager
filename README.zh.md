@@ -1,4 +1,4 @@
-[English](README.md)
+[English](README.en.md)
 
 # 游戏制作项目经理
 
@@ -43,7 +43,7 @@ npx skills add https://github.com/NewenergyEric/game-production-manager
 
 **原创制作计划：社区订单改造角落。** 已真实运行校验、工作包导出和变更影响工具。示例包含 12 个 Given/When/Then 验收用例、3 行资产家族 BOM，并保留正式输入待定。
 
-[完整分析与可下载底稿](case-studies/community-order/README.zh.md)
+[完整分析与可下载底稿](case-studies/community-order/README.md)
 
 [![游戏制作项目经理](case-studies/community-order/dashboard-zh.png?v=depth-v4)](case-studies/community-order/dashboard-zh.png)
 
@@ -60,7 +60,7 @@ npx skills add https://github.com/NewenergyEric/game-production-manager
 
 核心工具使用 Python 3.10+ 标准库；动画源码是可选的 Remotion 工程。
 
-[人类说明书](docs/HUMAN-GUIDE.zh.md) · [Agent guide](docs/AGENT-GUIDE.zh.md) · [SKILL.md](SKILL.zh.md) · [Tests and review](evals/) · [Motion source](motion/README.md)
+[人类说明书](docs/HUMAN-GUIDE.md) · [Agent guide](docs/AGENT-GUIDE.md) · [SKILL.md](SKILL.md) · [Tests and review](evals/) · [Motion source](motion/README.md)
 
 ```sh
 python -m unittest discover -s tests -v
@@ -75,6 +75,6 @@ python scripts/check_presentation.py
 
 个人制作者可以轮流承担四个岗位；团队通过同一份资料交接：什么值得做、竞对做了什么、资源和体量如何评估，以及如何创作自己的核心美术。
 
-[岗位如何交接证据、范围与美术资产](docs/WORKFLOW.zh.md) · [Art Director](https://github.com/NewenergyEric/art-director-skill)
+[岗位如何交接证据、范围与美术资产](docs/WORKFLOW.md) · [Art Director](https://github.com/NewenergyEric/art-director-skill)
 
 ![市场研究、竞品拆解、项目评估与核心美术创作；样板与成本反馈推动前序决定修订。](assets/readme/workflow-zh.png)
