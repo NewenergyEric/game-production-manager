@@ -26,6 +26,8 @@ The actual impact tool finds T-02, T-07, T-08, T-10, T-11 and T-12. T-06 scene a
 
 This is a planning case, not a produced feature. All tasks remain planned. Task and logical-state counts are not exported file counts or schedules. Acceptance requires real artifacts, review evidence and an authorized reviewer.
 
-[Reproducible case](../case-studies/community-order/README.md)
+[Reproducible case](../case-studies/community-order/README.en.md)
 
-[Agent guide](AGENT-GUIDE.md)
+[Agent guide](AGENT-GUIDE.en.md)
+
+Chinese is the primary entry; this English guide remains available. For report/SOW exports, `--lang en` selects English labels while preserving the supplied record text.

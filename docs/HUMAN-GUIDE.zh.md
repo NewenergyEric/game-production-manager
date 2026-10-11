@@ -1,4 +1,4 @@
-[English](HUMAN-GUIDE.md)
+[English](HUMAN-GUIDE.en.md)
 
 # 游戏制作项目经理 · 使用说明
 
@@ -26,6 +26,8 @@
 
 这是执行计划案例，功能尚未制作，所有任务仍为 planned。任务数量和逻辑状态不等于导出文件数或工期。真实制品、复核证据与有权限的验收记录齐备后，才可标记 accepted。
 
-[可复现案例](../case-studies/community-order/README.zh.md)
+[可复现案例](../case-studies/community-order/README.md)
 
-[Agent guide](AGENT-GUIDE.zh.md)
+[Agent guide](AGENT-GUIDE.md)
+
+默认入口、展示媒体与导出标题使用中文，英文材料通过 `.en.md` / `.en.json` 访问。报告或 SOW 导出可加 `--lang en` 使用英文标题；正文使用所选输入底稿，不自动翻译来源。

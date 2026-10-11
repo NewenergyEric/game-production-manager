@@ -1,6 +1,6 @@
 # 一条订单，拆到能够逐项接手
 
-[English](README.md)
+[English](README.en.md)
 
 **制作人的问题：** “玩家交付物品后改造角落，策划、程序、美术、QA 各自拿到什么？如果从交一件改成两件，哪里要一起改？”
 
@@ -29,7 +29,7 @@
 
 重复提交只能结算一次；库存不足不扣除；重进显示已保存状态；中断恢复后外观与订单一致；长文本和字体需逐语言检查。五种 UI 状态属于一个组件家族，不假报为五张纹理。
 
-[完整执行包 / Full package](../../examples/community-order-detailed.zh.json) · [任务 / Tasks](tasks.zh.csv) · [验收 / Acceptance](acceptance.zh.csv) · [资产 BOM](asset-bom.zh.csv) · [变更影响 / Impact](impact.json)
+[完整执行包 / Full package](../../examples/community-order-detailed.json) · [任务 / Tasks](tasks.csv) · [验收 / Acceptance](acceptance.csv) · [资产 BOM](asset-bom.csv) · [变更影响 / Impact](impact.json)
 
 ```sh
 python scripts/production.py validate examples/community-order-detailed.json

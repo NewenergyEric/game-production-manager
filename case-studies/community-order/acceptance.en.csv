@@ -1,0 +1,13 @@
+﻿task_id,case_id,given,when,then
+T-01,AC-01,The design state contract covers insufficient items,Review the design document and transition table,The document explicitly prohibits deduction/reward and specifies the reason shown; engineering and QA perform runtime verification.
+T-02,AC-02,A reward reference is missing or quantity is zero,Review the schema and invalid-configuration samples,The schema rejects a missing reward reference and zero quantity with a field location; final values remain pending.
+T-03,AC-03,The same order receives a repeated submission,Review the transaction sequence,Deduction and reward take effect at most once; failure/recovery ownership is explicit.
+T-04,AC-04,No approved art pack or engine specification is available,Prepare production inventory,Keep missing inputs visible and align specifications first; do not equate states with image count.
+T-05,AC-05,The UI specification includes the submitting state,Review state drafts and interaction annotations,"Annotate visible progress, repeat-trigger prevention and retry-after-failure; T-08/T-10 verify runtime interaction."
+T-06,AC-06,The same camera and positioning baseline,Overlay before/after scene drafts,Anchors match without position jumps or occlusion errors; dimensions/formats follow the valid specification.
+T-07,AC-07,The first submission has already taken effect,The same request arrives again,Inventory and rewards are not changed twice; return the existing result.
+T-08,AC-08,The order is completed and its state is saved,Exit and re-enter,Show completion without another deduction or a claim-again flow.
+T-09,AC-09,"Japanese, Simplified Chinese and long English test text",Review a UI draft or text measurement sample at the target minimum viewport,"No clipping, missing glyphs or reversed meaning; quantities and actions are clear."
+T-10,AC-10,Inventory exactly meets the requirement,"Submit once, then try again",One deduction and one reward; a second attempt cannot claim again.
+T-11,AC-11,Presentation is interrupted after a successful submission,Restore the scene,Completed order state matches the corner appearance without settling again.
+T-12,AC-12,An item lacks an actual artifact or authorized review,Prepare handoff,Preserve the gap and task state; do not change planned/submitted to accepted.

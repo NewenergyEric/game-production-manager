@@ -1,0 +1,933 @@
+{
+  "id": "community-order-execution-example",
+  "version": "draft-2",
+  "detail_level": "execution",
+  "example_only": true,
+  "goal": "Break one community order into specialist-ready tasks; this plan is not a completed game feature.",
+  "strategy": "Use the existing Merge system; define rules/interfaces, prepare UI, scene and text in parallel, then integrate and review.",
+  "scope_in": [
+    "Conditions, deduction, submission and completion feedback for one order",
+    "Before and after states of one neighborhood corner",
+    "UI, localization, rule tests and handoff"
+  ],
+  "scope_out": [
+    "Production of a complete game",
+    "Final item values, schedule and budget commitments",
+    "Unilaterally choosing client/server and persistence architecture"
+  ],
+  "constraints": [
+    "This is an original planning exercise, not approved scope for a user's project",
+    "All tasks remain planned; actual owners supply art and engineering specifications"
+  ],
+  "assumptions": [
+    "Item chain, rewards, engine, persistence architecture and art-pack version remain pending"
+  ],
+  "requirements": [
+    {
+      "id": "R-ORDER",
+      "text": "Delivering the required items completes the order; valid, failed, repeated and recovery behavior is explicit",
+      "source": "Original detailed planning case in this repository",
+      "status": "proposed",
+      "acceptance": [
+        "Concrete acceptance cases and a receiving role are defined"
+      ],
+      "owner_role": "Lead Designer"
+    },
+    {
+      "id": "R-CORNER",
+      "text": "A completed order changes the corner from before to after, with checkable asset bindings",
+      "source": "Original detailed planning case in this repository",
+      "status": "proposed",
+      "acceptance": [
+        "Concrete acceptance cases and a receiving role are defined"
+      ],
+      "owner_role": "Art Director"
+    },
+    {
+      "id": "R-LOCALE",
+      "text": "Order quantities, actions, errors and completion feedback can change language and fit the available space",
+      "source": "Original detailed planning case in this repository",
+      "status": "proposed",
+      "acceptance": [
+        "Concrete acceptance cases and a receiving role are defined"
+      ],
+      "owner_role": "Localization Lead"
+    }
+  ],
+  "deliverables": [
+    {
+      "id": "D-RULE",
+      "name": "Order state and rule contract",
+      "type": "design",
+      "requirement_ids": [
+        "R-ORDER"
+      ],
+      "spec": {
+        "baseline": "draft-2 / proposed",
+        "format": "See the task outputs; engine-specific specifications remain pending"
+      },
+      "acceptance": [
+        "The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"
+      ],
+      "reviewer_role": "Lead Designer"
+    },
+    {
+      "id": "D-CONFIG",
+      "name": "Item and reward configuration fields",
+      "type": "data",
+      "requirement_ids": [
+        "R-ORDER"
+      ],
+      "spec": {
+        "baseline": "draft-2 / proposed",
+        "format": "See the task outputs; engine-specific specifications remain pending"
+      },
+      "acceptance": [
+        "The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"
+      ],
+      "reviewer_role": "Lead Designer"
+    },
+    {
+      "id": "D-TECH",
+      "name": "Submission, persistence and idempotency contract",
+      "type": "technical",
+      "requirement_ids": [
+        "R-ORDER"
+      ],
+      "spec": {
+        "baseline": "draft-2 / proposed",
+        "format": "See the task outputs; engine-specific specifications remain pending"
+      },
+      "acceptance": [
+        "The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"
+      ],
+      "reviewer_role": "Technical Lead"
+    },
+    {
+      "id": "D-BOM",
+      "name": "Asset family and specification inventory",
+      "type": "asset",
+      "requirement_ids": [
+        "R-CORNER"
+      ],
+      "spec": {
+        "baseline": "draft-2 / proposed",
+        "format": "See the task outputs; engine-specific specifications remain pending"
+      },
+      "acceptance": [
+        "The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"
+      ],
+      "reviewer_role": "Art Director"
+    },
+    {
+      "id": "D-UI",
+      "name": "Order components and interaction states",
+      "type": "ui",
+      "requirement_ids": [
+        "R-ORDER"
+      ],
+      "spec": {
+        "baseline": "draft-2 / proposed",
+        "format": "See the task outputs; engine-specific specifications remain pending"
+      },
+      "acceptance": [
+        "The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"
+      ],
+      "reviewer_role": "Art Director"
+    },
+    {
+      "id": "D-SCENE",
+      "name": "Before/after corner assets and bindings",
+      "type": "asset",
+      "requirement_ids": [
+        "R-CORNER"
+      ],
+      "spec": {
+        "baseline": "draft-2 / proposed",
+        "format": "See the task outputs; engine-specific specifications remain pending"
+      },
+      "acceptance": [
+        "The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"
+      ],
+      "reviewer_role": "Art Director"
+    },
+    {
+      "id": "D-LOGIC",
+      "name": "Order logic and submission evidence",
+      "type": "code",
+      "requirement_ids": [
+        "R-ORDER"
+      ],
+      "spec": {
+        "baseline": "draft-2 / proposed",
+        "format": "See the task outputs; engine-specific specifications remain pending"
+      },
+      "acceptance": [
+        "The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"
+      ],
+      "reviewer_role": "Technical Lead"
+    },
+    {
+      "id": "D-BIND",
+      "name": "UI and data binding",
+      "type": "integration",
+      "requirement_ids": [
+        "R-ORDER"
+      ],
+      "spec": {
+        "baseline": "draft-2 / proposed",
+        "format": "See the task outputs; engine-specific specifications remain pending"
+      },
+      "acceptance": [
+        "The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"
+      ],
+      "reviewer_role": "Technical Lead"
+    },
+    {
+      "id": "D-LOCALE",
+      "name": "Replaceable text and length checks",
+      "type": "localization",
+      "requirement_ids": [
+        "R-LOCALE"
+      ],
+      "spec": {
+        "baseline": "draft-2 / proposed",
+        "format": "See the task outputs; engine-specific specifications remain pending"
+      },
+      "acceptance": [
+        "The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"
+      ],
+      "reviewer_role": "Localization Lead"
+    },
+    {
+      "id": "D-QA",
+      "name": "Rule, error and recovery acceptance records",
+      "type": "qa",
+      "requirement_ids": [
+        "R-ORDER"
+      ],
+      "spec": {
+        "baseline": "draft-2 / proposed",
+        "format": "See the task outputs; engine-specific specifications remain pending"
+      },
+      "acceptance": [
+        "The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"
+      ],
+      "reviewer_role": "QA Lead"
+    },
+    {
+      "id": "D-INTEGRATION",
+      "name": "Corner and order integration evidence",
+      "type": "integration",
+      "requirement_ids": [
+        "R-CORNER"
+      ],
+      "spec": {
+        "baseline": "draft-2 / proposed",
+        "format": "See the task outputs; engine-specific specifications remain pending"
+      },
+      "acceptance": [
+        "The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"
+      ],
+      "reviewer_role": "Production Lead"
+    },
+    {
+      "id": "D-HANDOFF",
+      "name": "Versioned execution handoff package",
+      "type": "handoff",
+      "requirement_ids": [
+        "R-ORDER"
+      ],
+      "spec": {
+        "baseline": "draft-2 / proposed",
+        "format": "See the task outputs; engine-specific specifications remain pending"
+      },
+      "acceptance": [
+        "The task's Given/When/Then has checkable evidence and a recorded review by the receiving role"
+      ],
+      "reviewer_role": "Production Lead"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T-01",
+      "owner_role": "Lead Designer",
+      "executor_kind": "either",
+      "deliverable_ids": [
+        "D-RULE"
+      ],
+      "depends_on": [],
+      "inputs": [
+        "brief/community-order"
+      ],
+      "input_versions": [
+        {
+          "ref": "brief/community-order",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        }
+      ],
+      "action": "Define valid transitions among unmet/ready/submitting/completed/failed, including repeat submission and re-entry.",
+      "outputs": [
+        "design/order-state-contract.md"
+      ],
+      "entry_criteria": [
+        "Required input versions are available and the task's rules/specifications are confirmed"
+      ],
+      "acceptance": [
+        "Do not deduct items or award a reward; provide a clear reason."
+      ],
+      "acceptance_cases": [
+        {
+          "id": "AC-01",
+          "given": "The design state contract covers insufficient items",
+          "when": "Review the design document and transition table",
+          "then": "The document explicitly prohibits deduction/reward and specifies the reason shown; engineering and QA perform runtime verification."
+        }
+      ],
+      "stop_conditions": [
+        "If an input version changes or rules conflict, record impact and return the decision to its original owner",
+        "Missing target project, valid art pack or specifications cannot be presented as completed production"
+      ],
+      "status": "planned",
+      "artifacts": []
+    },
+    {
+      "id": "T-02",
+      "owner_role": "Systems Designer",
+      "executor_kind": "either",
+      "deliverable_ids": [
+        "D-CONFIG"
+      ],
+      "depends_on": [
+        "T-01"
+      ],
+      "inputs": [
+        "D-RULE"
+      ],
+      "input_versions": [
+        {
+          "ref": "D-RULE",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        }
+      ],
+      "action": "Define item_id, required_count, reward_ref and corner_ref; keep values pending and avoid hardcoding them in the presentation layer.",
+      "outputs": [
+        "data/order.schema.json",
+        "data/order.example.json"
+      ],
+      "entry_criteria": [
+        "Required input versions are available and the task's rules/specifications are confirmed"
+      ],
+      "acceptance": [
+        "Reject invalid configuration with field locations; do not invent final values."
+      ],
+      "acceptance_cases": [
+        {
+          "id": "AC-02",
+          "given": "A reward reference is missing or quantity is zero",
+          "when": "Review the schema and invalid-configuration samples",
+          "then": "The schema rejects a missing reward reference and zero quantity with a field location; final values remain pending."
+        }
+      ],
+      "stop_conditions": [
+        "If an input version changes or rules conflict, record impact and return the decision to its original owner",
+        "Missing target project, valid art pack or specifications cannot be presented as completed production"
+      ],
+      "status": "planned",
+      "artifacts": []
+    },
+    {
+      "id": "T-03",
+      "owner_role": "Technical Lead",
+      "executor_kind": "either",
+      "deliverable_ids": [
+        "D-TECH"
+      ],
+      "depends_on": [
+        "T-01"
+      ],
+      "inputs": [
+        "D-RULE"
+      ],
+      "input_versions": [
+        {
+          "ref": "D-RULE",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        }
+      ],
+      "action": "Define transaction boundaries for inventory deduction, completion, rewards and persistence; record deduplication keys and failure recovery.",
+      "outputs": [
+        "engineering/order-submit-contract.md"
+      ],
+      "entry_criteria": [
+        "Required input versions are available and the task's rules/specifications are confirmed"
+      ],
+      "acceptance": [
+        "Deduction and reward take effect at most once; failure/recovery ownership is explicit."
+      ],
+      "acceptance_cases": [
+        {
+          "id": "AC-03",
+          "given": "The same order receives a repeated submission",
+          "when": "Review the transaction sequence",
+          "then": "Deduction and reward take effect at most once; failure/recovery ownership is explicit."
+        }
+      ],
+      "stop_conditions": [
+        "If an input version changes or rules conflict, record impact and return the decision to its original owner",
+        "Missing target project, valid art pack or specifications cannot be presented as completed production"
+      ],
+      "status": "planned",
+      "artifacts": []
+    },
+    {
+      "id": "T-04",
+      "owner_role": "Art Director",
+      "executor_kind": "either",
+      "deliverable_ids": [
+        "D-BOM"
+      ],
+      "depends_on": [
+        "T-01"
+      ],
+      "inputs": [
+        "D-RULE"
+      ],
+      "input_versions": [
+        {
+          "ref": "D-RULE",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        }
+      ],
+      "action": "Separate base components, state reuse, before/after corner assets and specification gaps; reference a valid art pack.",
+      "outputs": [
+        "art/order-asset-bom.csv"
+      ],
+      "entry_criteria": [
+        "Required input versions are available and the task's rules/specifications are confirmed"
+      ],
+      "acceptance": [
+        "Keep missing inputs visible and align specifications first; do not equate states with image count."
+      ],
+      "acceptance_cases": [
+        {
+          "id": "AC-04",
+          "given": "No approved art pack or engine specification is available",
+          "when": "Prepare production inventory",
+          "then": "Keep missing inputs visible and align specifications first; do not equate states with image count."
+        }
+      ],
+      "stop_conditions": [
+        "If an input version changes or rules conflict, record impact and return the decision to its original owner",
+        "Missing target project, valid art pack or specifications cannot be presented as completed production"
+      ],
+      "status": "planned",
+      "artifacts": []
+    },
+    {
+      "id": "T-05",
+      "owner_role": "UI Designer",
+      "executor_kind": "either",
+      "deliverable_ids": [
+        "D-UI"
+      ],
+      "depends_on": [
+        "T-01",
+        "T-04"
+      ],
+      "inputs": [
+        "D-RULE",
+        "D-BOM"
+      ],
+      "input_versions": [
+        {
+          "ref": "D-RULE",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        },
+        {
+          "ref": "D-BOM",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        }
+      ],
+      "action": "Define five state combinations for the order panel, button, quantity and feedback, including interaction and disabled rules.",
+      "outputs": [
+        "art/order-ui-states.fig-or-equivalent",
+        "art/order-ui-spec.md"
+      ],
+      "entry_criteria": [
+        "Required input versions are available and the task's rules/specifications are confirmed"
+      ],
+      "acceptance": [
+        "Keep progress visible and prevent repeat triggering; restore a retryable state after failure."
+      ],
+      "acceptance_cases": [
+        {
+          "id": "AC-05",
+          "given": "The UI specification includes the submitting state",
+          "when": "Review state drafts and interaction annotations",
+          "then": "Annotate visible progress, repeat-trigger prevention and retry-after-failure; T-08/T-10 verify runtime interaction."
+        }
+      ],
+      "stop_conditions": [
+        "If an input version changes or rules conflict, record impact and return the decision to its original owner",
+        "Missing target project, valid art pack or specifications cannot be presented as completed production"
+      ],
+      "status": "planned",
+      "artifacts": []
+    },
+    {
+      "id": "T-06",
+      "owner_role": "Environment Artist",
+      "executor_kind": "either",
+      "deliverable_ids": [
+        "D-SCENE"
+      ],
+      "depends_on": [
+        "T-04"
+      ],
+      "inputs": [
+        "D-BOM"
+      ],
+      "input_versions": [
+        {
+          "ref": "D-BOM",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        }
+      ],
+      "action": "Deliver before/after states for one corner with anchor, occlusion and composition checks; separate reused and new work.",
+      "outputs": [
+        "art/corner-before",
+        "art/corner-after",
+        "art/corner-integration-spec.md"
+      ],
+      "entry_criteria": [
+        "Required input versions are available and the task's rules/specifications are confirmed"
+      ],
+      "acceptance": [
+        "Anchors match without position jumps or occlusion errors; dimensions/formats follow the valid specification."
+      ],
+      "acceptance_cases": [
+        {
+          "id": "AC-06",
+          "given": "The same camera and positioning baseline",
+          "when": "Overlay before/after scene drafts",
+          "then": "Anchors match without position jumps or occlusion errors; dimensions/formats follow the valid specification."
+        }
+      ],
+      "stop_conditions": [
+        "If an input version changes or rules conflict, record impact and return the decision to its original owner",
+        "Missing target project, valid art pack or specifications cannot be presented as completed production"
+      ],
+      "status": "planned",
+      "artifacts": []
+    },
+    {
+      "id": "T-07",
+      "owner_role": "Gameplay Engineer",
+      "executor_kind": "either",
+      "deliverable_ids": [
+        "D-LOGIC"
+      ],
+      "depends_on": [
+        "T-02",
+        "T-03"
+      ],
+      "inputs": [
+        "D-CONFIG",
+        "D-TECH"
+      ],
+      "input_versions": [
+        {
+          "ref": "D-CONFIG",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        },
+        {
+          "ref": "D-TECH",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        }
+      ],
+      "action": "Implement validation, deduction, completion and reward against the contract; supply invalid-input and repeat-submission test evidence.",
+      "outputs": [
+        "code/order-service",
+        "tests/order-service-results",
+        "engineering/order-save-migration.md"
+      ],
+      "entry_criteria": [
+        "Required input versions are available and the task's rules/specifications are confirmed"
+      ],
+      "acceptance": [
+        "Inventory and rewards are not changed twice; return the existing result."
+      ],
+      "acceptance_cases": [
+        {
+          "id": "AC-07",
+          "given": "The first submission has already taken effect",
+          "when": "The same request arrives again",
+          "then": "Inventory and rewards are not changed twice; return the existing result."
+        }
+      ],
+      "stop_conditions": [
+        "If an input version changes or rules conflict, record impact and return the decision to its original owner",
+        "Missing target project, valid art pack or specifications cannot be presented as completed production"
+      ],
+      "status": "planned",
+      "artifacts": []
+    },
+    {
+      "id": "T-08",
+      "owner_role": "Client Engineer",
+      "executor_kind": "either",
+      "deliverable_ids": [
+        "D-BIND"
+      ],
+      "depends_on": [
+        "T-05",
+        "T-07",
+        "T-09"
+      ],
+      "inputs": [
+        "D-UI",
+        "D-LOGIC",
+        "D-LOCALE"
+      ],
+      "input_versions": [
+        {
+          "ref": "D-UI",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        },
+        {
+          "ref": "D-LOGIC",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        },
+        {
+          "ref": "D-LOCALE",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        }
+      ],
+      "action": "Bind inventory, order state, text keys and presentation; handle submission, failure and re-entry.",
+      "outputs": [
+        "code/order-panel",
+        "evidence/order-state-capture"
+      ],
+      "entry_criteria": [
+        "Required input versions are available and the task's rules/specifications are confirmed"
+      ],
+      "acceptance": [
+        "Show completion without another deduction or a claim-again flow."
+      ],
+      "acceptance_cases": [
+        {
+          "id": "AC-08",
+          "given": "The order is completed and its state is saved",
+          "when": "Exit and re-enter",
+          "then": "Show completion without another deduction or a claim-again flow."
+        }
+      ],
+      "stop_conditions": [
+        "If an input version changes or rules conflict, record impact and return the decision to its original owner",
+        "Missing target project, valid art pack or specifications cannot be presented as completed production"
+      ],
+      "status": "planned",
+      "artifacts": []
+    },
+    {
+      "id": "T-09",
+      "owner_role": "Localization Lead",
+      "executor_kind": "either",
+      "deliverable_ids": [
+        "D-LOCALE"
+      ],
+      "depends_on": [
+        "T-01",
+        "T-05"
+      ],
+      "inputs": [
+        "D-RULE",
+        "D-UI"
+      ],
+      "input_versions": [
+        {
+          "ref": "D-RULE",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        },
+        {
+          "ref": "D-UI",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        }
+      ],
+      "action": "Use text keys instead of hardcoded strings; check quantities, long text and glyph coverage in each language.",
+      "outputs": [
+        "localization/order-strings.csv",
+        "evidence/order-locale-review"
+      ],
+      "entry_criteria": [
+        "Required input versions are available and the task's rules/specifications are confirmed"
+      ],
+      "acceptance": [
+        "No clipping, missing glyphs or reversed meaning; quantities and actions are clear."
+      ],
+      "acceptance_cases": [
+        {
+          "id": "AC-09",
+          "given": "Japanese, Simplified Chinese and long English test text",
+          "when": "Review a UI draft or text measurement sample at the target minimum viewport",
+          "then": "No clipping, missing glyphs or reversed meaning; quantities and actions are clear."
+        }
+      ],
+      "stop_conditions": [
+        "If an input version changes or rules conflict, record impact and return the decision to its original owner",
+        "Missing target project, valid art pack or specifications cannot be presented as completed production"
+      ],
+      "status": "planned",
+      "artifacts": []
+    },
+    {
+      "id": "T-10",
+      "owner_role": "QA Engineer",
+      "executor_kind": "either",
+      "deliverable_ids": [
+        "D-QA"
+      ],
+      "depends_on": [
+        "T-07",
+        "T-08"
+      ],
+      "inputs": [
+        "D-LOGIC",
+        "D-BIND"
+      ],
+      "input_versions": [
+        {
+          "ref": "D-LOGIC",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        },
+        {
+          "ref": "D-BIND",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        }
+      ],
+      "action": "Test insufficient/exact/excess inventory, repeated submission, failure, recovery and invalid configuration.",
+      "outputs": [
+        "qa/order-cases.csv",
+        "qa/order-results.md"
+      ],
+      "entry_criteria": [
+        "Required input versions are available and the task's rules/specifications are confirmed"
+      ],
+      "acceptance": [
+        "One deduction and one reward; a second attempt cannot claim again."
+      ],
+      "acceptance_cases": [
+        {
+          "id": "AC-10",
+          "given": "Inventory exactly meets the requirement",
+          "when": "Submit once, then try again",
+          "then": "One deduction and one reward; a second attempt cannot claim again."
+        }
+      ],
+      "stop_conditions": [
+        "If an input version changes or rules conflict, record impact and return the decision to its original owner",
+        "Missing target project, valid art pack or specifications cannot be presented as completed production"
+      ],
+      "status": "planned",
+      "artifacts": []
+    },
+    {
+      "id": "T-11",
+      "owner_role": "Integration Engineer",
+      "executor_kind": "either",
+      "deliverable_ids": [
+        "D-INTEGRATION"
+      ],
+      "depends_on": [
+        "T-06",
+        "T-08",
+        "T-10"
+      ],
+      "inputs": [
+        "D-SCENE",
+        "D-BIND",
+        "D-QA"
+      ],
+      "input_versions": [
+        {
+          "ref": "D-SCENE",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        },
+        {
+          "ref": "D-BIND",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        },
+        {
+          "ref": "D-QA",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        }
+      ],
+      "action": "Integrate corner visuals with order completion; check ordering, interruption, recovery and asset references.",
+      "outputs": [
+        "build-or-scene-reference",
+        "evidence/order-corner-integration"
+      ],
+      "entry_criteria": [
+        "Required input versions are available and the task's rules/specifications are confirmed"
+      ],
+      "acceptance": [
+        "Completed order state matches the corner appearance without settling again."
+      ],
+      "acceptance_cases": [
+        {
+          "id": "AC-11",
+          "given": "Presentation is interrupted after a successful submission",
+          "when": "Restore the scene",
+          "then": "Completed order state matches the corner appearance without settling again."
+        }
+      ],
+      "stop_conditions": [
+        "If an input version changes or rules conflict, record impact and return the decision to its original owner",
+        "Missing target project, valid art pack or specifications cannot be presented as completed production"
+      ],
+      "status": "planned",
+      "artifacts": []
+    },
+    {
+      "id": "T-12",
+      "owner_role": "Game Production Manager",
+      "executor_kind": "either",
+      "deliverable_ids": [
+        "D-HANDOFF"
+      ],
+      "depends_on": [
+        "T-09",
+        "T-10",
+        "T-11"
+      ],
+      "inputs": [
+        "D-LOCALE",
+        "D-QA",
+        "D-INTEGRATION"
+      ],
+      "input_versions": [
+        {
+          "ref": "D-LOCALE",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        },
+        {
+          "ref": "D-QA",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        },
+        {
+          "ref": "D-INTEGRATION",
+          "version": "draft-2 / proposed",
+          "status": "pending"
+        }
+      ],
+      "action": "Check input versions, artifacts, acceptance and open questions; coordinate handoff and record owner decisions.",
+      "outputs": [
+        "handoff/manifest.json",
+        "handoff/review-record.md"
+      ],
+      "entry_criteria": [
+        "Required input versions are available and the task's rules/specifications are confirmed"
+      ],
+      "acceptance": [
+        "Preserve the gap and task state; do not change planned/submitted to accepted."
+      ],
+      "acceptance_cases": [
+        {
+          "id": "AC-12",
+          "given": "An item lacks an actual artifact or authorized review",
+          "when": "Prepare handoff",
+          "then": "Preserve the gap and task state; do not change planned/submitted to accepted."
+        }
+      ],
+      "stop_conditions": [
+        "If an input version changes or rules conflict, record impact and return the decision to its original owner",
+        "Missing target project, valid art pack or specifications cannot be presented as completed production"
+      ],
+      "status": "planned",
+      "artifacts": []
+    }
+  ],
+  "milestones": [
+    {
+      "id": "M-CONTRACT",
+      "goal": "Scope and contracts are ready for review",
+      "task_ids": [
+        "T-01",
+        "T-02",
+        "T-03",
+        "T-04"
+      ],
+      "exit_criteria": "Rule, data, technical and art inputs have owner decisions and available versions"
+    },
+    {
+      "id": "M-HANDOFF",
+      "goal": "Handoff is ready after artifacts and acceptance are complete",
+      "task_ids": [
+        "T-12"
+      ],
+      "exit_criteria": "Actual artifacts, tests and authorized reviews are complete; this case has not reached that state"
+    }
+  ],
+  "feedback": [],
+  "asset_bom": [
+    {
+      "id": "A-PANEL",
+      "family": "Order panel and submit button",
+      "states": [
+        "unmet",
+        "ready",
+        "submitting",
+        "completed",
+        "failed"
+      ],
+      "representation": "One component family; states combine text, color and interaction rules, not five textures",
+      "quantity_basis": "One order interface; actual export count depends on the valid art specification",
+      "spec_status": "pending: Art Director pack, engine format, dimensions and fonts"
+    },
+    {
+      "id": "A-CORNER",
+      "family": "Neighborhood corner",
+      "states": [
+        "before",
+        "after"
+      ],
+      "representation": "Before/after logical states of one scene; check reused and new resources separately",
+      "quantity_basis": "The case covers one corner; two logical states do not automatically mean two images",
+      "spec_status": "pending: camera, anchors, hierarchy and asset format"
+    },
+    {
+      "id": "A-FEEDBACK",
+      "family": "Submission feedback",
+      "states": [
+        "progress",
+        "success",
+        "failure"
+      ],
+      "representation": "Motion, text and audio requirements; check actual project resources before assuming reuse",
+      "quantity_basis": "Three feedback meanings; technical and art leads decide whether they need separate resources",
+      "spec_status": "pending: motion duration, audio and accessible alternatives"
+    }
+  ]
+}

@@ -25,6 +25,6 @@
 
 先区分订单规则、物品配置、提交事务、UI 绑定、角落前后资产、文本与本地化、QA、集成和接包。重复提交、物品不足、重进、失败反馈与长文本需要各自预期；服务端、存档与幂等策略由真实项目确定。
 
-用 [详细执行包](../examples/community-order-detailed.zh.json) 跑 `validate / render / impact`。它是原创规划案例，全部任务保持 planned；执行脚本验证计划与影响传播，不代表游戏制作或验收完成。
+用 [详细执行包](../examples/community-order-detailed.json) 跑 `validate / render / impact`。它是原创规划案例，全部任务保持 planned；执行脚本验证计划与影响传播，不代表游戏制作或验收完成。
 
 `detail_level: execution` 的包要求任务提供 `input_versions / outputs / entry_criteria / stop_conditions / acceptance_cases`。输入可以记录 pending，但不能把计划状态写成 ready 或 accepted。先完成补齐输入的任务，再让下游开工。

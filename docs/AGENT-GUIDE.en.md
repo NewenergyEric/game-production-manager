@@ -27,14 +27,14 @@ At minimum include `requirements`, `deliverables`, `tasks`, `milestones`, `accep
 
 ## Depth-case entry
 
-[Protocol](../references/execution-depth.md) · [Case](../case-studies/community-order/README.md)
+[Protocol](../references/execution-depth.en.md) · [Case](../case-studies/community-order/README.en.md)
 
 ```sh
-python scripts/production.py validate examples/community-order-detailed.json
-python scripts/production.py render examples/community-order-detailed.json --out outputs/community-order
-python scripts/production.py impact examples/community-order-detailed.json --changed D-CONFIG
+python scripts/production.py validate examples/community-order-detailed.en.json
+python scripts/production.py render examples/community-order-detailed.en.json --out outputs/community-order --lang en
+python scripts/production.py impact examples/community-order-detailed.en.json --changed D-CONFIG
 ```
 
 ## Tool JSON and execution gates
 
-Human report sections are not CLI field names. Use examples/community-order-detailed.json as the tool input contract. Execution packages require exactly one version record per declared input, valid internal D-/T-/R-/M- references and explicitly registered external materials. Available inputs and accepted prerequisites are required for ready/in_progress/submitted. Document tasks review documents; implementation and QA verify runtime behavior.
+Human report sections are not CLI field names. Use examples/community-order-detailed.en.json as the tool input contract. Execution packages require exactly one version record per declared input, valid internal D-/T-/R-/M- references and explicitly registered external materials. Available inputs and accepted prerequisites are required for ready/in_progress/submitted. Document tasks review documents; implementation and QA verify runtime behavior.

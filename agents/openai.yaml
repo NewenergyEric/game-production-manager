@@ -1,4 +1,4 @@
 interface:
-  display_name: "Game Production Manager"
-  short_description: "Turn game decisions into scoped, executable work packages."
-  default_prompt: "Use $game-production-manager to turn my goals and feedback into a versioned SOW, asset BOM, task handoffs, acceptance cases and change impact."
+  display_name: "游戏制作项目经理"
+  short_description: "把游戏目标、策略和反馈拆成团队可执行、可验收的 SOW、资产清单、工作包和任务。"
+  default_prompt: "使用 $game-production-manager，把我的目标和反馈拆为带版本的 SOW、资产 BOM、任务交接、验收用例和变更影响。"

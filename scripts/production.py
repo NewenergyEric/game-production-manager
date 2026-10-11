@@ -146,20 +146,28 @@ def impact(data, changed):
             'action': 'Review scope, inputs, estimates and acceptance; no tasks or approved decisions were modified.'}
 
 
-def render(data, out):
+def render(data, out, language='zh'):
+    if language not in ('zh', 'en'): raise ValueError('language must be zh or en')
+    labels = {'Goal': '目标', 'Strategy': '策略', 'In scope': '范围内', 'Out of scope': '范围外',
+              'Constraints': '约束', 'Assumptions and open decisions': '假设与待定',
+              'Deliverables and acceptance': '交付物与验收', 'Specification': '规格',
+              'Acceptance': '验收', 'Receiving role': '接收岗位', 'Milestones': '里程碑', 'Exit criteria': '退出条件',
+              'This is an execution plan. Executors submit actual art, code and builds; generating this document does not complete a task.':
+              '本文件是执行计划。制作、代码和 Build 由任务执行者提交；文档生成不改变任务完成状态。'}
+    t = lambda label: labels.get(label, label) if language == 'zh' else label
     errors = validate(data)
     if errors: raise ValueError('; '.join(errors))
     out.mkdir(parents=True, exist_ok=False)
-    lines = [f"# SOW · {data['id']} · {data['version']}", '', '**Goal:** ' + data['goal'], '', '**Strategy:** ' + data['strategy'], '']
+    lines = [f"# SOW · {data['id']} · {data['version']}", '', f"**{t('Goal')}:** " + data['goal'], '', f"**{t('Strategy')}:** " + data['strategy'], '']
     for key, label in [('scope_in','In scope'),('scope_out','Out of scope'),('constraints','Constraints'),('assumptions','Assumptions and open decisions')]:
-        lines += ['## ' + label, ''] + ['- ' + str(v) for v in data[key]] + ['']
-    lines += ['## Deliverables and acceptance', '']
+        lines += ['## ' + t(label), ''] + ['- ' + str(v) for v in data[key]] + ['']
+    lines += ['## ' + t('Deliverables and acceptance'), '']
     for d in data['deliverables']:
-        lines += [f"### {d['id']} · {d['name']}", '', 'Specification: ' + json.dumps(d['spec'],ensure_ascii=False), '',
-                  'Acceptance: ' + json.dumps(d['acceptance'],ensure_ascii=False), '', 'Receiving role: ' + d['reviewer_role'], '']
-    lines += ['## Milestones', '']
-    for m in data['milestones']: lines += [f"- {m['id']}：{m.get('goal','')}；Exit criteria: {m['exit_criteria']}"]
-    lines += ['', 'This is an execution plan. Executors submit actual art, code and builds; generating this document does not complete a task.', '']
+        lines += [f"### {d['id']} · {d['name']}", '', t('Specification') + ': ' + json.dumps(d['spec'],ensure_ascii=False), '',
+                  t('Acceptance') + ': ' + json.dumps(d['acceptance'],ensure_ascii=False), '', t('Receiving role') + ': ' + d['reviewer_role'], '']
+    lines += ['## ' + t('Milestones'), '']
+    for m in data['milestones']: lines += [f"- {m['id']}：{m.get('goal','')}；{t('Exit criteria')}: {m['exit_criteria']}"]
+    lines += ['', t('This is an execution plan. Executors submit actual art, code and builds; generating this document does not complete a task.'), '']
     (out/'SOW.md').write_text('\n'.join(lines),encoding='utf-8')
     fields = ['id','owner_role','executor_kind','deliverable_ids','depends_on','inputs','input_versions','action','outputs','entry_criteria','acceptance','stop_conditions','status']
     with (out/'tasks.csv').open('w',encoding='utf-8-sig',newline='') as file:
@@ -188,14 +196,16 @@ def main():
     subs = parser.add_subparsers(dest='command',required=True)
     for cmd in ['validate','render','impact']:
         p = subs.add_parser(cmd); p.add_argument('input',type=Path)
-        if cmd == 'render': p.add_argument('--out',type=Path,required=True)
+        if cmd == 'render':
+            p.add_argument('--out',type=Path,required=True)
+            p.add_argument('--lang',choices=['zh','en'],default='zh',help='SOW labels; input narrative is preserved (default: zh)')
         if cmd == 'impact': p.add_argument('--changed',nargs='+',required=True)
     args = parser.parse_args()
     try:
         data = json.loads(args.input.read_text(encoding='utf-8-sig')); errors = validate(data)
         if errors:
             print(json.dumps({'valid':False,'errors':errors},ensure_ascii=False)); return 1
-        if args.command == 'render': render(data,args.out)
+        if args.command == 'render': render(data,args.out,args.lang)
         result = impact(data,args.changed) if args.command == 'impact' else {'valid':True,'scope':'Plan structure only; tasks were not executed.'}
         print(json.dumps(result,ensure_ascii=False,indent=2)); return 0
     except (OSError,ValueError,TypeError,KeyError,AttributeError) as exc:
